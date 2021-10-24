@@ -8,17 +8,34 @@
   <name>SolidaridadEscuela Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  
+	<!-- Dependencia de JUnit -->  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Dependencia de PostgreSQL -->
 	<dependency>
 	    <groupId>org.postgresql</groupId>
 	    <artifactId>postgresql</artifactId>
 	    <version>42.3.0</version>
 	</dependency>
+	
+	<!-- Dependencia de Apache Shiro -->
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	    <version>1.8.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-web</artifactId>
+	    <version>1.8.0</version>
+	</dependency>
+	
   </dependencies>
   <build>
     <finalName>SolidaridadEscuela</finalName>
