@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.UserMapper">
+
+  <resultMap type='User' id='UserResult'>
+    <id property='userName' column='user_name'/>
+    <result property='name' column='name'/>
+    <result property='mail' column='mail'/>
+    <result property='passwd' column='passwd'/>
+    <result property='rol' column='rol'/>
+  </resultMap>
+  
+</mapper>  
