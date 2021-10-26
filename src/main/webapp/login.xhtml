@@ -6,19 +6,19 @@
     xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <link href="loginCSS.css" rel="stylesheet" type="text/css"/>
         <title>SOLIDARIDADECI</title>
     </h:head>
 
     <body>
         <h1> SOLIDARIDAD ECI </h1>
-        
-        <div class="card_1">
+        <div class="container ">
+            <h:form id="formulario">
+                <link href="loginCSS.css" rel="stylesheet" type="text/css"/>
                 <p><strong>Bienvenido</strong></p>
-                <p>Introduzca sus datos</p>
-                <h:form id="formulario"></h:form>
-            
+                <p>Introduzca sus datos para ingresar</p><br></br>
+
+                <p:commandButton id="user" style="width : 280px; " class="Button" type="button" value="BOTOOOOON"/>
+            </h:form>
         </div>
-    
     </body>
 </html>
