@@ -1,13 +1,13 @@
     body {
-      font-family: Montserrat, Helvetica, Geneva;
+      font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
       background-color: #548186;
       background-image: url("https://landing.escuelaing.edu.co/wp-content/uploads/2017/04/maestrias_v2.jpg");
       font-weight: bolder;
     }
     h1 {
-        font-family: Montserrat,Helvetica, Geneva;
+        font-family: Helvetica, Georgia, 'Times New Roman', Times, serif ;
         -webkit-text-stroke: 1px black;
-        color: #991F28;
+        color: white;
         text-align: center;
         font-size: 250%
     }
