@@ -6,13 +6,25 @@
   
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.CategoryMapper">
 
-  <resultMap type='Category' id='CategoryResult'>
-    <id property='id' column='id'/>
-    <result property='name' column='name'/>
-    <result property='description' column='description'/>
-    <result property='creationDate' column='creation_date'/>
-    <result property='state' column='state'/>
-    <result property='modifyDate' column='modify_date'/>
-  </resultMap>
+	<select parameterType="map" id="consultarCategorias" resultMap="CategoryResult">
+	    select * from categories
+  	</select>
+
+	<insert parameterType="map" id="crearCategoria">
+	   	insert into categories(name, description, creation_date, state, modify_date) values (#{Name}, #{desc}, current_date, #{State}, current_date)
+	</insert>
+  
+	 <update parameterType="map" id="actualizarCategoria">
+	 	update categories set description = #{Desc}, state = #{state}, modify_date = current_date where name = #{nom}
+	 </update>
+
+	<resultMap type='Category' id='CategoryResult'>
+		 <id property='id' column='id'/>
+		 <result property='name' column='name'/>
+		 <result property='description' column='description'/>
+		 <result property='creationDate' column='creation_date'/>
+		 <result property='state' column='state'/>
+		 <result property='modifyDate' column='modify_date'/>
+	</resultMap>
   
 </mapper>  
