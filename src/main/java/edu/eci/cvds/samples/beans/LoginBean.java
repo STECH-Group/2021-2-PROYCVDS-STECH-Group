@@ -31,6 +31,10 @@ public class LoginBean implements Serializable{
 		
 		try{
 			userActual.login(uPToken);
+			userActual.getSession().setAttribute("correo", user);
+			if (userActual.hasRole("Administrador")) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
+            }
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
             log.error(ex.getMessage(), ex);
@@ -43,7 +47,10 @@ public class LoginBean implements Serializable{
         } catch (AuthenticationException ex) {
             error("Unknown error: "+ex.getMessage());
             log.error(ex.getMessage(), ex);
-        }
+        } catch (IOException ex) {
+        	error("Unknown error: " + ex.getMessage());
+            log.error(ex.getMessage(), ex);
+		}
 	}
 	
 	public String getUser() {
