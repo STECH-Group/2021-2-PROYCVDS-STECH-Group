@@ -16,13 +16,14 @@
       background-color: silver;
       border-radius: 10px;
       padding: 25px;
-      top:25%;
-      left: 30%;
+      top:50%;
+      left: 50%;
       display: inline-flex;
       counter-reset: heading;
       position: absolute;
       justify-content: center;
       align-items: center;
+      transform: translate(-50%,-50%);
     }
   
 

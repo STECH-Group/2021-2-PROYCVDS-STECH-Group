@@ -5,13 +5,13 @@
       font-weight: bolder;
     }
 	h1 {
-        font-family: Helvetica, Georgia, 'Times New Roman', Times, serif ;
-        -webkit-text-stroke: 0.5px black;
-        color:#720C14;
-        text-align: center;
-        font-size: 250%;
-        counter-reset: heading;
-    }
+		font-family: Helvetica, Georgia, 'Times New Roman', Times, serif ;
+		-webkit-text-stroke: 0.5px black;
+		color:#720C14;
+		text-align: center;
+		font-size: 250%;
+		counter-reset: heading;
+	}
 	.container{
       background-color: silver;
       border-radius: 10px;
