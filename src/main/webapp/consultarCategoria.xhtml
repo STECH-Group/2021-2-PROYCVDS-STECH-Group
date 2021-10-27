@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>SOLIDARIDADECI</title>
+    </h:head>
+
+    <body>
+        <h:form>
+            <link href="consultarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
+            <header id="barra-administrador">
+                <div class=" logo-nav-container">
+                    <p id="admin-header" href="#">
+                        ADMINISTRADOR
+                    </p> 
+                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+                </div>
+            </header><!-- / #main-header -->
+            <div class="titulo">
+                <h2>CATEGORIAS</h2>
+            </div>
+            <div class= "panel consulta">	
+                <p:dataTable var="cliente"  rows="10"
+                     paginator="true"
+					 selectionMode="single" 
+					 rowKey="#{category.id}"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
+                     rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{category.id}" />
+                    </p:column>
+
+                    <p:column headerText="NOMBRE">
+                        <h:outputText value="#{category.name}" />
+                    </p:column>
+
+                    <p:column headerText="DESCRIPCION">
+                        <h:outputText value="#{category.description}" />
+                    </p:column>
+
+                    <p:column headerText="FECHA DE CREACIÓN">
+                        <h:outputText value="#{category.creationDate}" />
+                    </p:column>
+                    
+                    <p:column headerText="ESTADO">
+                        <h:outputText value="#{category.state}" />
+                    </p:column>
+                    
+                    <p:column headerText="FECHA MODIFICACIÓN">
+                        <h:outputText value="#{category.modifyDate}" />
+                    </p:column>
+                    
+                    <f:facet name="footer">
+                        <p:commandButton id="boton_Continuar" action = "administrador?faces-redirect = true" value = "REGRESAR" styleClass="ui-button-secondary"/>
+                    </f:facet>
+                </p:dataTable>
+            </div>
+    </h:form>
+    </body>
+</html>
