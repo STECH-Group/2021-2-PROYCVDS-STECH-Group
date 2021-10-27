@@ -11,18 +11,16 @@
 
     <body>
         <h1> SOLIDARIDAD ECI </h1>
-        <div class="container ">
+        <div class="container" >
             <h:form id="formulario">
                 <link href="loginCSS.css" rel="stylesheet" type="text/css"/>
                 <p><strong>Bienvenido</strong></p>
                 <p>Introduzca sus datos para ingresar</p><br></br>
                 <p  id="usuario" > Usuario </p> 
                 <p:inputText id="numeros" style="width : 500px; "  /><br></br>
-
                 <p  id="password" > Contraseña </p>
-                <p:inputText id="num" style="width : 500px; " binding="#{input}" /><br></br>
-
-                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar"/>
+                <p:inputText id="num" type="password" style="width : 500px; " binding="#{input}" /><br></br>
+                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar" alig = "center"/>
             </h:form>
         </div>
     </body>
