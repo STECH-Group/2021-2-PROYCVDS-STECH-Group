@@ -9,6 +9,12 @@
   <url>http://maven.apache.org</url>
   <dependencies>
   
+  	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-jdk14</artifactId>
+		<version>1.7.25</version>
+	</dependency>
+  
 	<!-- Dependencia de JUnit -->  
     <dependency>
       <groupId>junit</groupId>
@@ -113,6 +119,15 @@
 	    <artifactId>primefaces</artifactId>
 	    <version>10.0.0</version>
 	</dependency>
+	
+	<!-- Dependencia de h2 para DbTest -->
+	<dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <version>1.4.200</version>
+	    <scope>test</scope>
+	</dependency>
+	
 	
   </dependencies>
 

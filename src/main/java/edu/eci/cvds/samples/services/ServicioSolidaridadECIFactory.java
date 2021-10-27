@@ -21,15 +21,12 @@ import edu.eci.cvds.samples.services.impl.ServicioSolidaridadECIImpl;
 public class ServicioSolidaridadECIFactory {
 	
 	private static ServicioSolidaridadECIFactory instance = new ServicioSolidaridadECIFactory();
-	//private static Injector injector;
 	private static Optional<Injector> optInjector;
 	
 	private Injector myBatisInjector(String env, String pathResource) {
 	       return createInjector(new XMLMyBatisModule() {
 	           @Override
 	           protected void initialize() {
-	               //install(JdbcHelper.PostgreSQL);
-	               //setClassPathResource("mybatis-config.xml");
 	        	   setEnvironmentId(env);
 	        	   setClassPathResource(pathResource);
 	               bind(ServicioSolidaridadECI.class).to(ServicioSolidaridadECIImpl.class);
@@ -42,26 +39,18 @@ public class ServicioSolidaridadECIFactory {
 	private ServicioSolidaridadECIFactory() {
 		optInjector = Optional.empty();
 	}
-	
-	/*
-	public static SqlSessionFactory getSqlSessionFactory() {
-		SqlSessionFactory sqlSessionFactory = null;
-		if (sqlSessionFactory == null) {
-			InputStream inputStream;
-			try {
-				inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-				sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-			}
-			catch (IOException e) {
-				throw new RuntimeException(e.getCause());
-			}
-		}
-		return sqlSessionFactory;
-	}*/
-	
+
 	public ServicioSolidaridadECI getServicioSolidaridadECI() {
 		if (!optInjector.isPresent()) {
 	           optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+	       }
+		
+		return optInjector.get().getInstance(ServicioSolidaridadECI.class);
+	}
+	
+	public ServicioSolidaridadECI getServicioSolidaridadECITesting() {
+		if (!optInjector.isPresent()) {
+	           optInjector = Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
 	       }
 		
 		return optInjector.get().getInstance(ServicioSolidaridadECI.class);
