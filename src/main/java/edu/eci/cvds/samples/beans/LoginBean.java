@@ -2,6 +2,7 @@ package edu.eci.cvds.samples.beans;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -35,6 +36,7 @@ public class LoginBean implements Serializable{
 			if (userActual.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
             }
+			setLogeado(true);
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
             log.error(ex.getMessage(), ex);
@@ -79,5 +81,16 @@ public class LoginBean implements Serializable{
 	
 	private void error(String message) {
         FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "error"));
+    }
+	
+	public void redirect(String dr) {
+        Subject s = SecurityUtils.getSubject();
+        if (dr == "/faces/administrador.xhml" && s.hasRole("Administrador") || (dr != "/faces/administrador.xhml")) {
+            try {
+                FacesContext.getCurrentInstance().getExternalContext().redirect(dr);
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 }
