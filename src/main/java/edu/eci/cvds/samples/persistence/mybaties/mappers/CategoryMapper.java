@@ -8,13 +8,18 @@ import edu.eci.cvds.samples.entities.Category;
 
 public interface CategoryMapper {
 	
-	public List<Category> consultarCategorias();
+	public List<Category> searchCategories();
 	
 	public void newCategory(@Param ("Name") String name,
 							@Param ("desc") String description,
-							@Param ("State") boolean state);
+							@Param ("State") String state);
 	
-	public void updateCategory(@Param ("nom") String name,
-							@Param ("Desc") String description,
-							@Param ("state") boolean state);
+	public void updateCategoryName(@Param ("Oname") String name,
+							@Param ("Nnom") String newName);
+	
+	public void updateCategoryDescription(@Param ("Oname") String name,
+								@Param ("nDesc") String description);
+	
+	public void updateCategoryState(@Param ("Oname") String name,
+								@Param ("nState") String state);
 }

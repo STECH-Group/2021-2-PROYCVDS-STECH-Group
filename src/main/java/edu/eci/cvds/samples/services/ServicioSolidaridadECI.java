@@ -8,8 +8,8 @@ public interface ServicioSolidaridadECI {
 	
 	public List<Category> searchCategories();
 	
-	public void crearNuevaCategoria(String name, String description, boolean state) throws ExceptionServicioSolidaridadECI;
+	public void crearNuevaCategoria(String name, String description, String state) throws ExceptionServicioSolidaridadECI;
 	
-	public void actualizarCategoria(String name, String description, boolean state) throws ExceptionServicioSolidaridadECI;
+	public void actualizarCategoria(String oName, String nName, String description, String state) throws ExceptionServicioSolidaridadECI;
 
 }

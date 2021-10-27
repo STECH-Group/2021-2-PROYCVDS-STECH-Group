@@ -9,14 +9,14 @@ public class Category implements Serializable{
 	private String name;
 	private String description;
 	private Date creationDate;
-	private boolean state;
+	private String state;
 	private Date modifyDate;
 	
 	public Category() {
 		
 	}
 	
-	public Category(int id, String name, String description, Date creationDate, boolean state, Date modifyDate) {
+	public Category(int id, String name, String description, Date creationDate, String state, Date modifyDate) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -57,11 +57,11 @@ public class Category implements Serializable{
 		this.creationDate = creationDate;
 	}
 	
-	public boolean isState() {
+	public String getState() {
 		return state;
 	}
 	
-	public void setState(boolean state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 	
@@ -75,7 +75,7 @@ public class Category implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Categorie [id=" + id + ", name=" + name + ", description=" + description + ", creationDate="
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", creationDate="
 				+ creationDate + ", state=" + state + ", modifyDate=" + modifyDate + "]" + "\n\t";
 	}
 }

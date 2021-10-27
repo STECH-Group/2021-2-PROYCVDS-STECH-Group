@@ -20,27 +20,27 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	private UserDAO userDAO;
 
 	@Override
-	public void crearNuevaCategoria(String name, String description, boolean state)
+	public void crearNuevaCategoria(String name, String description, String state)
 			throws ExceptionServicioSolidaridadECI {
 		// TODO Auto-generated method stub
 		categoryDAO.crearCategoria(name, description, state);
 	}
 
 	@Override
-	public void actualizarCategoria(String name, String description, boolean state)
+	public void actualizarCategoria(String oName, String nName, String description, String state)
 			throws ExceptionServicioSolidaridadECI {
 		try {
-			categoryDAO.actualizarCategoria(name, description, state);
+			categoryDAO.actualizarCategoria(oName, nName, description, state);
 		}
 		catch (PersistenceException ex) {
-			throw new ExceptionServicioSolidaridadECI("El nombre " + name + " ya se encuentra en uso.", ex);
+			throw new ExceptionServicioSolidaridadECI("El nombre " + nName + " ya se encuentra en uso.", ex);
 		}
 	}
 
 	@Override
 	public List<Category> searchCategories() {
 		// TODO Auto-generated method stub
-		return categoryDAO.searchCategories();
+		return categoryDAO.consultarCategorias();
 	}
 	
 }

@@ -15,7 +15,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Inject
 	private CategoryMapper categoryMapper;
 	
-	public void crearCategoria(String name, String description, boolean state) throws PersistenceException {
+	public void crearCategoria(String name, String description, String state) throws PersistenceException {
 
 		try {
 		categoryMapper.newCategory(name, description, state);
@@ -25,10 +25,12 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 		}
 	}
 
-	public void actualizarCategoria(String name, String description, boolean state) throws PersistenceException {
+	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException {
 
 		try{
-            categoryMapper.updateCategory(name, description, state);
+			if (nName != "") categoryMapper.updateCategoryName(oName, nName);
+			if (description != "") categoryMapper.updateCategoryDescription(oName, description);
+			if(state != "") categoryMapper.updateCategoryState(oName, state);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al actualizar la categoria",e);
@@ -36,9 +38,8 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	}
 
 	@Override
-	public List<Category> searchCategories() {
+	public List<Category> consultarCategorias() {
 		// TODO Auto-generated method stub
-		return categoryMapper.consultarCategorias();
+		return categoryMapper.searchCategories();
 	}
-
 }
