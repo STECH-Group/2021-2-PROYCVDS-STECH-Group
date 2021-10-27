@@ -23,7 +23,7 @@ public class ServicioSolidaridadECITest {
 	@Before
 	public void setUp() {
 		try {
-			ssECI.crearNuevaCategoria("Laboratorios", "Implementos de seguridad para practicas de laboratorio", "Activo");
+			//ssECI.crearNuevaCategoria("Laboratorios", "Implementos de seguridad para practicas de laboratorio", "Activo");
 			ssECI.crearNuevaCategoria("Electronica", "Implmentos de electronica", "Activo");
 			ssECI.crearNuevaCategoria("Textos", "Libros, guias, manuales, etc. para clases teoricas", "Inactivo");
 			ssECI.crearNuevaCategoria("Deportes", "Equipo de practica para los integrantes de los equipos de la Escuela", "Activo");
