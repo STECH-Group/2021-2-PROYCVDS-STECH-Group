@@ -17,10 +17,15 @@
                 <p><strong>Bienvenido</strong></p>
                 <p>Introduzca sus datos para ingresar</p><br></br>
                 <p  id="usuario" > Usuario </p> 
-                <p:inputText id="numeros" style="width : 500px; "  /><br></br>
+                
+                <p:inputText id="user_name" style="width : 500px;" value="#{LoginBean.user}" />
+
+                <p:watermark for="user_name" value= "example@mail.com" id="user_w"  /> <br></br>
+
                 <p  id="password" > Contraseña </p>
-                <p:inputText id="num" type="password" style="width : 500px; " binding="#{input}" /><br></br>
-                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar" alig = "center"/>
+                <p:inputText id="num" type="password" style="width : 500px; " binding="#{input}" value="#{LoginBean.passwd}" /><br></br>
+                
+                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar" alig = "center" action="#{LoginBean.login()}" />
             </h:form>
         </div>
     </body>
