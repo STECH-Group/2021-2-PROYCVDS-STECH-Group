@@ -1,7 +1,7 @@
 create table if not exists USERS( 
 	user_Name varchar(100) primary key,
 	name varchar(200) not null,
-	mail varchar(150) not null,
+	mail varchar(150) unique not null,
 	passwd varchar(100) not null,
 	rol varchar(50) not null
  );

@@ -25,15 +25,11 @@ public class GuiceContextListener {
                 install(JdbcHelper.PostgreSQL);
                 setEnvironmentId("development");
                 setClassPathResource("mybatis-config.xml");
-
-                // TODO Add service class associated to Stub implementation
                 bind(ServicioSolidaridadECI.class).to(ServicioSolidaridadECIImpl.class);
 	            bind(CategoryDAO.class).to(MyBatisCategoryDAO.class);
 	            bind(UserDAO.class).to(MyBatisUserDAO.class);
             }
         });
-
         servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);
     }
-	
 }

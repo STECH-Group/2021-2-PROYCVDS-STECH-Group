@@ -25,6 +25,10 @@
     </servlet-mapping>
     
     <listener>
+		<listener-class>edu.eci.cvds.guice.GuiceContextListener</listener-class>
+    </listener>
+    
+    <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
       
