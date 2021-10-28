@@ -51,19 +51,30 @@ body {
     align-items: center;
 }
 
-.wizard > .actions > ul > li.disabled {
-    display: none;
+.div_boton{
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top:80%;
+    left: 50%;
+
+}
+
+.boton_R {
+    padding: 10px;
+    margin: 10px;
   }
 
-  .rwzButton {
-    font: inherit;
-    display: inline-block;
-    min-width: 6.66667em;
-    *width: 6.66667em;
-    padding: .16667em .83333em;
-    border: 1px solid #828282;
-    cursor: default;
-    user-select: none;
-    text-align: center;
-    visibility: hidden !important;
-    }
+  .container{
+    border-radius: 10px;
+    padding: 25px;
+    top:50%;
+    left: 50%;
+    display: inline-flex;
+    counter-reset: heading;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+  }

@@ -1,13 +1,20 @@
     body {
+
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
       font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
       background-color: #548186;
-      background-image: url("https://landing.escuelaing.edu.co/wp-content/uploads/2017/04/maestrias_v2.jpg");
+      /*background-image: url("https://landing.escuelaing.edu.co/wp-content/uploads/2017/04/maestrias_v2.jpg") ;*/
+      background-image: url("fondo.jpg") ;
+      
       font-weight: bolder;
     }
     h1 {
-        font-family: Helvetica, Georgia, 'Times New Roman', Times, serif ;
+        font-family:  'Verdana', 'Times New Roman', Times, serif ;
         -webkit-text-stroke: 0.5px black;
-        color:#720C14;
+        color:#75262d;
         text-align: center;
         font-size: 250%;
         counter-reset: heading;

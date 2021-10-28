@@ -10,7 +10,7 @@
     </h:head>
 
     <body>
-        <h:form>
+        <h:form id= "Formato">
             <link href="registrarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
             <header id="barra-administrador">
                 <div class=" logo-nav-container">
@@ -22,8 +22,28 @@
             </header><!-- / #main-header -->
             <div class="titulo">
                 <h2>ACTUALIZAR CATEGORIA</h2>
-            </div>
-          
-    </h:form>
+            </div>        
+            <div class="container" >
+                <p:tab id="personal" title="ACTUALIZAR CATEGORIA">
+                    <p:panel header="Ingrese los datos a actualizar">
+                        <h:panelGrid columns="2" columnClasses="label, value">
+
+                            <h:outputText for="category_name" value="Nombre categoria:" />
+                            <p:inputText id="nombre" type="String"  binding="#{name}" required="true"/>
+
+                            <h:outputLabel for="description" value="Descripcion:       " />
+                            <p:inputText id="description"  type="String" binding="#{description}" required="true" />
+
+                            <h:outputText for="estado" value="Estado:      " />
+                            <p:inputText id="estado" type="String" binding="#{state}" required="true"/>
+                            
+                        </h:panelGrid>
+                        <p:commandButton id="boton_R" action = "administrador?faces-redirect = true" value = "ACTUALIZAR"  update="Formato" styleClass="ui-button-secondary" 
+                        actionListener="#{administratorBean.updateCategory(name.value,description.value,state.value)}" style="float:center;" />            
+                    </p:panel>
+                </p:tab>  
+            <br></br>              
+        </div>
+        </h:form>
     </body>
 </html>

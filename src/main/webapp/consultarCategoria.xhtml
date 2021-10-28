@@ -25,6 +25,7 @@
             </div>
             <div class= "panel consulta">	
                 <p:dataTable var="cliente"  rows="10"
+                    value="#{administratorBean.consultarCategories()}"
                      paginator="true"
 					 selectionMode="single" 
 					 rowKey="#{category.id}"
