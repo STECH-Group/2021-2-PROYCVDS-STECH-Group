@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>ADMINISTRADOR</title>
+    </h:head>
+
+    <body>
+        <h1>  Bienvenido,Usuario </h1>
+        
+        <h:form id="formulario">
+			<link href="usuarioCSS.css" rel="stylesheet" type="text/css"/>
+
+			<header id="barra-usuario">
+
+				<div class=" logo-nav-container">
+
+					<p id="usuario-header" href="#">
+						USUARIO
+					</p>
+					<p:commandButton id="cerrar_sesion" styleClass="ui-button-raised ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+
+				</div>
+
+			</header><!-- / #main-header -->
+			<div class="container" >
+				<p:panelMenu style="width:500px">
+					<p:submenu label="Necesidad">
+                        <p:menuitem value="Registrar respuesta a necesidad" icon="pi pi-book"  />
+						<p:menuitem value="Registrar necesidad" icon="pi pi-book"  />
+					</p:submenu>
+					<p:submenu label="Oferta">
+                        <p:menuitem value="Registrar respuesta a oferta" icon="pi pi-book"  />
+                        <p:menuitem value="Registrar oferta" icon="pi pi-book"  />
+					</p:submenu>
+				</p:panelMenu>
+			</div>
+        </h:form>
+    </body>
+</html>
