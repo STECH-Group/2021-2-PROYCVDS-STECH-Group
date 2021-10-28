@@ -39,7 +39,6 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 
 	@Override
 	public List<Category> consultarCategorias() {
-		// TODO Auto-generated method stub
 		return categoryMapper.searchCategories();
 	}
 }

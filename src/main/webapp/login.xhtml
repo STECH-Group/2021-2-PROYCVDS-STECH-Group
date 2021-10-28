@@ -23,9 +23,9 @@
                 <p:watermark for="user_name" value= "example@mail.com" id="user_w"  /> <br></br>
 
                 <p  id="password" > Contraseña </p>
-                <p:inputText id="num" type="password" style="width : 500px; " binding="#{input}" value="#{loginBean.passwd}" /><br></br>
+                <p:inputText id="num" type="password" style="width : 500px;" value="#{loginBean.passwd}" /><br></br>
                 
-                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar" alig = "center" action="#{loginBean.login()}" />
+                <br></br><p:commandButton id="user" styleClass="rounded-button ui-button-info" type="button" value="Ingresar" alig = "center" actionListener="#{loginBean.login()}" />
             </h:form>
         </div>
     </body>

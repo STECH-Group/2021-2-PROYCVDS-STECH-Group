@@ -5,10 +5,8 @@ import java.io.Serializable;
 import java.util.logging.Level;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.crypto.hash.Sha256Hash;
@@ -16,7 +14,7 @@ import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@ManagedBean(name = "loginBean")
+@ManagedBean(name="loginBean")
 @SessionScoped
 public class LoginBean implements Serializable{
 	
@@ -28,12 +26,16 @@ public class LoginBean implements Serializable{
 	
 	public void login() {
 		Subject userActual = SecurityUtils.getSubject();
-		UsernamePasswordToken uPToken = new UsernamePasswordToken(getUser(), new Sha256Hash(getPasswd()).toHex());
+		UsernamePasswordToken uPToken = new UsernamePasswordToken(getUser(), getPasswd());
+		System.out.println(uPToken.getUsername());
+		System.out.println(uPToken.getCredentials());
+		
 		
 		try{
 			userActual.login(uPToken);
 			userActual.getSession().setAttribute("correo", user);
 			if (userActual.hasRole("Administrador")) {
+				System.out.println("Entrmos al if por lo menos");
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
             }
 			setLogeado(true);
@@ -85,7 +87,7 @@ public class LoginBean implements Serializable{
 	
 	public void redirect(String dr) {
         Subject s = SecurityUtils.getSubject();
-        if (dr == "/faces/administrador.xhml" && s.hasRole("Administrador") || (dr != "/faces/administrador.xhml")) {
+        if ((dr == "/faces/administrador.xhml" && s.hasRole("Administrador")) || (dr != "/faces/administrador.xhml")) {
             try {
                 FacesContext.getCurrentInstance().getExternalContext().redirect(dr);
             } catch (IOException ex) {
