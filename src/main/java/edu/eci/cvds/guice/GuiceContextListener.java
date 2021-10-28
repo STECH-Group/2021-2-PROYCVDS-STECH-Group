@@ -1,6 +1,7 @@
 package edu.eci.cvds.guice;
 
 import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -16,7 +17,7 @@ import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.impl.ServicioSolidaridadECIImpl;
 
 
-public class GuiceContextListener {
+public class GuiceContextListener implements ServletContextListener{
 
 	public void contextInitialized(ServletContextEvent servletContextEvent) {
         Injector injector = Guice.createInjector(new XMLMyBatisModule() {

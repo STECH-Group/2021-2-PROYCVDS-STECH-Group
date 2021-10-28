@@ -7,7 +7,7 @@ create table if not exists USERS(
  );
 
 create table if not exists CATEGORIES(
-	ID int primary key,
+	ID int primary key auto_increment,
 	name varchar(50) unique not null,
 	description varchar(400) not null,
 	creation_Date Date not null,
