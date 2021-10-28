@@ -35,8 +35,14 @@ public class LoginBean implements Serializable{
 			userActual.getSession().setAttribute("correo", user);
 			if (userActual.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
+<<<<<<< HEAD
             }
 			setLogeado(true);
+=======
+            	}
+		setLogeado(true);	
+
+>>>>>>> adc6db162b19e4ebf9924b8a9947f83652d7288f
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
             log.error(ex.getMessage(), ex);
