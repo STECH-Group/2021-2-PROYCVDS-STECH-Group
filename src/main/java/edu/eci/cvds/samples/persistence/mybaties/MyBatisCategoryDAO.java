@@ -28,10 +28,10 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException {
 
 		try{
-			if(nName != "") categoryMapper.updateCategoryName(oName, nName);
-			if(description != "") categoryMapper.updateCategoryDescription(oName, description);
-			if(state != "") categoryMapper.updateCategoryState(oName, state);
-        }
+			if(description.length() != 0) categoryMapper.updateCategoryDescription(oName, description);
+			if(state.length() != 0) categoryMapper.updateCategoryState(oName, state);
+			if(nName.length() != 0) categoryMapper.updateCategoryName(oName, nName);
+		}
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al actualizar la categoria",e);
         }

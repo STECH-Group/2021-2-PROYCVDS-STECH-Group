@@ -32,6 +32,7 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	}
 	
 	public void updateCategory(String oName, String nName, String desc, String state) throws ExceptionServicioSolidaridadECI {
+		
 		ssECI.actualizarCategoria(oName, nName, desc, state);
 	}
 	

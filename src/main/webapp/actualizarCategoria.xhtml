@@ -28,18 +28,21 @@
                     <p:panel header="Ingrese los datos a actualizar">
                         <h:panelGrid columns="2" columnClasses="label, value">
 
-                            <h:outputText for="category_name" value="Nombre categoria:" />
-                            <p:inputText id="nombre" type="String"  binding="#{name}" required="true"/>
+                            <h:outputText for="category_name" value="Anterior Nombre categoria: " />
+                            <p:inputText id="nombre1" type="String" binding="#{nameold}" required="true" />
+
+                            <h:outputText for="category_name" value="Nuevo Nombre categoria: " />
+                            <p:inputText id="nombre" type="String"  binding="#{name}"/>
 
                             <h:outputLabel for="description" value="Descripcion:       " />
-                            <p:inputText id="description"  type="String" binding="#{description}" required="true" />
+                            <p:inputText id="description"  type="String" binding="#{description}" />
 
                             <h:outputText for="estado" value="Estado:      " />
-                            <p:inputText id="estado" type="String" binding="#{state}" required="true"/>
+                            <p:inputText id="estado" type="String" binding="#{state}" />
                             
                         </h:panelGrid>
-                        <p:commandButton id="boton_R" action = "administrador?faces-redirect = true" value = "ACTUALIZAR"  update="Formato" styleClass="ui-button-secondary" 
-                        actionListener="#{administratorBean.updateCategory(name.value,description.value,state.value)}" style="float:center;" />            
+                        <p:commandButton id="boton_R" action = "consultarCategoria?faces-redirect = true" value = "ACTUALIZAR"  update="Formato" styleClass="ui-button-secondary" 
+                        actionListener="#{administratorBean.updateCategory(nameold.value,name.value,description.value,state.value)}" style="float:center;" />            
                     </p:panel>
                 </p:tab>  
             <br></br>              
