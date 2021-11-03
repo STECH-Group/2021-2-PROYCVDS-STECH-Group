@@ -95,7 +95,7 @@ public class Need implements Serializable{
 	public String toString() {
 		return "Need [id=" + id + ", category=" + category + ", name=" + name + ", description=" + description
 				+ ", urgency=" + urgency + ", creationDate=" + creationDate + ", state=" + state + ", modifyDate="
-				+ modifyDate + "]";
+				+ modifyDate + "]\n\t";
 	}
 
 }
