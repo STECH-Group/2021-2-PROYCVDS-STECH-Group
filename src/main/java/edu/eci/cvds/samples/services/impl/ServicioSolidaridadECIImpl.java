@@ -39,8 +39,12 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 
 	@Override
 	public List<Category> searchCategories() {
-		// TODO Auto-generated method stub
 		return categoryDAO.consultarCategorias();
+	}
+
+	@Override
+	public void limpiarCategorias() {
+		categoryDAO.limpiarCategorias();
 	}
 	
 }
