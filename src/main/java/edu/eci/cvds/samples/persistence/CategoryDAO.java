@@ -13,4 +13,6 @@ public interface CategoryDAO {
 	public void crearCategoria(String name, String description, String state) throws PersistenceException;
 	
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException;
+	
+	public void limpiarCategorias();
 }
