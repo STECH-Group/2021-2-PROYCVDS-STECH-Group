@@ -21,7 +21,7 @@ create sequence id_Needs;
 
 create table if not exists NEEDS( 
 	id int primary key,
-	category varchar(50) references CATEGORIES(name),
+	category varchar(50) references CATEGORIES(name) not null,
 	name varchar(80) not null,
 	description varchar(400) not null,
 	urgency int not null,
