@@ -22,4 +22,8 @@ public interface CategoryMapper {
 	
 	public void updateCategoryState(@Param ("Oname") String name,
 								@Param ("nState") String state);
+
+	public void deleteAllCategories();
+	
+	public void restartSequence();
 }

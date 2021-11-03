@@ -25,6 +25,16 @@
 	 <update parameterType="map" id="updateCategoryName">
 	 	update categories set name = #{Nnom}, modify_date = current_date where name = #{Oname}
 	 </update>
+	 
+	 <delete id="deleteAllCategories">
+	 	delete from categories;
+	 	
+	 </delete>
+	 <!-- 
+	 <sql id="restartSequence">
+	 	alter sequence id restart;
+	 </sql>
+	  -->
 
 	<resultMap type='Category' id='CategoryResult'>
 		 <id property='id' column='id'/>
