@@ -28,8 +28,8 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException {
 
 		try{
-			if (nName != "") categoryMapper.updateCategoryName(oName, nName);
-			if (description != "") categoryMapper.updateCategoryDescription(oName, description);
+			if(nName != "") categoryMapper.updateCategoryName(oName, nName);
+			if(description != "") categoryMapper.updateCategoryDescription(oName, description);
 			if(state != "") categoryMapper.updateCategoryState(oName, state);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
@@ -40,5 +40,12 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Override
 	public List<Category> consultarCategorias() {
 		return categoryMapper.searchCategories();
+	}
+
+	@Override
+	public void limpiarCategorias() {
+		categoryMapper.deleteAllCategories();
+		categoryMapper.restartSequence();
+		
 	}
 }
