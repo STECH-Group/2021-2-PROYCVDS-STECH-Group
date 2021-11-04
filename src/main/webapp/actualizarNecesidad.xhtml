@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Actualizar necesidad</title>
+    </h:head>
+    <body>
+        <h:form>
+            <link href="consultarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
+            <header id="barra-administrador">
+                <div class=" logo-nav-container">
+                    <p id="admin-header" href="#">
+                        USUARIO
+                    </p> 
+                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+                </div>
+            </header><!-- / #main-header -->
+            <div class="titulo">
+                <h2>NECESIDADES</h2>
+            </div>
+            <div class= "panel consulta">	
+                <p:dataTable var="cliente"  rows="10"
+                    value="#{usuarioBean.consultarNecesidades()}"
+                     paginator="true"
+					 selectionMode="single" 
+                     selection = ""
+					 rowKey="#{need.id}"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
+                     rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{need.getId()}" />
+                    </p:column>
+
+                    <p:column headerText="CATEGORIA">
+                        <h:outputText value="#{need.getCategory()}" />
+                    </p:column>
+
+                    <p:column headerText="NOMBRE">
+                        <h:outputText value="#{need.getName()}" />
+                    </p:column>
+
+                    <p:column headerText="DESCRIPCION">
+                        <h:outputText value="#{need.getDescription()}" />
+                    </p:column>
+                    
+                    <p:column headerText="URGENCIA">
+                        <h:outputText value="#{need.getUrgency()}" />
+                    </p:column>
+                    
+                    <p:column headerText="FECHA MODIFICACIÓN">
+                        <h:outputText value="#{need.getCreationDate()}" />
+                    </p:column>
+
+                    <p:column headerText="ESTADO">
+                        <h:outputText value="#{need.getState()}" />
+                    </p:column>
+
+                    <p:column headerText="FECHA MODIFICACIÓN">
+                        <h:outputText value="#{need.getModifyDate()}" />
+                    </p:column>
+                    <!-- / Habilitar campo al seleccionar la fila -->
+                    <f:facet name="footer">
+                        <p:commandButton id="boton_Continuar" value = "ACTUALIZAR NECESIDAD" action = "actualizarEstadoNecesidad?faces-redirect = true" styleClass="ui-button-secondary"/>
+                    </f:facet>
+                </p:dataTable>
+            </div>
+    </h:form>
+    </body>
+</html>
