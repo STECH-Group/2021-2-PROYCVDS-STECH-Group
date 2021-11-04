@@ -1,7 +1,8 @@
 package edu.eci.cvds.samples.persistence.mybaties;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.exceptions.PersistenceException;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 
 import com.google.inject.Inject;
 
@@ -13,12 +14,14 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Inject
 	private NeedMapper needMapper;
 	
-	public void registrarNecesidad(String category, String name, String description, int urgency, String state) throws PersistenceException {
+	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
-			needMapper.registerNeed(category, name, description, urgency, state);
-		} catch(org.apache.ibatis.exceptions.PersistenceException e) {
-	        throw new PersistenceException("Error al registrar la necesidad",e);
-		}
+			Subject user = SecurityUtils.getSubject();
+			needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
+			}
+			catch(org.apache.ibatis.exceptions.PersistenceException e) {
+	            throw new PersistenceException("Error al crear la categoria, el nombre ya esta en uso",e);
+			}
 	}
 	
 	private void actualizarEstadoNecesidad(int id, String state) throws PersistenceException{
