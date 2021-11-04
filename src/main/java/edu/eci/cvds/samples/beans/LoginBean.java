@@ -26,16 +26,12 @@ public class LoginBean implements Serializable{
 	
 	public void login() {
 		Subject userActual = SecurityUtils.getSubject();
-		UsernamePasswordToken uPToken = new UsernamePasswordToken(getUser(), getPasswd());
-		System.out.println(uPToken.getUsername());
-		System.out.println(uPToken.getCredentials());
-		
+		UsernamePasswordToken uPToken = new UsernamePasswordToken(getUser(), new Sha256Hash(getPasswd()).toHex());
 		
 		try{
 			userActual.login(uPToken);
 			userActual.getSession().setAttribute("correo", user);
 			if (userActual.hasRole("Administrador")) {
-				System.out.println("Entrmos al if por lo menos");
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
             }
 			setLogeado(true);
