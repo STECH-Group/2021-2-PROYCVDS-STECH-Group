@@ -83,9 +83,9 @@ public class ServicioSolidaridadECITest {
 		Assert.assertEquals("Category [id=2, name=Electronica, description=Implmentos de electronica, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
 	}
 	
-	/*@After
+	@After
 	public void setUpAfter() {
 		ssECI.limpiarCategorias();
-	}*/
+	}
 
 }

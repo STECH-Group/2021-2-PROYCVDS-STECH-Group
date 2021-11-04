@@ -42,11 +42,11 @@
 	 	delete from categories where id = #{idCat};
 	 </delete>
 	 
-	 <!-- 
+	  
 	 <sql id="restartSequence">
-	 	alter sequence id restart;
+	 	alter sequence id restart with 1;
 	 </sql>
-	  -->
+	  
 
 	<resultMap type='Category' id='CategoryResult'>
 		 <id property='id' column='id'/>
