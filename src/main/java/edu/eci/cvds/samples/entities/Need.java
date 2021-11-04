@@ -16,7 +16,6 @@ public class Need implements Serializable{
 	
 	public Need(int id, Category category, String name, String description, int urgency, Date creationDate,
 			String state, Date modifyDate) {
-		super();
 		this.id = id;
 		this.category = category;
 		this.name = name;

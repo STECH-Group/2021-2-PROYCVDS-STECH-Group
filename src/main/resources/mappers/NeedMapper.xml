@@ -5,7 +5,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper">
-
+	
+	<insert parameterType="map" id="registerNeed">
+	   	insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), #{Cat}, #{Name}, #{Desc}, #{Urg}, current_date, #{State}, current_date)
+	</insert>
+	
+	<update parameterType="map" id="updateStateNeed">
+	 	update needs set state = #{State}, modify_date = current_date where id = #{Id}
+	 </update>
+	 
+	 <delete id="deleteNeedById">
+	 	delete from needs where id = #{Id};
+	 </delete>
+	 
+	 <delete id="deleteNeeds">
+	 	delete from needs;
+	 </delete>
+	
 	<resultMap type='Need' id='NeedResult'>
 		 <id property='id' column='id'/>
 		 <result property='name' column='name'/>

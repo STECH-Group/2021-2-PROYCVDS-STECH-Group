@@ -33,7 +33,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 			if(nName.length() != 0) categoryMapper.updateCategoryName(oName, nName);
 		}
         catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("Error al actualizar la categoria",e);
+            throw new PersistenceException("Error al actualizar la categoría",e);
         }
 	}
 
@@ -45,7 +45,23 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Override
 	public void limpiarCategorias() {
 		categoryMapper.deleteAllCategories();
-		categoryMapper.restartSequence();
+		//categoryMapper.restartSequence();
 		
+	}
+	
+	@Override
+	public void eliminarCategoria(String name, int id) throws PersistenceException{
+		try{
+			if(name.length() != 0) categoryMapper.deleteCategoryByName(name);
+			if(id != 0) categoryMapper.deleteCategoryById(id);
+		}
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Error al eliminar la categoría",e);
+        }
+	}
+
+	@Override
+	public List<Category> consultarCategoriasActivas() {
+		return categoryMapper.searchActiveCategories();
 	}
 }

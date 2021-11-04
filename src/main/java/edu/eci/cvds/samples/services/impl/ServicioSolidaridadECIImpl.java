@@ -46,5 +46,15 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	public void limpiarCategorias() {
 		categoryDAO.limpiarCategorias();
 	}
+
+	@Override
+	public List<Category> searchActiveCategories() {
+		return categoryDAO.consultarCategoriasActivas();
+	}
+
+	@Override
+	public void eliminarCategoria(String name, int id) {
+		categoryDAO.eliminarCategoria(name, id);
+	}
 	
 }

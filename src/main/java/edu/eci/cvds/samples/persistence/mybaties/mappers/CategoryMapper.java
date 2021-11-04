@@ -10,6 +10,8 @@ public interface CategoryMapper {
 	
 	public List<Category> searchCategories();
 	
+	public List<Category> searchActiveCategories();
+	
 	public void newCategory(@Param ("Name") String name,
 							@Param ("desc") String description,
 							@Param ("State") String state);
@@ -25,5 +27,11 @@ public interface CategoryMapper {
 
 	public void deleteAllCategories();
 	
+	public void deleteCategoryByName(@Param ("Name") String name);
+	
+	public void deleteCategoryById(@Param ("idCat") int idCategory);
+	
 	public void restartSequence();
+	
+	
 }
