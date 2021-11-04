@@ -1,6 +1,6 @@
 # Plataforma Solidaridad Escuela
 
-## Período académico: 2021-2
+## Perï¿½odo acadï¿½mico: 2021-2
 
 ## Nombre del curso: Ciclos de Vida del Desarrollo de Software - CVDS
 
@@ -10,38 +10,38 @@
 
 ## Nombres de los integrantes
 
-+ José Manuel Gamboa Gómez - Back
++ Josï¿½ Manuel Gamboa Gï¿½mez - Back
 + Zuly Valentina Vargas Ramirez - Front
 + Cristian Camilo Forero Monroy - UX/Scrum Master
-+ Camilo Andrés Pichimata Cárdenas - Back
++ Camilo Andrï¿½s Pichimata Cï¿½rdenas - Back
 
-## Descripción del producto
+## Descripciï¿½n del producto
 
-### Descripción General
+### Descripciï¿½n General
 
-La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorno de comunicación y ayuda dentro de la comunidad de la Escuela Colombiana de Ingeniería Julio Garavito. El sistema permite que los estudiantes puedan expresar las necesidades que puedan tener de algún elemento para poder desarrollar sus actividades de forma correcta, y que los demás miembros de la comunidad puedan facilitar estos elementos a quienes lo necesitan. De igual manera los miembros de la comunidad pueden ofrecer diferentes elementos que sean de interés para los estudiantes sin que exista alguna solicitud específica. Adicionalmente el sistema cuenta con diferentes funcionalidades de reportería y administración que permite llevar un control del funcionamiento de la plataforma y del alcance que se está logrando.
+La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorno de comunicaciï¿½n y ayuda dentro de la comunidad de la Escuela Colombiana de Ingenierï¿½a Julio Garavito. El sistema permite que los estudiantes puedan expresar las necesidades que puedan tener de algï¿½n elemento para poder desarrollar sus actividades de forma correcta, y que los demï¿½s miembros de la comunidad puedan facilitar estos elementos a quienes lo necesitan. De igual manera los miembros de la comunidad pueden ofrecer diferentes elementos que sean de interï¿½s para los estudiantes sin que exista alguna solicitud especï¿½fica. Adicionalmente el sistema cuenta con diferentes funcionalidades de reporterï¿½a y administraciï¿½n que permite llevar un control del funcionamiento de la plataforma y del alcance que se estï¿½ logrando.
 
 ### Manual de Usuario
 
 ### Principales funcionalidades 
 
-## Arquitectura y Diseño detallado
+## Arquitectura y Diseï¿½o detallado
 
 ### Modelo E-R
 
 ### Diagrama de clases
 
-### Descripción de la arquitectura y del Stack de tecnologías utilizado
+### Descripciï¿½n de la arquitectura y del Stack de tecnologï¿½as utilizado
 
-### Enlace a la aplicación en Heroku
+### Enlace a la aplicaciï¿½n en Heroku
 
-### Enlace al sistema de integración continua
+### Enlace al sistema de integraciï¿½n continua
 
-## Descripción del proceso
+## Descripciï¿½n del proceso
 
 ### Integrantes
 
-### Breve descripción de la Metodología
+### Breve descripciï¿½n de la Metodologï¿½a
 
 ### Release-burndown chart
 
@@ -55,4 +55,4 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 
 ### Reporte de pruebas y de cubrimiento de las mismas 
 
-### Reporte de análisis estático de código
+### Reporte de anï¿½lisis estï¿½tico de cï¿½digo
