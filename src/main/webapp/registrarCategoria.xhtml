@@ -33,9 +33,14 @@
 
                             <h:outputLabel for="description" value="Descripcion: *" />
                             <p:inputText id="description"  type="String" binding="#{description}" required="true" />
+                            
+                            <p:outputLabel  value="Estado: *" />
+                            <p:selectOneMenu id="option"  binding="#{state}">
+                                <f:selectItem itemLabel="Seleccione una" itemValue=""/>
+                                <f:selectItem itemLabel="Activa" itemValue="Activa"/>
+                                <f:selectItem itemLabel="Inactiva" itemValue="Inactiva"/>
+                            </p:selectOneMenu>
 
-                            <h:outputText for="estado" value="Estado: *" />
-                            <p:inputText id="estado" type="String" binding="#{state}" required="true"/>                
                         </h:panelGrid>
                         <p:commandButton id="boton_R" action = "administrador?faces-redirect = true" value = "REGISTRAR"  update="Formato" styleClass="ui-button-secondary" 
                             actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />

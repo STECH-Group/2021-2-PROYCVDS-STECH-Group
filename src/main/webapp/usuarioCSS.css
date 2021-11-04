@@ -7,18 +7,20 @@ h1 {
     counter-reset: heading;
 }
 .container{
-  background-color: silver;
-  border-radius: 10px;
-  padding: 25px;
-  top:50%;
-  left: 50%;
-  display: flex;
-  counter-reset: heading;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  transform: translate(-50%, -50%);
-}
+    background-color: silver;
+    border-radius: 10px;
+    padding: 25px;
+    top:50%;
+    left: 50%;
+    display:inline-block;
+    counter-reset: heading;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+
+    
+  }
 #barra-usuario{
 
     background: #720C14;
