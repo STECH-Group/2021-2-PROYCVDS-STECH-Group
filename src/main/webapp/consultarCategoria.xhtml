@@ -24,36 +24,36 @@
                 <h2>CATEGORIAS</h2>
             </div>
             <div class= "panel consulta">	
-                <p:dataTable var="cliente"  rows="10"
+                <p:dataTable var="category"  rows="10"
                     value="#{administratorBean.consultarCategories()}"
-                     paginator="true"
-					 selectionMode="single" 
-					 rowKey="#{category.id}"
-                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
-                     rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                    paginator="true"
+					selectionMode="single" 
+					rowKey="#{Category.id}"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                    currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
+                    rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                     <p:column headerText="ID">
-                        <h:outputText value="#{category.getId()}" />
+                        <h:outputText value="#{category.id}" />
                     </p:column>
 
                     <p:column headerText="NOMBRE">
-                        <h:outputText value="#{category.getName()}" />
+                        <h:outputText value="#{category.name}" />
                     </p:column>
 
                     <p:column headerText="DESCRIPCION">
-                        <h:outputText value="#{category.getDescription()}" />
+                        <h:outputText value="#{category.description}" />
                     </p:column>
 
                     <p:column headerText="FECHA DE CREACIÓN">
-                        <h:outputText value="#{category.getCreationDate()}" />
+                        <h:outputText value="#{category.creationDate}" />
                     </p:column>
                     
                     <p:column headerText="ESTADO">
-                        <h:outputText value="#{category.getState()}" />
+                        <h:outputText value="#{category.state}" />
                     </p:column>
                     
                     <p:column headerText="FECHA MODIFICACIÓN">
-                        <h:outputText value="#{category.getModifyDate()}" />
+                        <h:outputText value="#{category.modifyDate}" />
                     </p:column>
                     
                     <f:facet name="footer">
