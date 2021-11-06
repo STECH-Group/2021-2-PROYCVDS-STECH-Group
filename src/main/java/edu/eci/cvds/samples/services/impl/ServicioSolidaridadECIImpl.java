@@ -18,11 +18,13 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	
 	@Inject
 	private UserDAO userDAO;
+	
+	@Inject
+	private NeedDAO needDAO;
 
 	@Override
 	public void crearNuevaCategoria(String name, String description, String state)
 			throws ExceptionServicioSolidaridadECI {
-		// TODO Auto-generated method stub
 		categoryDAO.crearCategoria(name, description, state);
 	}
 
@@ -56,5 +58,25 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	public void eliminarCategoria(String name, int id) {
 		categoryDAO.eliminarCategoria(name, id);
 	}
-	
+
+	@Override
+	public void registrarNecesidad(String category, String description, int urgency, String state)
+			throws PersistenceException {
+		needDAO.registrarNecesidad(category, description, urgency, state);	
+	}
+
+	@Override
+	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException {
+		needDAO.actualizarEstadoNecesidad(id, state);
+	}
+
+	@Override
+	public void eliminarNecesidadPorId(int id) throws PersistenceException {
+		needDAO.eliminarNecesidadPorId(id);
+	}
+
+	@Override
+	public void eliminarNecesidades() {
+		needDAO.eliminarNecesidades();	
+	}
 }
