@@ -13,11 +13,13 @@
     }
     h1 {
         font-family:  'Verdana', 'Times New Roman', Times, serif ;
-        -webkit-text-stroke: 0.5px black;
-        color:#75262d;
+        -webkit-text-stroke: 0.6px black;
+        color:#660707;
         text-align: center;
-        font-size: 250%;
+        font-size: 295%;
         counter-reset: heading;
+        letter-spacing: 3px;
+        
     }
     .container{
       background-color: silver;

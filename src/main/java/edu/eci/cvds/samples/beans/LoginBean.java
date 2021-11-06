@@ -33,7 +33,8 @@ public class LoginBean implements Serializable{
 			userActual.getSession().setAttribute("correo", user);
 			if (userActual.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
-            }
+				logeado = true;
+			}
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
@@ -79,6 +80,16 @@ public class LoginBean implements Serializable{
 	
 	private void error(String message) {
         FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "error"));
+    }
+
+	public void logOut() {
+		setLogeado(false);
+        SecurityUtils.getSubject().logout();
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/login.xhtml");
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 	
 	public void redirect(String dr) {

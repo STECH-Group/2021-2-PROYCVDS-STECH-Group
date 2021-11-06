@@ -9,7 +9,8 @@
         <title>ADMINISTRATIVO</title>
     </h:head>
 
-    <body>
+
+    <body> 
         <h1>  Bienvenido,Administrativo </h1>
         
         <h:form id="formulario">
@@ -19,7 +20,7 @@
 					<p id="usuario-header" href="#">
 						ADMINISTRATIVO
 					</p>
-					<p:commandButton id="cerrar_sesion" styleClass="ui-button-raised ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+					<p:commandButton id="cerrar_sesion" styleClass="ui-button-raised ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}"  value="Cerrar Sesión"/>
 				</div>
 			</header><!-- / #main-header -->
 			<div class="container" >
