@@ -6,7 +6,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
    <typeAliases>
        <typeAlias type="edu.eci.cvds.samples.entities.User" alias="User"/>
-        <typeAlias type="edu.eci.cvds.samples.entities.Category" alias="Category"/>
+       <typeAlias type="edu.eci.cvds.samples.entities.Category" alias="Category"/>
+       <typeAlias type="edu.eci.cvds.samples.entities.Need" alias="Need"/>
    </typeAliases>
 
    <environments default="test">
@@ -23,7 +24,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
    <mappers>
        <mapper resource="mappers/UserMapper.xml"></mapper>
-       <mapper resource="mappers/CategoryMapper.xml"></mapper> 
+       <mapper resource="mappers/CategoryMapper.xml"></mapper>
+       <mapper resource="mappers/NeedMapper.xml"></mapper> 
    </mappers> 
 
 </configuration>
