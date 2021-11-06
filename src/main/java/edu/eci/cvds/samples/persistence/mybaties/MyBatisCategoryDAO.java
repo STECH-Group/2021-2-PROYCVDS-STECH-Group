@@ -15,16 +15,17 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Inject
 	private CategoryMapper categoryMapper;
 	
+	@Override
 	public void crearCategoria(String name, String description, String state) throws PersistenceException {
-
 		try {
 		categoryMapper.newCategory(name, description, state);
 		}
-		catch(org.apache.ibatis.exceptions.PersistenceException e) {
+		catch(PersistenceException e) {
             throw new PersistenceException("Error al crear la categoria, el nombre ya esta en uso",e);
 		}
 	}
 
+	@Override
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException {
 
 		try{
@@ -32,7 +33,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 			if(state.length() != 0) categoryMapper.updateCategoryState(oName, state);
 			if(nName.length() != 0) categoryMapper.updateCategoryName(oName, nName);
 		}
-        catch(org.apache.ibatis.exceptions.PersistenceException e){
+        catch(PersistenceException e){
             throw new PersistenceException("Error al actualizar la categoría",e);
         }
 	}
@@ -45,7 +46,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Override
 	public void limpiarCategorias() {
 		categoryMapper.deleteAllCategories();
-		//categoryMapper.restartSequence();
+		categoryMapper.restartSequence();
 		
 	}
 	
@@ -55,7 +56,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 			if(name.length() != 0) categoryMapper.deleteCategoryByName(name);
 			if(id != 0) categoryMapper.deleteCategoryById(id);
 		}
-        catch(org.apache.ibatis.exceptions.PersistenceException e){
+        catch(PersistenceException e){
             throw new PersistenceException("Error al eliminar la categoría",e);
         }
 	}
