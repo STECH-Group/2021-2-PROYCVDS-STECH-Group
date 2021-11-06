@@ -22,7 +22,7 @@
 					<p id="usuario-header" href="#">
 						ESTUDIANTE
 					</p>
-					<p:commandButton id="cerrar_sesion" styleClass="ui-button-raised ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+					<p:commandButton id="cerrar_sesion" actionListener="#{loginBean.logOut()}" styleClass="ui-button-raised ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
 
 				</div>
 

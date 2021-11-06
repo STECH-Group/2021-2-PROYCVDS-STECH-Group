@@ -9,7 +9,7 @@
         <title>Consulta Categoria</title>
     </h:head>
 
-    <body>
+    <body >
         <h:form>
             <link href="consultarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
             <header id="barra-administrador">
@@ -24,14 +24,14 @@
                 <h2>CATEGORIAS</h2>
             </div>
             <div class= "panel consulta">	
-                <p:dataTable var="category"  rows="10"
+                <p:dataTable var="category"  rows="4"
                     value="#{administratorBean.consultarCategories()}"
                     paginator="true"
 					selectionMode="single" 
 					rowKey="#{Category.id}"
-                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                    paginatorPosition = "bottom"
                     currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" 
-                    rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                    >
                     <p:column headerText="ID">
                         <h:outputText value="#{category.id}" />
                     </p:column>
