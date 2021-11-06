@@ -43,9 +43,9 @@
 	 </delete>
 	 
 	  
-	 <sql id="restartSequence">
-	 	alter sequence id restart with 1;
-	 </sql>
+	 <update id="restartSequence">
+	 	alter sequence id_Categories restart with 1;
+	 </update>
 	  
 
 	<resultMap type='Category' id='CategoryResult'>
