@@ -38,30 +38,28 @@ public class ServicioSolidaridadECITest {
 			e.printStackTrace();
 		}
 	}
-	/*@SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	@Test
 	public void deberiaConsultarCategoriesTest() {
 		Assert.assertEquals("Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(2).toString());
-	}*/
+	}
 	
-	/*
+	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void deberiaActualizarDatosCategoria() throws ExceptionServicioSolidaridadECI {
-		ssECI.actualizarCategoria("Laboratorios", "Labs", "", "Inactivo");
-		//System.out.println(ssECI.searchCategories().get(0).toString());
-		System.out.println(ssECI.searchCategories());
-		Assert.assertEquals("Category [id=1, name=Labs, description=Implementos XD, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(0).toString());
+		ssECI.actualizarCategoria("Laboratorios", "Labs", "Implementos necesarios en los labs", "Inactivo");
+		//System.out.println(ssECI.searchCategories());
+		Assert.assertEquals("Category [id=1, name=Labs, description=Implementos necesarios en los labs, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(0).toString());
 		
-	}*/
+	}
 	
-	/*
+	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void deberiaActualizarNombreCategoria() throws ExceptionServicioSolidaridadECI {
 		ssECI.actualizarCategoria("Electronica", "Electronica_v2", "", "");
-		//System.out.println(ssECI.searchCategories().get(0).toString());
-		System.out.println(ssECI.searchCategories());
+		//System.out.println(ssECI.searchCategories());
 		Assert.assertEquals("Category [id=2, name=Electronica_v2, description=Implmentos de electronica, creationDate=" + LocalDate.now() + ", state=Activo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
 	}
 	
@@ -69,17 +67,15 @@ public class ServicioSolidaridadECITest {
 	@Test
 	public void deberiaActualizarDescripcionCategoria() throws ExceptionServicioSolidaridadECI {
 		ssECI.actualizarCategoria("Electronica", "", "Implementos de las materias relacionadas con Electrónica", "");
-		//System.out.println(ssECI.searchCategories().get(0).toString());
-		System.out.println(ssECI.searchCategories());
+		//System.out.println(ssECI.searchCategories());
 		Assert.assertEquals("Category [id=2, name=Electronica, description=Implementos de las materias relacionadas con Electrónica, creationDate=" + LocalDate.now() + ", state=Activo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
-	}*/
+	}
 	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void deberiaActualizarEstadoCategoria() throws ExceptionServicioSolidaridadECI {
 		ssECI.actualizarCategoria("Electronica", "", "", "Inactivo");
-		//System.out.println(ssECI.searchCategories().get(0).toString());
-		System.out.println(ssECI.searchCategories());
+		//System.out.println(ssECI.searchCategories());
 		Assert.assertEquals("Category [id=2, name=Electronica, description=Implmentos de electronica, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
 	}
 	
