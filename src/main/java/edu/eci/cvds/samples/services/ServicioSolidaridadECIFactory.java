@@ -31,7 +31,8 @@ public class ServicioSolidaridadECIFactory {
 	        	   setClassPathResource(pathResource);
 	               bind(ServicioSolidaridadECI.class).to(ServicioSolidaridadECIImpl.class);
 	               bind(CategoryDAO.class).to(MyBatisCategoryDAO.class);
-	               bind(UserDAO.class).to(MyBatisUserDAO.class);   
+	               bind(UserDAO.class).to(MyBatisUserDAO.class);
+	               bind(NeedDAO.class).to(MyBatisNeedDAO.class);
 	           }
 	       });
 	   }
