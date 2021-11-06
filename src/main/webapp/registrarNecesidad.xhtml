@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Registrar Necesidad</title>
+    </h:head>
+
+    <body>
+        <h:form id= "Formato">
+            <link href="registrarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
+            <header id="barra-administrador">
+                <div class=" logo-nav-container">
+                    <p id="admin-header" href="#">
+                        ADMINISTRADOR
+                    </p> 
+                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+                </div>
+            </header><!-- / #main-header -->
+            <div class="titulo">
+                <h2>REGISTRAR NECESIDAD</h2>
+            </div>        
+            <div class="container" >
+                <p:tab id="personal" title="REGISTRAR NECESIDAD">
+                    <p:panel header="Ingrese los datos a registrar">
+                        <h:panelGrid columns="2" columnClasses="label, value">
+
+                            <h:outputText for="category_name" value="Nombre categoria: " />
+                            <p:inputText id="categoria" type="String" binding="#{categoria}" required="true" />
+
+                            <h:outputText for="name" value="Nombre: " />
+                            <p:inputText id="nombre" type="String"  binding="#{name}"/>
+
+                            <h:outputLabel for="description" value="Descripcion:       " />
+                            <p:inputText id="descripcion"  type="String" binding="#{descripcion}" />
+
+							<h:outputText for="urgencia" value="Urgencia(): " />
+                            <p:inputText id="urgencia" type="String" binding="#{urgencia}" />
+							
+                            <h:outputText for="estado" value="Estado:      " />
+                            <p:selectOneMenu id="option"  binding="#{state}">
+                                <f:selectItem itemLabel="Seleccione una" itemValue=""/>
+                                <f:selectItem itemLabel="Activa" itemValue="Activa"/>
+                                <f:selectItem itemLabel="Inactiva" itemValue="Inactiva"/>
+                            </p:selectOneMenu>
+                            
+                        </h:panelGrid>
+                        <p:commandButton id="boton_R" value = "REGISTRAR"  update="Formato" styleClass="ui-button-secondary"
+                         style="float:center;" /> <!-- colocar accion y actionListener -->
+                    </p:panel>
+                </p:tab>  
+            <br></br>              
+        </div>
+        </h:form>
+    </body>
+</html>
