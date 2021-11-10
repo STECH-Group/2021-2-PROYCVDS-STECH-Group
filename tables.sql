@@ -29,3 +29,15 @@ create table if not exists NEEDS(
 	state varchar(10) not null,
 	modify_Date Date not null
  );
+ 
+ create sequence id_Offers;
+ 
+ create table if not exists OFFERS( 
+	id int primary key,
+	category varchar(50) references categories(name) not null,
+	name varchar(80) references users(name) not null,
+	description varchar(400) not null,
+	creation_Date Date not null,
+	state varchar(10) not null,
+	modify_Date Date not null
+ );

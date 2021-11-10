@@ -9,6 +9,7 @@ public class User implements Serializable{
 	private String mail;
 	private String passwd;
 	private String rol;
+	public static int limitNeeds;
 	
 	public User() {
 		
@@ -62,9 +63,18 @@ public class User implements Serializable{
 		this.rol = rol;
 	}
 	
+	public static int getLimitNeeds() {
+		return limitNeeds;
+	}
+
+	public static void setLimitNeeds(int limitNeeds) {
+		User.limitNeeds = limitNeeds;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [userName=" + userName + ", name=" + name + ", mail=" + mail + ", passwd=" + passwd + ", rol="
 				+ rol + "]" + "\n\t";
 	}
+	
 }
