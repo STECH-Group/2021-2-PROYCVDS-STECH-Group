@@ -17,7 +17,7 @@
                     <p id="admin-header" href="#">
                         ADMINISTRADOR
                     </p> 
-                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" type="button" value="Cerrar Sesión"/>
+                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}" value="Cerrar Sesión"/>
                 </div>
             </header><!-- / #main-header -->
             <div class="titulo">
