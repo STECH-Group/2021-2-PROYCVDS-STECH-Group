@@ -6,4 +6,14 @@
   
   <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.OfferMapper">
   
+  	<resultMap type='Need' id='NeedResult'>
+		<id property='id' column='id'/>
+		<result property='description' column='description'/>
+		<result property='creationDate' column='creation_date'/>
+		<result property='state' column='state'/>
+		<result property='modifyDate' column='modify_date'/>
+		<association property='category' javaType='Category' resultMap='edu.eci.cvds.samples.persistence.mybaties.mappers.CategoryMapper.CategoryResult'></association>
+		<association property='name' javaType='User' resultMap='edu.eci.cvds.samples.persistence.mybaties.mappers.UserMapper.UserResult'></association>
+	</resultMap>
+  
   </mapper>  
