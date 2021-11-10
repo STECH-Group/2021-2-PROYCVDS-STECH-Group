@@ -9,7 +9,7 @@
         <title>Actualizar necesidad</title>
     </h:head>
     <body>
-        <h:form>
+        <h:form id="consultarnecesidad">
             <link href="consultarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
             <header id="barra-administrador">
                 <div class=" logo-nav-container">
@@ -23,7 +23,7 @@
                 <h2>NECESIDADES EXISTENTES</h2>
             </div>
             <div class= "panel consulta">	
-                <p:dataTable var="cliente"  rows="10"
+                <p:dataTable var="need"  rows="10"
                     value="#{usuarioBean.consultarNecesidades()}"
                      paginator="true"
 					 selectionMode="single" 
@@ -63,22 +63,24 @@
                     <p:column headerText="FECHA MODIFICACIÓN">
                         <h:outputText value="#{need.getModifyDate()}" />
                     </p:column>
+                    
                 </p:dataTable>
                     <!-- / Habilitar campo al seleccionar la fila -->
                 <h:panelGrid columns="2" columnClasses="label, value">
                     <h:outputText for="estado" value="Nuevo Estado:  " />
                     <p:selectOneMenu id="option"  binding="#{state}">
-                        <f:selectItem itemLabel="Seleccione una" itemValue=""/>
+                        <f:selectItem itemLabel="Seleccione " itemValue=""/>
                         <f:selectItem itemLabel="Activa" itemValue="Activa"/>
                         <f:selectItem itemLabel="En proceso" itemValue="En proceso"/>
                         <f:selectItem itemLabel="Resuelta" itemValue="Resuelta"/>
                         <f:selectItem itemLabel="Cerrada" itemValue="Cerrada"/>
                     </p:selectOneMenu>
-                </h:panelGrid>
                     <f:facet name="footer">
-                        <p:commandButton id="boton_Continuar" value = "ACTUALIZAR NECESIDAD" styleClass="ui-button-secondary"/>
+                        <p:commandButton id="boton_Actualizar" value = "ACTUALIZAR" update="consultarnecesidad" styleClass="ui-button-secondary" /><br></br>
+                        <br></br><p:commandButton id="boton_Regresar" value = "  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary"  />
                     </f:facet>
+                </h:panelGrid>
             </div>
-    </h:form>
+        </h:form>
     </body>
 </html>
