@@ -7,7 +7,10 @@ import org.apache.ibatis.annotations.Param;
 import edu.eci.cvds.samples.entities.Need;
 
 public interface NeedMapper {
+	
 	public List<Need> searchNeeds();
+	
+	public List<Need> searchNeedsByUser(@Param ("Name") String name);
 	
 	public void registerNeed(@Param ("Cat") String category,
 			@Param ("Name") String name, 

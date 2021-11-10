@@ -30,10 +30,9 @@ public class LoginBean implements Serializable{
 		
 		try{
 			userActual.login(uPToken);
-			userActual.getSession().setAttribute("correo", user);
+			userActual.getSession().setAttribute("mail", user);
 			if (userActual.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
-				logeado = true;
 			}
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {

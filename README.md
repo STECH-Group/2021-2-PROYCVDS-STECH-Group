@@ -35,12 +35,11 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 
 ### Enlace a la aplicación en Heroku
 
-
 [![ProjectDesign](https://www.herokucdn.com/deploy/button.png)](https://solidaridadeci.herokuapp.com)
 
 ### Enlace al sistema de integración continua
 
-
+[![CircleCI](https://circleci.com/gh/STECH-Group/2021-2-PROYCVDS-STECH-Group/tree/master.svg?style=svg)](https://circleci.com/gh/STECH-Group/2021-2-PROYCVDS-STECH-Group/tree/master)
 
 ## Descripción del proceso
 

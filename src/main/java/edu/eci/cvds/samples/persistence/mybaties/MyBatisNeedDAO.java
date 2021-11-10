@@ -1,11 +1,14 @@
 package edu.eci.cvds.samples.persistence.mybaties;
 
+import java.util.List;
+
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.persistence.NeedDAO;
 import edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper;
 
@@ -45,5 +48,15 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Override
 	public void eliminarNecesidades() {	
 		needMapper.deleteNeeds();
+	}
+
+	@Override
+	public List<Need> consultarNecesidades() {
+		return needMapper.searchNeeds();
+	}
+
+	@Override
+	public List<Need> consultarNecesidadesPorUsuario(String nombre) {
+		return needMapper.searchNeedsByUser(nombre);
 	}
 }
