@@ -6,14 +6,14 @@
 
 ## Nombre del profesor
 
-+ Oscar David Ospina Rodriguez - Product Owner
++	Oscar David Ospina Rodriguez - Product Owner
 
 ## Nombres de los integrantes
 
-+ José Manuel Gamboa Gómez - Back
-+ Zuly Valentina Vargas Ramírez - Front
-+ Cristian Camilo Forero Monroy - UX/Scrum Master
-+ Camilo Andrés Pichimata Cárdenas - Back
++	José Manuel Gamboa Gómez - Back
++	Zuly Valentina Vargas Ramírez - Front
++	Cristian Camilo Forero Monroy - UX/Scrum Master
++	Camilo Andrés Pichimata Cárdenas - Back
 
 ## Descripción del producto
 
@@ -68,3 +68,5 @@ Historias de usuario:
 ### Reporte de pruebas y de cubrimiento de las mismas 
 
 ### Reporte de análisis estético de código
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2bb6066ee2249488b34a41489893cf5)](https://www.codacy.com/gh/STECH-Group/2021-2-PROYCVDS-STECH-Group/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=STECH-Group/2021-2-PROYCVDS-STECH-Group&amp;utm_campaign=Badge_Grade)
