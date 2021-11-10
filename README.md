@@ -25,7 +25,7 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 
 ### Principales funcionalidades 
 
-## Arquitectura y Dise�o detallado
+## Arquitectura y Diseño detallado
 
 ### Modelo E-R
 
@@ -67,4 +67,4 @@ Historias de usuario:
 
 ### Reporte de pruebas y de cubrimiento de las mismas 
 
-### Reporte de an�lisis est�tico de c�digo
+### Reporte de análisis estético de código
