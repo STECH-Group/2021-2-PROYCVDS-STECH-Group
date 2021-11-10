@@ -31,17 +31,7 @@ public class LoginBean implements Serializable{
 		try{
 			userActual.login(uPToken);
 			userActual.getSession().setAttribute("mail", user);
-			if (userActual.hasRole("Administrador")) {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
-			} else if (userActual.hasRole("Estudiante")) {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/estudiante.xhtml");
-			} else if (userActual.hasRole("Administrativo")) {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrativo.xhtml");
-			} else if (userActual.hasRole("Egresado")) {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/egresado.xhtml");
-			} else if (userActual.hasRole("Profesor")) {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/profesor.xhtml");
-			}
+			redirect(userActual);
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
@@ -55,10 +45,7 @@ public class LoginBean implements Serializable{
         } catch (AuthenticationException ex) {
             error("Unknown error: "+ex.getMessage());
             log.error(ex.getMessage(), ex);
-        } catch (IOException ex) {
-        	error("Unknown error: " + ex.getMessage());
-            log.error(ex.getMessage(), ex);
-		}
+        }
 	}
 	
 	public String getUser() {
@@ -91,11 +78,31 @@ public class LoginBean implements Serializable{
 
 	public void logOut() {
 		setLogeado(false);
-        SecurityUtils.getSubject().logout();
         try {
+        	SecurityUtils.getSubject().logout();
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/login.xhtml");
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+	
+	public void redirect(Subject user) {
+		try {
+			if (user.hasRole("Administrador")) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
+			} else if (user.hasRole("Estudiante")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/estudiante.xhtml");
+			} else if (user.hasRole("Administrativo")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrativo.xhtml");
+			} else if (user.hasRole("Egresado")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/egresado.xhtml");
+			} else if (user.hasRole("Profesor")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/profesor.xhtml");
+			}
+		} catch (IOException ex) {
+        	error("Unknown error: " + ex.getMessage());
+            log.error(ex.getMessage(), ex);
+		}
+	}
+	
 }

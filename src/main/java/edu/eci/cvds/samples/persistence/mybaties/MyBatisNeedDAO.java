@@ -21,7 +21,11 @@ public class MyBatisNeedDAO implements NeedDAO{
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
 			Subject user = SecurityUtils.getSubject();
-			needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
+			if (user.hasRole("Estudiante")) {
+				needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
+			} else {
+				throw new PersistenceException("El rol del usuario no tiene permiso para registrar una necesidad");
+			}
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("Error al crear la categoria, el nombre ya esta en uso",e);
 		}
@@ -56,8 +60,13 @@ public class MyBatisNeedDAO implements NeedDAO{
 	}
 
 	@Override
-	public List<Need> consultarNecesidadesPorUsuario() {
-		Subject user = SecurityUtils.getSubject();
-		return needMapper.searchNeedsByUser(user.getSession().getAttribute("name").toString());
+	public List<Need> consultarNecesidadesPorUsuario() throws PersistenceException{
+		try {
+			Subject user = SecurityUtils.getSubject();
+			return needMapper.searchNeedsByUser(user.getSession().getAttribute("name").toString());
+		} catch(PersistenceException e) {
+	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
+		}
 	}
+	
 }
