@@ -33,6 +33,14 @@ public class LoginBean implements Serializable{
 			userActual.getSession().setAttribute("mail", user);
 			if (userActual.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
+			} else if (userActual.hasRole("Estudiante")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/estudiante.xhtml");
+			} else if (userActual.hasRole("Administrativo")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrativo.xhtml");
+			} else if (userActual.hasRole("Egresado")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/egresado.xhtml");
+			} else if (userActual.hasRole("Profesor")) {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/profesor.xhtml");
 			}
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {
@@ -88,17 +96,6 @@ public class LoginBean implements Serializable{
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/login.xhtml");
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-	
-	public void redirect(String dr) {
-        Subject s = SecurityUtils.getSubject();
-        if ((dr == "/faces/administrador.xhml" && s.hasRole("Administrador")) || (dr != "/faces/administrador.xhml")) {
-            try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect(dr);
-            } catch (IOException ex) {
-                java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 }

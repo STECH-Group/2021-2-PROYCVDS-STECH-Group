@@ -7,6 +7,7 @@ import org.apache.ibatis.exceptions.PersistenceException;
 import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.entities.Category;
+import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -15,9 +16,6 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	
 	@Inject
 	private CategoryDAO categoryDAO;
-	
-	@Inject
-	private UserDAO userDAO;
 	
 	@Inject
 	private NeedDAO needDAO;
@@ -78,5 +76,15 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public void eliminarNecesidades() {
 		needDAO.eliminarNecesidades();	
+	}
+
+	@Override
+	public List<Need> consultarNecesidades() {
+		return needDAO.consultarNecesidades();
+	}
+
+	@Override
+	public List<Need> consultarNecesidadesPorUsuario() {
+		return needDAO.consultarNecesidadesPorUsuario();
 	}
 }

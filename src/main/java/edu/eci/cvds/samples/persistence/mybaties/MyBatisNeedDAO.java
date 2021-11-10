@@ -56,7 +56,8 @@ public class MyBatisNeedDAO implements NeedDAO{
 	}
 
 	@Override
-	public List<Need> consultarNecesidadesPorUsuario(String nombre) {
-		return needMapper.searchNeedsByUser(nombre);
+	public List<Need> consultarNecesidadesPorUsuario() {
+		Subject user = SecurityUtils.getSubject();
+		return needMapper.searchNeedsByUser(user.getSession().getAttribute("name").toString());
 	}
 }

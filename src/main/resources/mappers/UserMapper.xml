@@ -14,4 +14,4 @@
     <result property='rol' column='rol'/>
   </resultMap>
   
-</mapper>  
+</mapper>

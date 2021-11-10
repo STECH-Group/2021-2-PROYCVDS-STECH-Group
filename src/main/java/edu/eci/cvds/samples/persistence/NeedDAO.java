@@ -10,7 +10,7 @@ public interface NeedDAO {
 	
 	public List<Need> consultarNecesidades();
 	
-	public List<Need> consultarNecesidadesPorUsuario(String nombre);
+	public List<Need> consultarNecesidadesPorUsuario();
 	
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException;
 	

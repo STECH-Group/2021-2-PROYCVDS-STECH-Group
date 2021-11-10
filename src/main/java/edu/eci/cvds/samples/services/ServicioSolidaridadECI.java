@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 
-import edu.eci.cvds.samples.entities.Category;
+import edu.eci.cvds.samples.entities.*;
 
 public interface ServicioSolidaridadECI {
 	
@@ -27,4 +27,9 @@ public interface ServicioSolidaridadECI {
 	public void eliminarNecesidadPorId(int id) throws PersistenceException;
 	
 	public void eliminarNecesidades();
+	
+	public List<Need> consultarNecesidades();
+	
+	public List<Need> consultarNecesidadesPorUsuario();
+	
 }
