@@ -6,14 +6,14 @@
 
 ## Nombre del profesor
 
-+  Oscar David Ospina Rodriguez - Product Owner
+  + Oscar David Ospina Rodriguez - Product Owner
 
 ## Nombres de los integrantes
 
-+  José Manuel Gamboa Gómez - Back
-+  Zuly Valentina Vargas Ramírez - Front
-+  Cristian Camilo Forero Monroy - UX/Scrum Master
-+  Camilo Andrés Pichimata Cárdenas - Back
+  + José Manuel Gamboa Gómez - Back
+  + Zuly Valentina Vargas Ramírez - Front
+  + Cristian Camilo Forero Monroy - UX/Scrum Master
+  + Camilo Andrés Pichimata Cárdenas - Back
 
 ## Descripción del producto
 
