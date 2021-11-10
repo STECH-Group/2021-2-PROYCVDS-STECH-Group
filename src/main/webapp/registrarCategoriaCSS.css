@@ -1,70 +1,78 @@
 #barra-administrador {
-  background: #720c14;
-  color:#720c14;
-  height: 80px;
-  width: 100%; 
-  left: 0; 
-  right: 20px;
-  top: 0; 
-  position: fixed; 
+    background: #720c14;
+    color: #720c14;
+    height: 80px;
+    width: 100%;
+    left: 0;
+    right: 20px;
+    top: 0;
+    position: fixed;
 }
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #666;
-  background: #f2f2f2; 
-  font-size: 1em;
-  line-height: 1.5em;
-  padding-top: 80px; 
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    background: #f2f2f2;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding-top: 80px;
 }
+
 .titulo {
-  font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
-  -webkit-text-stroke: 0.5px black;
-  color:#1f1d1d;
-  text-align: center;
-  font-size: 120%;
-  counter-reset: heading;
+    font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
+    -webkit-text-stroke: 0.5px black;
+    color: #1f1d1d;
+    text-align: center;
+    font-size: 120%;
+    counter-reset: heading;
 }
+
 #admin-header {
-  display: block;
-  font-weight: 900;
-  font-size: 1.5em;
-  color: white;
-  display: block;
-  padding: 8px 14px;
-  font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    font-weight: 900;
+    font-size: 1.5em;
+    color: white;
+    display: block;
+    padding: 8px 14px;
+    font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
 }
+
 #cerrar_sesion {
-  margin: 0;
-  padding: 10px 50px 20px;   
-  color: white;
+    margin: 0;
+    padding: 10px 50px 20px;
+    color: white;
 }
+
 .logo-nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .div_boton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  top:80%;
-  left: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 80%;
+    left: 50%;
 }
+
 .boton_R {
-  padding: 10px;
-  margin: 10px;
+    padding: 10px;
+    margin: 10px;
 }
-  .container {
-  border-radius: 10px;
-  padding: 25px;
-  top:50%;
-  left: 50%;
-  display: inline-flex;
-  counter-reset: heading;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  transform: translate(-50%, -50%);
+
+.container {
+    border-radius: 10px;
+    padding: 25px;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    counter-reset: heading;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
 }
