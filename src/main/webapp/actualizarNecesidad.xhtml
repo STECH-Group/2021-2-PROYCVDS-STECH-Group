@@ -20,7 +20,7 @@
                 </div>
             </header><!-- / #main-header -->
             <div class="titulo">
-                <h2>NECESIDADES</h2>
+                <h2>NECESIDADES EXISTENTES</h2>
             </div>
             <div class= "panel consulta">	
                 <p:dataTable var="cliente"  rows="10"
@@ -63,11 +63,21 @@
                     <p:column headerText="FECHA MODIFICACIÓN">
                         <h:outputText value="#{need.getModifyDate()}" />
                     </p:column>
-                    <!-- / Habilitar campo al seleccionar la fila -->
-                    <f:facet name="footer">
-                        <p:commandButton id="boton_Continuar" value = "ACTUALIZAR NECESIDAD" action = "actualizarEstadoNecesidad?faces-redirect = true" styleClass="ui-button-secondary"/>
-                    </f:facet>
                 </p:dataTable>
+                    <!-- / Habilitar campo al seleccionar la fila -->
+                <h:panelGrid columns="2" columnClasses="label, value">
+                    <h:outputText for="estado" value="Nuevo Estado:  " />
+                    <p:selectOneMenu id="option"  binding="#{state}">
+                        <f:selectItem itemLabel="Seleccione una" itemValue=""/>
+                        <f:selectItem itemLabel="Activa" itemValue="Activa"/>
+                        <f:selectItem itemLabel="En proceso" itemValue="En proceso"/>
+                        <f:selectItem itemLabel="Resuelta" itemValue="Resuelta"/>
+                        <f:selectItem itemLabel="Cerrada" itemValue="Cerrada"/>
+                    </p:selectOneMenu>
+                </h:panelGrid>
+                    <f:facet name="footer">
+                        <p:commandButton id="boton_Continuar" value = "ACTUALIZAR NECESIDAD" styleClass="ui-button-secondary"/>
+                    </f:facet>
             </div>
     </h:form>
     </body>
