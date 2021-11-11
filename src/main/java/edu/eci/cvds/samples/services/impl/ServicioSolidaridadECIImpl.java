@@ -36,6 +36,11 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 			throw new ExceptionServicioSolidaridadECI("El nombre " + nName + " ya se encuentra en uso.", ex);
 		}
 	}
+	
+	@Override
+	public List<String> searchActiveCategoryNames() {
+		return categoryDAO.consultarNombresDeCategoriasActivas();
+	}
 
 	@Override
 	public List<Category> searchCategories() {
@@ -87,4 +92,5 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	public List<Need> consultarNecesidadesPorUsuario() {
 		return needDAO.consultarNecesidadesPorUsuario();
 	}
+
 }
