@@ -2,11 +2,15 @@ package edu.eci.cvds.samples.beans;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.ArrayList; 
 
 import org.apache.ibatis.annotations.Param;
 
 import javax.faces.bean.*;
 import com.google.inject.Inject;
+
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.SecurityUtils;
 
 import edu.eci.cvds.samples.entities.*;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -42,8 +46,14 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	
 	public List<Need> searchNeedsByUser() {
 		//Si el rol es Administrador llamar a la de needs 
-		
-		return ssECI.consultarNecesidadesPorUsuario();
+		List<Need> categories = new ArrayList<Need>();
+		Subject user = SecurityUtils.getSubject();
+		if (user.hasRole("Administrador")) {
+            categories = searchNeeds();
+		} else {
+			categories = ssECI.consultarNecesidadesPorUsuario();
+		}
+		return categories;
 	}
 	
 	public List<Offer> searchOffers() {

@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.persistence.mybaties;
 
 import java.util.List;
+import java.util.ArrayList; 
 
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.shiro.SecurityUtils;
@@ -23,7 +24,7 @@ public class MyBatisNeedDAO implements NeedDAO{
 			System.out.println("ANtes de crear el Subject ");
 			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Estudiante")) {
-				System.out.println("Nombre usuario ¿null? " + user.getSession().getAttribute("name").toString() );
+				System.out.println("Nombre usuario ¿null? " + user.getSession().getAttribute("mail").toString() );
 				needMapper.registerNeed(category, "José Gamboa", description, urgency, state);
 				//needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
 			} else {

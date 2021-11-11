@@ -19,7 +19,6 @@ import org.slf4j.LoggerFactory;
 public class LoginBean implements Serializable{
 	
 	private static final Logger log = LoggerFactory.getLogger(LoginBean.class);
-
 	private String user;
 	private String passwd;
 	public boolean logeado = false;
@@ -27,7 +26,6 @@ public class LoginBean implements Serializable{
 	public void login() {
 		Subject userActual = SecurityUtils.getSubject();
 		UsernamePasswordToken uPToken = new UsernamePasswordToken(getUser(), new Sha256Hash(getPasswd()).toHex());
-		
 		try{
 			userActual.login(uPToken);
 			userActual.getSession().setAttribute("mail", user);

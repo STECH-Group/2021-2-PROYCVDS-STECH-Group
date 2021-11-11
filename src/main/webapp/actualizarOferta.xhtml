@@ -64,7 +64,7 @@
                     <f:selectItem itemLabel="Cerrado" itemValue="Cerrado" />
                 </p:selectOneMenu>
                 <f:facet name="footer">
-                    <p:commandButton id="boton_Actualizar" actionListener="#{usuarioBean.updateStateOffer(state.value)}" value="ACTUALIZAR" update="consultaroferta" styleClass="ui-button-secondary" /><br></br>
+                    <p:commandButton id="boton_Actualizar" actionListener="#{usuarioBean.updateStateOffer(#{state.value)}" value="ACTUALIZAR" update="consultaroferta" styleClass="ui-button-secondary" /><br></br>
                     <br></br>
                     <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
                 </f:facet>
