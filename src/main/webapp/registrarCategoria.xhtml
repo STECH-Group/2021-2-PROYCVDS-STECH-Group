@@ -40,10 +40,9 @@
                         </p:selectOneMenu>
                     </h:panelGrid>
                     <p:commandButton id="boton_R" value="REGISTRAR" styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />
-                    <p:commandButton id="boton_Regresar" value="  REGRESAR  " action="administrador?faces-redirect = true" styleClass="ui-button-secondary" style="float:right;" />
+                    <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
                 </p:panel>
             </p:tab>
-
         </div>
     </h:form>
 </body>

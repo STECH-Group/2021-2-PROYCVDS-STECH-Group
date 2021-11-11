@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <title>Actualizar Categoria</title>
-    </h:head>
+<h:head>
+    <title>Actualizar Categoria</title>
+</h:head>
 
-    <body>
-        <h:form id= "Formato">
-            <link href="registrarCategoriaCSS.css" rel="stylesheet" type="text/css"/>
-            <header id="barra-administrador">
-                <div class=" logo-nav-container">
-                    <p id="admin-header" href="#">
-                        ADMINISTRADOR
-                    </p> 
-                    <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}" value="Cerrar Sesión"/>
-                </div>
-            </header><!-- / #main-header -->
-            <div class="titulo">
-                <h2>ACTUALIZAR CATEGORIA</h2>
-            </div>        
-            <div class="container" >
-                <p:tab id="personal" title="ACTUALIZAR CATEGORIA">
-                    <p:panel header="Ingrese los datos a actualizar">
-                        <h:panelGrid columns="2" columnClasses="label, value">
-
-                            <h:outputText for="category_name" value="Anterior Nombre categoria: " />
-                            <p:inputText id="nombre1" type="String" binding="#{nameold}" required="true" />
-
-                            <h:outputText for="category_name" value="Nuevo Nombre categoria: " />
-                            <p:inputText id="nombre" type="String"  binding="#{name}"/>
-
-                            <h:outputLabel for="description" value="Descripcion:       " />
-                            <p:inputText id="description"  type="String" binding="#{description}" />
-
-                            
-                            <p:outputLabel  value="Estado: *" />
-                            <p:selectOneMenu id="option"  binding="#{state}">
-                                <f:selectItem itemLabel="Seleccione una" itemValue=""/>
-                                <f:selectItem itemLabel="Activa" itemValue="Activa"/>
-                                <f:selectItem itemLabel="Inactiva" itemValue="Inactiva"/>
-                            </p:selectOneMenu>
-                        </h:panelGrid>
-                        <p:commandButton id="boton_R" action = "consultarCategoria?faces-redirect = true" value = "ACTUALIZAR"  update="Formato" styleClass="ui-button-secondary" 
-                        actionListener="#{administratorBean.updateCategory(nameold.value,name.value,description.value,state.value)}" style="float:center;" />            
-                    </p:panel>
-                </p:tab>  
-            <br></br>              
+<body>
+    <h:form id="Formato">
+        <link href="registrarCategoriaCSS.css" rel="stylesheet" type="text/css" />
+        <header id="barra-administrador">
+            <div class=" logo-nav-container">
+                <p id="admin-header" href="#">
+                    ADMINISTRADOR
+                </p>
+                <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}" value="Cerrar Sesión" />
+            </div>
+        </header>
+        <!-- / #main-header -->
+        <div class="titulo">
+            <h2>ACTUALIZAR CATEGORIA</h2>
         </div>
-        </h:form>
-    </body>
+        <div class="container">
+            <p:tab id="personal" title="ACTUALIZAR CATEGORIA">
+                <p:panel header="Ingrese los datos a actualizar">
+                    <h:panelGrid columns="2" columnClasses="label, value">
+
+                        <h:outputText for="category_name" value="Anterior Nombre categoria: " />
+                        <p:inputText id="nombre1" type="String" binding="#{nameold}" required="true" />
+
+                        <h:outputText for="category_name" value="Nuevo Nombre categoria: " />
+                        <p:inputText id="nombre" type="String" binding="#{name}" />
+
+                        <h:outputLabel for="description" value="Descripcion:       " />
+                        <p:inputText id="description" type="String" binding="#{description}" />
+
+
+                        <p:outputLabel value="Estado: *" />
+                        <p:selectOneMenu id="option" binding="#{state}">
+                            <f:selectItem itemLabel="Seleccione una" itemValue="" />
+                            <f:selectItem itemLabel="Activa" itemValue="Activa" />
+                            <f:selectItem itemLabel="Inactiva" itemValue="Inactiva" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                    <p:commandButton id="boton_R" action="consultarCategoria?faces-redirect = true" value="ACTUALIZAR" update="Formato" styleClass="ui-button-secondary" actionListener="#{administratorBean.updateCategory(nameold.value,name.value,description.value,state.value)}"
+                        style="float:center;" />
+                    <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
+                </p:panel>
+            </p:tab>
+            <br></br>
+        </div>
+    </h:form>
+</body>
+
 </html>

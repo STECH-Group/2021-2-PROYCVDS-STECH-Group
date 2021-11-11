@@ -50,7 +50,7 @@
                 </p:column>
 
                 <f:facet name="footer">
-                    <p:commandButton id="boton_Continuar" action="administrador?faces-redirect = true" value="REGRESAR" styleClass="ui-button-secondary" />
+                    <p:commandButton id="boton_Continuar" actionListener="#{loginBean.redirect()}" value="REGRESAR" styleClass="ui-button-secondary" />
                 </f:facet>
             </p:dataTable>
         </div>
