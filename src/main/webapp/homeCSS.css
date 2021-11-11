@@ -60,9 +60,22 @@ body {
 
 .botones {
     background-color: #fff;
-    width: 20%;
-    height: 50vh;
+    width: 10%;
+    height: 20vh;
     padding-left: 50px;
     padding-top: 20px;
     position: center;
+}
+
+.manual {
+    font-size: 105%;
+    color: #727070;
+    font-family: Helvetica, Georgia, 'Times New Roman', Times, sans-serif;
+    background-color: #fff;
+    width: 30%;
+    height: 50vh;
+    padding-left: 50px;
+    padding-top: 20px;
+    position: static;
+    float: left;
 }

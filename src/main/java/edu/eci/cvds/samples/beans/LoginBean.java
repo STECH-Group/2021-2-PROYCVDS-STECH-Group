@@ -77,16 +77,19 @@ public class LoginBean implements Serializable{
     }
 
 	public void logOut() {
+		System.out.println("Estoy en LogOut");
 		setLogeado(false);
         try {
         	SecurityUtils.getSubject().logout();
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/login.xhtml");
-        } catch (IOException ex) {
+			System.out.println("Me estoy redirigiendo en LogOut");
+		} catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 	
 	public void redirect() {
+		System.out.println("Estoy en Redirect");
 		try {
 			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Administrador")) {

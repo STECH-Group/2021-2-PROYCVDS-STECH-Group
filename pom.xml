@@ -14,7 +14,7 @@
 		<artifactId>slf4j-jdk14</artifactId>
 		<version>1.7.25</version>
 	</dependency>
-  
+	
 	<!-- Dependencia de JUnit -->  
     <dependency>
       <groupId>junit</groupId>

@@ -24,7 +24,7 @@
             <h2>CATEGORIAS</h2>
         </div>
         <div class="panel consulta">
-            <p:dataTable var="category" rows="4" value="#{administratorBean.consultarCategories()}" paginator="true" selectionMode="single" rowKey="#{Category.id}" paginatorPosition="bottom" currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
+            <p:dataTable var="category" rows="4" value="#{administratorBean.searchCategories()}" paginator="true" selectionMode="single" rowKey="#{Category.id}" paginatorPosition="bottom" currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
                 <p:column headerText="ID">
                     <h:outputText value="#{category.id}" />
                 </p:column>

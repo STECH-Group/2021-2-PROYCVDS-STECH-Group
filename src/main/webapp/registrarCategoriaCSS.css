@@ -69,10 +69,10 @@ body {
     padding: 25px;
     top: 50%;
     left: 50%;
-    display: inline-flex;
+    display: inline-block;
     counter-reset: heading;
-    position: absolute;
+    position: relative;
     justify-content: center;
     align-items: center;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
