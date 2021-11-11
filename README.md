@@ -12,7 +12,7 @@
 
 +   José Manuel Gamboa Gómez - Back
 +   Zuly Valentina Vargas Ramírez - Front
-+   Cristian Camilo Forero Monroy - UX/Scrum Master
++   Cristian Camilo Forero Monroy - UX
 +   Camilo Andrés Pichimata Cárdenas - Back
 
 ## Descripción del producto
