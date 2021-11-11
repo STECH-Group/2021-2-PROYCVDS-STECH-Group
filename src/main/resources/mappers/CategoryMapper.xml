@@ -11,7 +11,11 @@
   	</select>
   	
   	<select parameterType="map" id="searchActiveCategories" resultMap="CategoryResult">
-	    select * from categories where state = 'Activa'
+	    select * from categories where state = 'Activo'
+  	</select>
+  	
+  	<select parameterType="map" id="searchActiveCategoryNames" resultMap="CategoryResult">
+	    select name from categories where state = 'Activo'
   	</select>
 
 	<insert parameterType="map" id="newCategory">
