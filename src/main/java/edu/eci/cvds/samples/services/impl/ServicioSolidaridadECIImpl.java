@@ -20,6 +20,16 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Inject
 	private NeedDAO needDAO;
 
+	@Inject
+	private OfferDAO offerDAO;
+	
+	@Override
+	public void limpiarTablas() {
+		categoryDAO.limpiarCategorias();
+		needDAO.eliminarNecesidades();
+		offerDAO.eliminarOfertas();
+	}
+	
 	@Override
 	public void crearNuevaCategoria(String name, String description, String state)
 			throws ExceptionServicioSolidaridadECI {
@@ -45,13 +55,6 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public List<Category> searchCategories() {
 		return categoryDAO.consultarCategorias();
-	}
-
-	@Override
-	public void limpiarTablas() {
-		categoryDAO.limpiarCategorias();
-		needDAO.eliminarNecesidades();
-		//offerDAO.eliminarOfertas();
 	}
 
 	@Override

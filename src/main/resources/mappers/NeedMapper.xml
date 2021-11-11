@@ -7,11 +7,11 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper">
 
 	<select parameterType="map" id="searchNeeds" resultMap="NeedResult">
-	    select * from needs order by state desc
+	    select * from needs order by state, modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchNeedsByUser" resultMap="NeedResult">
-	    select * from needs where name = #{Name} order by state desc
+	    select * from needs where name = #{Name} order by state, modify_date desc
   	</select>
 	
 	<insert parameterType="map" id="registerNeed">
@@ -29,6 +29,10 @@
 	 <delete id="deleteNeeds">
 	 	delete from needs;
 	 </delete>
+	 
+	 <update id="restartSequenceNeeds">
+	 	alter sequence id_Needs restart with 1;
+	 </update>
 	
 	<resultMap type='Need' id='NeedResult'>
 		 <id property='id' column='id'/>

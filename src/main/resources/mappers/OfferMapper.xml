@@ -6,7 +6,35 @@
   
   <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.OfferMapper">
   
-  	<resultMap type='Need' id='NeedResult'>
+  	<select parameterType="map" id="searchOffers" resultMap="OfferResult">
+	    select * from offers group by state order by modify_date desc
+  	</select>
+  	
+  	<select parameterType="map" id="searchInProcessOffers" resultMap="OfferResult">
+	    select * from offers where state = 'Activo' or state = 'En proceso' group by state order by modify_date desc
+  	</select>
+  
+  	<insert parameterType="map" id="newOffer">
+	   	insert into offers(id, category, name, description, creation_date, state, modify_date) values (nextval('id_Offers'), #{Cat}, #{Name}, #{Desc}, current_date, #{State}, current_date)
+	</insert>
+	
+	<update parameterType="map" id="updateStateOffer">
+	 	update offers set state = #{State}, modify_date = current_date where id = #{Id}
+	 </update>
+	 
+	 <delete id="deleteOffers">
+	 	delete from offers;
+	 </delete>
+	 
+	 <delete id="deleteOfferById">
+	 	delete from offers where id = #{Id};
+	 </delete>
+	 
+	 <update id="restartSequenceOffers">
+	 	alter sequence id_Offers restart with 1;
+	 </update>
+  
+  	<resultMap type='Offer' id='OfferResult'>
 		<id property='id' column='id'/>
 		<result property='description' column='description'/>
 		<result property='creationDate' column='creation_date'/>

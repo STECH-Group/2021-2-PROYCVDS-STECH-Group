@@ -17,8 +17,6 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Inject
 	private NeedMapper needMapper;
 	
-	
-	
 	@Override
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
