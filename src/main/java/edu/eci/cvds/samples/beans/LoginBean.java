@@ -31,7 +31,7 @@ public class LoginBean implements Serializable{
 		try{
 			userActual.login(uPToken);
 			userActual.getSession().setAttribute("mail", user);
-			redirect(userActual);
+			redirect();
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {
             error("Unknown account");
@@ -86,8 +86,9 @@ public class LoginBean implements Serializable{
         }
     }
 	
-	public void redirect(Subject user) {
+	public void redirect() {
 		try {
+			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Administrador")) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/administrador.xhtml");
 			} else if (user.hasRole("Estudiante")) {
