@@ -6,6 +6,8 @@ import java.util.List;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
+import org.apache.ibatis.annotations.One;
+
 import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.entities.*;
@@ -23,8 +25,16 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	@Inject
 	private ServicioSolidaridadECI ssECI;
 	
-	public List<Category> consultarCategories(){
+	public List<Category> searchCategories(){
 		return ssECI.searchCategories();
+	}
+	
+	public List<Category> searchActiveCategories(){
+		return ssECI.searchActiveCategories();
+	}
+	
+	public List<String> searchActiveCategoryNames(){
+		return ssECI.searchActiveCategoryNames();
 	}
 	
 	public void newCategory(String name, String desc, String state) throws ExceptionServicioSolidaridadECI {
