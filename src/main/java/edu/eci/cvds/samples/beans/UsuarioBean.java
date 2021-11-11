@@ -5,11 +5,15 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import javax.faces.bean.*;
 import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.entities.*;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
 
+
+@ManagedBean(name="usuarioBean")
+@SessionScoped
 public class UsuarioBean extends BasePageBean implements Serializable {
 	
 	private String cat;
@@ -53,6 +57,12 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	}
 	
 	public void registerNeed(String category, String description, int urgency, String state) {
+		System.out.println("Categoria " +category);
+		System.out.println("Descripcion " + description);
+		System.out.println("Urgencia " + urgency);
+		System.out.println("Estado  " + state);
+		
+		
 		ssECI.registrarNecesidad(category, description, urgency, state);
 	}
 	

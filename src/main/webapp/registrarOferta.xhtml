@@ -28,7 +28,7 @@
                     <h:panelGrid columns="2" columnClasses="label, value">
 
                         <h:outputLabel for="descripcion" value="Descripcion:       " />
-                        <p:inputTextarea cols="30" id="descripcion" type="String" binding="#{descripcion}" />
+                        <p:inputTextarea rows="6" cols="30" id="descripcion" type="String" binding="#{descripcion}" />
 
                         <h:outputText for="estado" value="Estado:      " />
                         <p:selectOneMenu id="option" binding="#{state}">
@@ -42,7 +42,7 @@
                         <h:outputText for="category_name" value="Nombre categoria: " />
                         <p:selectOneMenu id="categoria_lista" binding="#{category}">
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
-                            <!--f:selectItems value="#{administratorBean.nombresCategorias}" /-->
+                            <f:selectItems value="#{administratorBean.searchActiveCategoryNames()}" />
                             <p:ajax update="Formato" />
                         </p:selectOneMenu>
 

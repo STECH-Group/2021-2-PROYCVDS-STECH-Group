@@ -41,9 +41,10 @@
                 </p:submenu>
 
                 <p:submenu label="Servicios">
-                    <p:menuitem value="Registrar respuesta" icon="pi pi-book" />
-                    <p:menuitem value="Actualizar estado oferta" icon="pi pi-refresh" />
-                    <p:menuitem value="Actualizar estado necesidad " icon="pi pi-refresh" />
+                    <p:menuitem value="Registrar respuesta a necesidad" icon="pi pi-book" action="consultarNecesidades?faces-redirect = true"/>
+					<p:menuitem value="Registrar respuesta a oferta" icon="pi pi-book"  action="consultarOfertas?faces-redirect = true" />
+                    <p:menuitem value="Actualizar estado oferta" icon="pi pi-refresh"  action="actualizarOferta?faces-redirect = true" />
+                    <p:menuitem value="Actualizar estado necesidad" icon="pi pi-refresh" action="actualizarNecesidad?faces-redirect = true" />
                 </p:submenu>
             </p:panelMenu>
         </div>

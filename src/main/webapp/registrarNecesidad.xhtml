@@ -31,12 +31,12 @@
                         <p:inputTextarea rows="6" cols="30" id="descripcion" type="String" binding="#{descripcion}" />
 
                         <h:outputText for="urgencia" value="Urgencia: " />
-                        <p:rating binding="#{urgencia}">
+                        <p:rating binding="#{urgencia}" >
                             <p:ajax event="rate" />
                         </p:rating>
 
                         <h:outputText for="estado" value="Estado:      " />
-                        <p:selectOneMenu id="option" binding="#{state}">
+                        <p:selectOneMenu id="option" binding="#{state}" type="String">
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
                             <f:selectItem itemLabel="Activa" itemValue="Activa" />
                             <f:selectItem itemLabel="En proceso" itemValue="En proceso" />
@@ -45,16 +45,13 @@
                         </p:selectOneMenu>
 
                         <h:outputText for="category_name" value="Nombre categoria: " />
-                        <p:selectOneMenu id="categoria_lista" binding="#{category}">
+                        <p:selectOneMenu id="categoria_lista" binding="#{category}" >
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
-                            <!--f:selectItems value="#{administratorBean.nombresCategorias}" /-->
-                            <p:ajax update="Formato" />
+                            <f:selectItems value="#{administratorBean.searchActiveCategoryNames()}" />
                         </p:selectOneMenu>
 
                     </h:panelGrid>
-                    <p:commandButton id="boton_R" value="REGISTRAR" update="Formato" styleClass="ui-button-secondary" style="float:center;" />
-                    <!-- colocar accion y actionListener -->
-
+                    <p:commandButton id="boton_R" value="REGISTRAR" actionListener="#{usuarioBean.registerNeed(category.value,descripcion.value,urgencia.value,state.value)}" update="Formato" styleClass="ui-button-secondary" style="float:center;" />
                     <p:commandButton id="boton_Back" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
                 </p:panel>
             </p:tab>

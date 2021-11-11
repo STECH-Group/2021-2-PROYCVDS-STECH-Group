@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Consulta de ofertas</title>
+</h:head>
+<body>
+    <h:form id="Formato">
+        <link href="registrarCategoriaCSS.css" rel="stylesheet" type="text/css" />
+        <header id="barra-administrador">
+            <div class=" logo-nav-container">
+                <p id="admin-header" href="#">
+                    USUARIO
+                </p>
+                <p:commandButton id="cerrar_sesion" styleClass="ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}" value="Cerrar Sesión" />
+            </div>
+        </header>
+		<!--ESTA ES PARA REGISTRAR RESPUESTA A OFERTAS, SE MUESTRAN *TODAS* LAS ACTIVAS -->
+		<div class="titulo">
+            <h2>OFERTAS EXISTENTES</h2>
+        </div>
+        <div class="panel consulta">
+            <p:dataTable var="ofert" rows="6" value="#{usuarioBean.consultarOfertas()}" paginator="true" selectionMode="single" selection="" rowKey="#{ofert.id}" 
+                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                <p:column headerText="ID">
+                    <h:outputText value="#{ofert.getId()}" />
+                </p:column>
+
+                <p:column headerText="CATEGORIA">
+                    <h:outputText value="#{ofert.getCategory()}" />
+                </p:column>
+
+                <p:column headerText="NOMBRE">
+                    <h:outputText value="#{ofert.getName()}" />
+                </p:column>
+
+                <p:column headerText="DESCRIPCION">
+                    <h:outputText value="#{ofert.getDescription()}" />
+                </p:column>
+
+                <p:column headerText="FECHA MODIFICACIÓN">
+                    <h:outputText value="#{ofert.getCreationDate()}" />
+                </p:column>
+
+                <p:column headerText="ESTADO">
+                    <h:outputText value="#{ofert.getState()}" />
+                </p:column>
+
+                <p:column headerText="FECHA MODIFICACIÓN">
+                    <h:outputText value="#{ofert.getModifyDate()}" />
+                </p:column>
+				<f:facet name="footer">
+                    <p:commandButton id="boton_Actualizar" value="RESPONDER" action="registrarRespuesta?faces-redirect = true" styleClass="ui-button-secondary" /><br></br>
+                    <br></br>
+                    <p:commandButton id="boton_Regresar" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
+            	</f:facet>
+			</p:dataTable>
+		</div>
+	</h:form>
+</body>
+</html>

@@ -3,8 +3,7 @@ package edu.eci.cvds.samples.beans;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.faces.bean.*;
 
 import org.apache.ibatis.annotations.One;
 
@@ -15,7 +14,7 @@ import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
 
 @ManagedBean(name="administratorBean")
-@ApplicationScoped
+@SessionScoped
 public class AdministratorBean extends BasePageBean implements Serializable{
 	
 	private String name;
