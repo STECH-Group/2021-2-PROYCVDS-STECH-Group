@@ -12,9 +12,11 @@ public interface NeedDAO {
 	
 	public List<Need> consultarNecesidadesPorUsuario() throws PersistenceException;
 	
+	public List<Need> consultarNecesidadesActivasOEnProceso() throws PersistenceException;
+	
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException;
 	
-	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException;
+	public void actualizarEstadoNecesidad(Need need, String state) throws PersistenceException;
 	
 	public void eliminarNecesidadPorId(int id) throws PersistenceException;
 	

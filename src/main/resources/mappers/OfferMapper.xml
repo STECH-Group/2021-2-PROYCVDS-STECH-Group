@@ -13,6 +13,10 @@
   	<select parameterType="map" id="searchInProcessOffers" resultMap="OfferResult">
 	    select * from offers where state = 'Activo' or state = 'En proceso' group by state order by modify_date desc
   	</select>
+  	
+  	<select parameterType="map" id="searchOffersByUser" resultMap="OfferResult">
+	    select * from offers where name = #{Name} order by modify_date desc
+  	</select>
   
   	<insert parameterType="map" id="newOffer">
 	   	insert into offers(id, category, name, description, creation_date, state, modify_date) values (nextval('id_Offers'), #{Cat}, #{Name}, #{Desc}, current_date, #{State}, current_date)

@@ -8,6 +8,7 @@ import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.entities.Category;
 import edu.eci.cvds.samples.entities.Need;
+import edu.eci.cvds.samples.entities.Offer;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -74,8 +75,8 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	}
 
 	@Override
-	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException {
-		needDAO.actualizarEstadoNecesidad(id, state);
+	public void actualizarEstadoNecesidad(Need need, String state) throws PersistenceException {
+		needDAO.actualizarEstadoNecesidad(need, state);
 	}
 
 	@Override
@@ -91,6 +92,46 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public List<Need> consultarNecesidadesPorUsuario() {
 		return needDAO.consultarNecesidadesPorUsuario();
+	}
+	
+	@Override
+	public List<Need> consultaNecesidadesActivasOEnProceso() {
+		return needDAO.consultarNecesidadesActivasOEnProceso();
+	}
+
+	@Override
+	public List<Offer> consultaOfertas() {
+		return offerDAO.consultarOfertas();
+	}
+
+	@Override
+	public List<Offer> consultaOfertasActivasOEnProceso() {
+		return offerDAO.consultarOfertasActivasOEnProceso();
+	}
+
+	@Override
+	public List<Offer> consultaOfertasPorUsuario() {
+		return offerDAO.consultarOfertasPorUsuario();
+	}
+
+	@Override
+	public void nuevaOferta(String category, String description, String state) throws PersistenceException {
+		offerDAO.nuevaOferta(category, description, state);
+	}
+
+	@Override
+	public void actualizarEstadoOferta(Offer offer, String state) throws PersistenceException {
+		offerDAO.actualizarEstadoOferta(offer, state);
+	}
+
+	@Override
+	public void eliminarOfertaPorId(int id) throws PersistenceException {
+		offerDAO.eliminarOfertaPorId(id);
+	}
+
+	@Override
+	public void eliminarOfertas() {
+		offerDAO.eliminarOfertas();
 	}
 
 }

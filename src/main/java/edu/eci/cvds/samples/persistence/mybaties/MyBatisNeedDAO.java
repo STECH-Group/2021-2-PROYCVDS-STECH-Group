@@ -32,9 +32,9 @@ public class MyBatisNeedDAO implements NeedDAO{
 	}
 	
 	@Override
-	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException{
+	public void actualizarEstadoNecesidad(Need need, String state) throws PersistenceException{
 		try {	
-			needMapper.updateStateNeed(id, state);
+			needMapper.updateStateNeed(need.getId(), state);
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("Error al actualizar la necesidad",e);
 		}
@@ -68,5 +68,10 @@ public class MyBatisNeedDAO implements NeedDAO{
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
 		}
+	}
+
+	@Override
+	public List<Need> consultarNecesidadesActivasOEnProceso() throws PersistenceException {
+		return needMapper.searchActiveOrInProcessNeeds();
 	}
 }

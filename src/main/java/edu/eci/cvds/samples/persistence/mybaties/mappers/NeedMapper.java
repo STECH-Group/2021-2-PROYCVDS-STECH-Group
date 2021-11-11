@@ -12,6 +12,8 @@ public interface NeedMapper {
 	
 	public List<Need> searchNeedsByUser(@Param ("Name") String name);
 	
+	public List<Need> searchActiveOrInProcessNeeds();
+	
 	public void registerNeed(@Param ("Cat") String category,
 			@Param ("Name") String name, 
 			@Param ("Desc") String description,

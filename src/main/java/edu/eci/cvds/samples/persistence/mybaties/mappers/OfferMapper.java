@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.bouncycastle.jcajce.provider.asymmetric.dsa.DSASigner.noneDSA;
 
+import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.entities.Offer;
 
 public interface OfferMapper {
@@ -12,6 +13,8 @@ public interface OfferMapper {
 	public List<Offer> searchOffers();
 	
 	public List<Offer> searchActiveOrInProcessOffers();
+	
+	public List<Offer> searchOffersByUser(@Param ("Name") String name);
 	
 	public void newOffer(@Param ("Cat") String category,
 			@Param ("Name") String name, 

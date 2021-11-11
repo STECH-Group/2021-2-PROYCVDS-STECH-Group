@@ -28,9 +28,24 @@ public interface ServicioSolidaridadECI {
 	
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException;
 	
-	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException;
+	public void actualizarEstadoNecesidad(Need need, String state) throws PersistenceException;
 	
 	public void eliminarNecesidadPorId(int id) throws PersistenceException;
 	
+	public List<Need> consultaNecesidadesActivasOEnProceso();
+	
+	public List<Offer> consultaOfertas();
+	
+	public List<Offer> consultaOfertasActivasOEnProceso();
+	
+	public List<Offer> consultaOfertasPorUsuario();
+	
+	public void nuevaOferta(String category, String description, String state) throws PersistenceException;
+	
+	public void actualizarEstadoOferta(Offer offer, String state) throws PersistenceException;
+	
+	public void eliminarOfertaPorId(int id) throws PersistenceException;
+	
+	public void eliminarOfertas();
 	
 }

@@ -42,9 +42,9 @@ public class MyBatisOfferDAO implements OfferDAO{
 	}
 
 	@Override
-	public void actualizarEstadoOferta(int id, String state) throws PersistenceException {
+	public void actualizarEstadoOferta(Offer offer, String state) throws PersistenceException {
 		try {	
-			offerMapper.updateStateOffer(id, state);
+			offerMapper.updateStateOffer(offer.getId(), state);
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("Error al actualizar la oferta",e);
 		}
@@ -63,6 +63,16 @@ public class MyBatisOfferDAO implements OfferDAO{
 	public void eliminarOfertas() {
 		offerMapper.deleteOffers();
 		offerMapper.restartSequenceOffers();
+	}
+
+	@Override
+	public List<Offer> consultarOfertasPorUsuario() throws PersistenceException {
+		try {
+			Subject user = SecurityUtils.getSubject();
+			return offerMapper.searchOffersByUser(user.getSession().getAttribute("name").toString());
+		} catch(PersistenceException e) {
+	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
+		}
 	}
 
 }
