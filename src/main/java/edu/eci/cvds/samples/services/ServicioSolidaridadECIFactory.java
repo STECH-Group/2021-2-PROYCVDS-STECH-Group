@@ -33,6 +33,7 @@ public class ServicioSolidaridadECIFactory {
 	               bind(CategoryDAO.class).to(MyBatisCategoryDAO.class);
 	               bind(UserDAO.class).to(MyBatisUserDAO.class);
 	               bind(NeedDAO.class).to(MyBatisNeedDAO.class);
+	               bind(OfferDAO.class).to(MyBatisOfferDAO.class);
 	           }
 	       });
 	   }
