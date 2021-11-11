@@ -57,12 +57,10 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	}
 	
 	public void registerNeed(String category, String description, int urgency, String state) {
-		System.out.println("Categoria " +category);
-		System.out.println("Descripcion " + description);
-		System.out.println("Urgencia " + urgency);
-		System.out.println("Estado  " + state);
-		
-		
+		System.out.println("Categoria " +category + "Tipo " + category.getClass());
+		System.out.println("Descripcion " + description + "Tipo " + description.getClass());
+		System.out.println("Urgencia " + urgency );
+		System.out.println("Estado  " + state + "Tipo " + state.getClass());
 		ssECI.registrarNecesidad(category, description, urgency, state);
 	}
 	

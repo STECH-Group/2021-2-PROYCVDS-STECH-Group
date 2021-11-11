@@ -20,9 +20,12 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Override
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
+			System.out.println("ANtes de crear el Subject ");
 			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Estudiante")) {
-				needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
+				System.out.println("Nombre usuario ¿null? " + user.getSession().getAttribute("name").toString() );
+				needMapper.registerNeed(category, "José Gamboa", description, urgency, state);
+				//needMapper.registerNeed(category, user.getSession().getAttribute("name").toString(), description, urgency, state);
 			} else {
 				throw new PersistenceException("El rol del usuario no tiene permiso para registrar una necesidad");
 			}
