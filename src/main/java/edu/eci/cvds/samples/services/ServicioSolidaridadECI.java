@@ -18,7 +18,7 @@ public interface ServicioSolidaridadECI {
 	
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws ExceptionServicioSolidaridadECI;
 	
-	public void limpiarCategorias();
+	public void limpiarTablas();
 	
 	public void eliminarCategoria(String name, int id);
 
@@ -27,8 +27,6 @@ public interface ServicioSolidaridadECI {
 	public void actualizarEstadoNecesidad(int id, String state) throws PersistenceException;
 	
 	public void eliminarNecesidadPorId(int id) throws PersistenceException;
-	
-	public void eliminarNecesidades();
 	
 	public List<Need> consultarNecesidades();
 	

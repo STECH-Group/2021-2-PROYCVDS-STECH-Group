@@ -24,4 +24,6 @@ public interface NeedMapper {
 	public void deleteNeedById(@Param ("Id") int idNeed);
 	
 	public void deleteNeeds();
+	
+	public void restartSequenceNeeds();
 }

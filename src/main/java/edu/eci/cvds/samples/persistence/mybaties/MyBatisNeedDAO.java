@@ -17,6 +17,8 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Inject
 	private NeedMapper needMapper;
 	
+	
+	
 	@Override
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
@@ -52,6 +54,7 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Override
 	public void eliminarNecesidades() {	
 		needMapper.deleteNeeds();
+		needMapper.restartSequenceNeeds();
 	}
 
 	@Override
@@ -68,5 +71,4 @@ public class MyBatisNeedDAO implements NeedDAO{
 	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
 		}
 	}
-	
 }

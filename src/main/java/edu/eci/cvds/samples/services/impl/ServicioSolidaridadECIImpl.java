@@ -48,8 +48,10 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	}
 
 	@Override
-	public void limpiarCategorias() {
+	public void limpiarTablas() {
 		categoryDAO.limpiarCategorias();
+		needDAO.eliminarNecesidades();
+		//offerDAO.eliminarOfertas();
 	}
 
 	@Override
@@ -76,11 +78,6 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public void eliminarNecesidadPorId(int id) throws PersistenceException {
 		needDAO.eliminarNecesidadPorId(id);
-	}
-
-	@Override
-	public void eliminarNecesidades() {
-		needDAO.eliminarNecesidades();	
 	}
 
 	@Override
