@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Reporte Necesidades</title>
+</h:head>
+<body>
+	<!-- / #main-header -->
+        <div class="titulo">
+            <h2>CATEGORIAS</h2>
+        </div>
+        <div class="panel consulta">
+            <p:dataTable var="need" value="#{usuarioBean.consultarNecesidades()}" paginator="true" selectionMode="single" selection="" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                
+				<p:column headerText="ID">
+                    <h:outputText value="#{need.getId()}" />
+                </p:column>
+				
+				<p:column headerText="CATEGORIA">
+                    <h:outputText value="#{need.getCategory().getName()}" />
+                </p:column>
+
+                <p:column headerText="NOMBRE">
+                    <h:outputText value="#{need.getName()}" />
+                </p:column>
+
+                <p:column headerText="DESCRIPCION">
+                    <h:outputText value="#{need.getDescription()}" />
+                </p:column>
+
+                <p:column headerText="FECHA CREACIÓN">
+                    <h:outputText value="#{need.getCreationDate()}" />
+                </p:column>
+
+                <p:column headerText="ESTADO">
+                    <h:outputText value="#{need.getState()}" />
+                </p:column>
+
+                <p:column headerText="FECHA MODIFICACIÓN">
+                    <h:outputText value="#{need.getModifyDate()}" />
+                </p:column>
+				
+				<p:column headerText="NOMBRE DE USUARIO">
+                    <h:outputText value="#{need.getUsername()}" />
+                </p:column>
+				
+				<f:facet name="footer">
+                    
+            	</f:facet>
+            </p:dataTable>
+        </div>
+		<p:chart type="pie" />
+    </h:form>
+</body>
+</html>
