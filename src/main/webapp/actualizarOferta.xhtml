@@ -22,34 +22,34 @@
             <h2>OFERTAS EXISTENTES</h2>
         </div>
         <div class="panel consulta">
-            <p:dataTable var="ofert" rows="10" value="#{usuarioBean.consultarOfertas()}" paginator="true" selectionMode="single" selection="" rowKey="#{ofert.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+            <p:dataTable var="offer" rows="10" value="#{usuarioBean.searchOffersByUser()}" paginator="true" selectionMode="single" selection="" rowKey="#{offer.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 <p:column headerText="ID">
-                    <h:outputText value="#{ofert.getId()}" />
+                    <h:outputText value="#{offer.getId()}" />
                 </p:column>
 
                 <p:column headerText="CATEGORIA">
-                    <h:outputText value="#{ofert.getCategory()}" />
+                    <h:outputText value="#{offer.getCategory()}" />
                 </p:column>
 
                 <p:column headerText="NOMBRE">
-                    <h:outputText value="#{ofert.getName()}" />
+                    <h:outputText value="#{offer.getName()}" />
                 </p:column>
 
                 <p:column headerText="DESCRIPCION">
-                    <h:outputText value="#{ofert.getDescription()}" />
+                    <h:outputText value="#{offer.getDescription()}" />
                 </p:column>
 
                 <p:column headerText="FECHA MODIFICACIÓN">
-                    <h:outputText value="#{ofert.getCreationDate()}" />
+                    <h:outputText value="#{offer.getCreationDate()}" />
                 </p:column>
 
                 <p:column headerText="ESTADO">
-                    <h:outputText value="#{ofert.getState()}" />
+                    <h:outputText value="#{offer.getState()}" />
                 </p:column>
 
                 <p:column headerText="FECHA MODIFICACIÓN">
-                    <h:outputText value="#{ofert.getModifyDate()}" />
+                    <h:outputText value="#{offer.getModifyDate()}" />
                 </p:column>
 
             </p:dataTable>
@@ -58,13 +58,13 @@
                 <h:outputText for="estado" value="Nuevo Estado:  " />
                 <p:selectOneMenu id="option" binding="#{state}">
                     <f:selectItem itemLabel="Seleccione " itemValue="" />
-                    <f:selectItem itemLabel="Activa" itemValue="Activa" />
+                    <f:selectItem itemLabel="Activo" itemValue="Activo" />
                     <f:selectItem itemLabel="En proceso" itemValue="En proceso" />
-                    <f:selectItem itemLabel="Resuelta" itemValue="Resuelta" />
-                    <f:selectItem itemLabel="Cerrada" itemValue="Cerrada" />
+                    <f:selectItem itemLabel="Resuelto" itemValue="Resuelto" />
+                    <f:selectItem itemLabel="Cerrado" itemValue="Cerrado" />
                 </p:selectOneMenu>
                 <f:facet name="footer">
-                    <p:commandButton id="boton_Actualizar" value="ACTUALIZAR" update="consultaroferta" styleClass="ui-button-secondary" /><br></br>
+                    <p:commandButton id="boton_Actualizar" actionListener="#{usuarioBean.updateStateOffer(state.value)}" value="ACTUALIZAR" update="consultaroferta" styleClass="ui-button-secondary" /><br></br>
                     <br></br>
                     <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
                 </f:facet>

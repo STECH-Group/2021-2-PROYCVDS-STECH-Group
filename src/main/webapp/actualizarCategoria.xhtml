@@ -26,8 +26,11 @@
                 <p:panel header="Ingrese los datos a actualizar">
                     <h:panelGrid columns="2" columnClasses="label, value">
 
-                        <h:outputText for="category_name" value="Anterior Nombre categoria: " />
-                        <p:inputText id="nombre1" type="String" binding="#{nameold}" required="true" />
+						<h:outputText for="category_name" value="Anterior Nombre categoria: " />
+                        <p:selectOneMenu id="categoria_name" binding="#{nameold}" required="true" >
+                            <f:selectItem itemLabel="Seleccione" itemValue="" />
+                            <f:selectItems value="#{administratorBean.searchActiveCategoryNames()}" />
+                        </p:selectOneMenu>
 
                         <h:outputText for="category_name" value="Nuevo Nombre categoria: " />
                         <p:inputText id="nombre" type="String" binding="#{name}" />

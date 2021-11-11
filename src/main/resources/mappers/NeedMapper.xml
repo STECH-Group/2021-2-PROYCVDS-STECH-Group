@@ -15,7 +15,7 @@
   	</select>
   	
   	<select parameterType="map" id="searchActiveOrInProcessNeeds" resultMap="NeedResult">
-	    select * from needs where state = 'Activo' or state = 'En proceso' group by state order by modify_date desc
+	    select * from needs where state = 'Activo' or state = 'En proceso' order by modify_date desc
   	</select>
 	
 	<insert parameterType="map" id="registerNeed">

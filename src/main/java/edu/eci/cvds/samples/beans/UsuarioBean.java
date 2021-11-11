@@ -41,6 +41,8 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	}
 	
 	public List<Need> searchNeedsByUser() {
+		//Si el rol es Administrador llamar a la de needs 
+		
 		return ssECI.consultarNecesidadesPorUsuario();
 	}
 	

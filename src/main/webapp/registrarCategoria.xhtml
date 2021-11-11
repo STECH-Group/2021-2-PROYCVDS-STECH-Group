@@ -35,8 +35,8 @@
                         <p:outputLabel value="Estado: *" />
                         <p:selectOneMenu id="option" binding="#{state}">
                             <f:selectItem itemLabel="Seleccione " itemValue="" />
-                            <f:selectItem itemLabel="Activa" itemValue="Activa" />
-                            <f:selectItem itemLabel="Inactiva" itemValue="Inactiva" />
+                            <f:selectItem itemLabel="Activo" itemValue="Activo" />
+                            <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
                         </p:selectOneMenu>
                     </h:panelGrid>
                     <p:commandButton id="boton_R" value="REGISTRAR" styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />

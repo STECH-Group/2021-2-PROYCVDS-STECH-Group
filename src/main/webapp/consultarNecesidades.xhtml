@@ -21,7 +21,7 @@
         </div>
 		<!--ESTA ES PARA REGISTRAR RESPUESTA A NECESIDADES, SE MUESTRAN *TODAS* LAS ACTIVAS -->
         <div class="consultarnecesidad">
-            <p:dataTable var="need" rows="10" value="#{usuarioBean.consultarNecesidades()}" paginator="true" selectionMode="single" selection="" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+            <p:dataTable var="need" rows="10" value="#{usuarioBean.searchActiveOrInProcessNeeds()}" paginator="true" selectionMode="single" selection="{usuarioBean.need}" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 <p:column headerText="CATEGORIA">
                     <h:outputText value="#{need.getCategory().getName()}" />
@@ -57,7 +57,6 @@
                     <p:commandButton id="boton_Regresar" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
             	</f:facet>
             </p:dataTable>
-
 		</div>
 	</h:form>
 </body>
