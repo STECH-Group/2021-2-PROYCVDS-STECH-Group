@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.persistence.mybaties;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
@@ -64,5 +65,15 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	@Override
 	public List<Category> consultarCategoriasActivas() {
 		return categoryMapper.searchActiveCategories();
+	}
+
+	@Override
+	public List<String> consultarNombresDeCategoriasActivas() {
+		List<Category> listaCategorias = categoryMapper.searchActiveCategoryNames();
+		List<String> lista = new ArrayList<String>() ; 
+		for (Category categoria : listaCategorias) {
+			 lista.add(categoria.getName());
+		}
+		return lista;
 	}
 }
