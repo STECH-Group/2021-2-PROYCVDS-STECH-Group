@@ -7,11 +7,11 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper">
 
 	<select parameterType="map" id="searchNeeds" resultMap="NeedResult">
-	    select * from users
+	    select * from needs order by state desc
   	</select>
   	
   	<select parameterType="map" id="searchNeedsByUser" resultMap="NeedResult">
-	    select * from users where name = #{Name}
+	    select * from needs where name = #{Name} order by state desc
   	</select>
 	
 	<insert parameterType="map" id="registerNeed">
