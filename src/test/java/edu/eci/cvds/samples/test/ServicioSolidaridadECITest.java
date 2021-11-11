@@ -65,7 +65,7 @@ public class ServicioSolidaridadECITest {
 	
 	@After
 	public void setUpAfter() {
-		ssECI.limpiarCategorias();
+		ssECI.limpiarTablas();
 	}
 
 }
