@@ -7,15 +7,29 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper">
 
 	<select parameterType="map" id="searchNeeds" resultMap="NeedResult">
-	    select * from needs order by state, modify_date desc
+	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
+	    n.state, n.modify_date from needs as n
+	    join categories as c on n.category = c.name 
+	    join users as u on n.name = u.name 
+	    order by n.state, n.modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchNeedsByUser" resultMap="NeedResult">
-	    select * from needs where name = #{Name} order by state, modify_date desc
+	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
+	    n.state, n.modify_date from needs as n
+	    join categories as c on n.category = c.name 
+	    join users as u on n.name = u.name 
+	    where u.name = #{Name} 
+	    order by n.state, n.modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchActiveOrInProcessNeeds" resultMap="NeedResult">
-	    select * from needs where state = 'Activo' or state = 'En proceso' order by modify_date desc
+	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
+	    n.state, n.modify_date from needs as n
+	    join categories as c on n.category = c.name 
+	    join users as u on n.name = u.name 
+	    where n.state = 'Activo' or n.state = 'En proceso' 
+	    order by n.modify_date desc
   	</select>
 	
 	<insert parameterType="map" id="registerNeed">

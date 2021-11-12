@@ -7,15 +7,29 @@
   <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.OfferMapper">
   
   	<select parameterType="map" id="searchOffers" resultMap="OfferResult">
-	    select * from offers group by state order by modify_date desc
+	    select o.id, o.category, o.name, o.description, o.creation_date,
+	    o.state, o.modify_date from offers as o
+	    join categories as c on o.category = c.name 
+	    join users as u on o.name = u.name 
+	    order by o.modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchInProcessOffers" resultMap="OfferResult">
-	    select * from offers where state = 'Activo' or state = 'En proceso' order by modify_date desc
+	    select o.id, o.category, o.name, o.description, o.creation_date,
+	    o.state, o.modify_date from offers as o
+	    join categories as c on o.category = c.name 
+	    join users as u on o.name = u.name 
+	    where o.state = 'Activo' or o.state = 'En proceso' 
+	    order by o.modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchOffersByUser" resultMap="OfferResult">
-	    select * from offers where name = #{Name} order by modify_date desc
+	    select o.id, o.category, o.name, o.description, o.creation_date,
+	    o.state, o.modify_date from offers as o
+	    join categories as c on o.category = c.name 
+	    join users as u on o.name = u.name 
+	    where u.name = #{Name} 
+	    order by modify_date desc
   	</select>
   
   	<insert parameterType="map" id="newOffer">
