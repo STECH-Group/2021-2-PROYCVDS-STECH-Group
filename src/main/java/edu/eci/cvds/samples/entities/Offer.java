@@ -6,13 +6,13 @@ import java.sql.Date;
 public class Offer implements Serializable{
 	private int id;
 	private Category category;
-	private String name;
+	private User name;
 	private String description;
 	private Date creationDate;
 	private String state;
 	private Date modifyDate;
 	
-	public Offer(int id, Category category, String name, String description, Date creationDate, String state,
+	public Offer(int id, Category category, User name, String description, Date creationDate, String state,
 			Date modifyDate) {
 		this.id = id;
 		this.category = category;
@@ -39,11 +39,11 @@ public class Offer implements Serializable{
 		this.category = category;
 	}
 	
-	public String getName() {
+	public User getName() {
 		return name;
 	}
 	
-	public void setName(String name) {
+	public void setName(User name) {
 		this.name = name;
 	}
 	
