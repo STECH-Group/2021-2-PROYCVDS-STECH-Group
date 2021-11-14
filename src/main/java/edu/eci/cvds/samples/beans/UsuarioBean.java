@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList; 
 
-import org.apache.ibatis.annotations.Param;
-
 import javax.faces.bean.*;
 import com.google.inject.Inject;
 

@@ -14,6 +14,8 @@ public interface CategoryDAO {
 	
 	public List<String> consultarNombresDeCategoriasActivas();
 	
+	public List<Category> consultarCategoriasPorNombre(String name);
+	
 	public void crearCategoria(String name, String description, String state) throws PersistenceException;
 	
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws PersistenceException;
@@ -21,6 +23,4 @@ public interface CategoryDAO {
 	public void limpiarCategorias();
 	
 	public void eliminarCategoria(String name, int id);
-	
-	
 }

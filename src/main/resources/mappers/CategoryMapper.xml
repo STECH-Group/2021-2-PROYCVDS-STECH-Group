@@ -18,7 +18,11 @@
 	    select name from categories where state = 'Activo'
   	</select>
 
-	<insert parameterType="map" id="newCategory">
+	<select parameterType="map" id="searchCategoriesByName" resultMap="CategoryResult">
+	    select * from categories where name = #{Name}
+  	</select>
+  	
+  	<insert parameterType="map" id="newCategory">
 	   	insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), #{Name}, #{desc}, current_date, #{State}, current_date)
 	</insert>
   
@@ -46,11 +50,9 @@
 	 	delete from categories where id = #{idCat};
 	 </delete>
 	 
-	  
 	 <update id="restartSequence">
 	 	alter sequence id_Categories restart with 1;
 	 </update>
-	  
 
 	<resultMap type='Category' id='CategoryResult'>
 		 <id property='id' column='id'/>

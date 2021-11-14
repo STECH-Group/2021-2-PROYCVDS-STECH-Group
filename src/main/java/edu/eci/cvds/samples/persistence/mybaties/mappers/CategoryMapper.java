@@ -2,6 +2,8 @@ package edu.eci.cvds.samples.persistence.mybaties.mappers;
 
 import java.util.List;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 import org.apache.ibatis.annotations.Param;
 
 import edu.eci.cvds.samples.entities.Category;
@@ -13,6 +15,8 @@ public interface CategoryMapper {
 	public List<Category> searchActiveCategories();
 	
 	public List<Category> searchActiveCategoryNames();
+
+	public List<Category> searchCategoriesByName(@Param ("Name") String name);
 	
 	public void newCategory(@Param ("Name") String name,
 							@Param ("desc") String description,
