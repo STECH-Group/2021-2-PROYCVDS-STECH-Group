@@ -26,7 +26,6 @@
             <p:tab id="personal" title="REGISTRAR OFERTA">
                 <p:panel header="Ingrese los datos a registrar">
                     <h:panelGrid columns="2" columnClasses="label, value">
-
                         <h:outputLabel for="descripcion" value="Descripcion:       " />
                         <p:inputTextarea rows="6" cols="30" id="descripcion" type="String" binding="#{descripcion}" />
 
@@ -48,8 +47,8 @@
 
                     </h:panelGrid>
                     <p:commandButton id="boton_R" value="REGISTRAR" update="Formato" styleClass="ui-button-secondary" style="float:center;" />
-                    <!-- colocar accion y actionListener -->
-                </p:panel>
+                    <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
+				</p:panel>
             </p:tab>
             <br></br>
         </div>

@@ -23,7 +23,7 @@
             <h2>REGISTRAR CATEGORIA</h2>
         </div>
         <div class="container">
-            <p:tab id="personal" title="NUEVA CATEGORIA">
+            <p:tab id="personal_category" title="NUEVA CATEGORIA">
                 <p:panel header="Información categoria">
                     <h:panelGrid columns="2" columnClasses="label, value">
                         <h:outputText for="category_name" value="Nombre categoria: *" />
@@ -39,10 +39,11 @@
                             <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
                         </p:selectOneMenu>
                     </h:panelGrid>
-                    <p:commandButton id="boton_R" value="REGISTRAR" styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />
-                    <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
+                    <p:commandButton id="boton_Registrar" value="REGISTRAR" styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />
+                    <p:commandButton id="boton_regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
                 </p:panel>
             </p:tab>
+			<br></br>
         </div>
     </h:form>
 </body>
