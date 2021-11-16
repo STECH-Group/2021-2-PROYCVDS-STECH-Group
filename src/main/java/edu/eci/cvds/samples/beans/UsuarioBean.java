@@ -43,7 +43,7 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	}
 	
 	public List<Need> searchNeedsByUser() {
-		//Si el rol es Administrador llamar a la de needs 
+		
 		List<Need> categories = new ArrayList<Need>();
 		Subject user = SecurityUtils.getSubject();
 		if (user.hasRole("Administrador")) {
