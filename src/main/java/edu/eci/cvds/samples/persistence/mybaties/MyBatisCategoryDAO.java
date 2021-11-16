@@ -76,4 +76,11 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 		}
 		return lista;
 	}
+
+	@Override
+	public List<Category> consultarCategoriasPorNombre(String name) {
+		return categoryMapper.searchCategoriesByName(name);
+	}
+	
+	
 }
