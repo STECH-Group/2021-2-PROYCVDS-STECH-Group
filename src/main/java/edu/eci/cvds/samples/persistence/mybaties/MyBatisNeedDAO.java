@@ -24,7 +24,6 @@ public class MyBatisNeedDAO implements NeedDAO{
 	@Override
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException {
 		try {	
-			System.out.println("Antes de crear el Subject ");
 			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Estudiante")) {
 				User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
