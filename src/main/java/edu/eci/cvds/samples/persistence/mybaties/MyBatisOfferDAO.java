@@ -9,13 +9,17 @@ import org.apache.shiro.subject.Subject;
 import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.entities.Offer;
+import edu.eci.cvds.samples.entities.User;
 import edu.eci.cvds.samples.persistence.OfferDAO;
-import edu.eci.cvds.samples.persistence.mybaties.mappers.OfferMapper;
+import edu.eci.cvds.samples.persistence.mybaties.mappers.*;
 
 public class MyBatisOfferDAO implements OfferDAO{
 	
 	@Inject
 	private OfferMapper offerMapper;
+	
+	@Inject
+	private UserMapper userMapper;
 
 	@Override
 	public List<Offer> consultarOfertas() {
@@ -34,7 +38,8 @@ public class MyBatisOfferDAO implements OfferDAO{
 			if (user.hasRole("Administrador")) {
 				throw new PersistenceException("El rol del usuario no tiene permiso para registrar una oferta");
 			} else {
-				offerMapper.newOffer(category, user.getSession().getAttribute("name").toString(), description, state);				
+				User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
+				offerMapper.newOffer(category, user2.getName(), description, state);				
 			}
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("Error al crear la oferta, la categoría no se esta activa o no está registrada",e);

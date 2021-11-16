@@ -7,7 +7,7 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.UserMapper">
 
 	<select parameterType="map" id="searchNameUserByMail" resultMap="UserResult">
-		select name from users where mail = #{Email};
+		select * from users where mail = #{Email};
   	</select>
 
 	<resultMap type='User' id='UserResult'>
