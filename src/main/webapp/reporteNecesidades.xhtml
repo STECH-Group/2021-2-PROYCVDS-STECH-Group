@@ -11,7 +11,7 @@
             <h2>CATEGORIAS</h2>
         </div>
         <div class="panel consulta">
-            <p:dataTable var="need" value="#{usuarioBean.consultarNecesidades()}" paginator="true" selectionMode="single" selection="" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+            <p:dataTable id="reporteNecesidad" var="need" value="#{usuarioBean.consultarNecesidades()}" paginator="true" selectionMode="single" selection="" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 
 				<p:column headerText="ID">
@@ -50,8 +50,15 @@
                     
             	</f:facet>
             </p:dataTable>
+			
         </div>
-		<p:chart type="pie" />
+		<p:chart type="pie" model="#{AdministradorBean.pieModel}" style="width:400px;height:300px"/>
+		<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2 ui-button-outlined">
+			<p:dataExporter type="xlsxstream" target="reporteNecesidad" fileName="ReporteNecesidad"/>
+		</p:commandButton>
+		<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2 ui-button-outlined">
+			<p:dataExporter type="pdf" target="reporteNecesidad" fileName="ReporteNecesidad"/>
+		</p:commandButton>
     </h:form>
 </body>
 </html>
