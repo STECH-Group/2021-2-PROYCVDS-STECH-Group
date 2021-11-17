@@ -47,6 +47,7 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	}
 	
 	public void deleteCategory() {
+		System.out.println("Esta es la categoria que da null  "+ getCategory().toString());
 		ssECI.eliminarCategoria(getCategory());
 	}
 	
