@@ -54,7 +54,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	public void eliminarCategoria(Category category) throws PersistenceException{
 		try{
 			if(category.getName().length() != 0) categoryMapper.deleteCategoryByName(category.getName());
-			//if(id != 0) categoryMapper.deleteCategoryById(id);
+			if(category.getId() != 0) categoryMapper.deleteCategoryById(category.getId());
 		}
         catch(PersistenceException e){
             throw new PersistenceException("Error al eliminar la categoría",e);
