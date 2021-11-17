@@ -74,7 +74,8 @@ public class MyBatisOfferDAO implements OfferDAO{
 	public List<Offer> consultarOfertasPorUsuario() throws PersistenceException {
 		try {
 			Subject user = SecurityUtils.getSubject();
-			return offerMapper.searchOffersByUser(user.getSession().getAttribute("name").toString());
+			User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
+			return offerMapper.searchOffersByUser(user2.getName());
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
 		}

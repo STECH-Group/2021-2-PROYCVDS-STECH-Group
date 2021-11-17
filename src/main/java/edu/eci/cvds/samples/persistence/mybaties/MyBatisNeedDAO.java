@@ -69,7 +69,8 @@ public class MyBatisNeedDAO implements NeedDAO{
 	public List<Need> consultarNecesidadesPorUsuario() throws PersistenceException{
 		try {
 			Subject user = SecurityUtils.getSubject();
-			return needMapper.searchNeedsByUser(user.getSession().getAttribute("name").toString());
+			User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
+			return needMapper.searchNeedsByUser(user2.getName());
 		} catch(PersistenceException e) {
 	        throw new PersistenceException("El usuario no se encuentra registrado en la base de datos",e);
 		}
