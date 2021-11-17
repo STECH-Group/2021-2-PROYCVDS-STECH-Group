@@ -46,7 +46,7 @@
                         </p:selectOneMenu>
 
                     </h:panelGrid>
-                    <p:commandButton id="boton_R" value="REGISTRAR" action="consultarOfertas?faces-redirect = true" actionListener="#{usuarioBean.newOffer(category.value,descripcion.value,state.value)}" styleClass="ui-button-secondary" style="float:center;" />
+                    <p:commandButton id="boton_R" value="REGISTRAR" action="actualizarNecesidad?faces-redirect = true" actionListener="#{usuarioBean.newOffer(category.value,descripcion.value,state.value)}" styleClass="ui-button-secondary" style="float:center;" />
                     <p:commandButton id="boton_Regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
 				</p:panel>
             </p:tab>
