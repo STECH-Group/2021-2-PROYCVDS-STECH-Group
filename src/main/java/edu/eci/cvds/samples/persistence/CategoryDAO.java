@@ -22,5 +22,5 @@ public interface CategoryDAO {
 	
 	public void limpiarCategorias();
 	
-	public void eliminarCategoria(String name, int id);
+	public void eliminarCategoria(Category category);
 }

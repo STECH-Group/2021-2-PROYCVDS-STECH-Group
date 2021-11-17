@@ -28,4 +28,5 @@ public interface NeedMapper {
 	public void deleteNeeds();
 	
 	public void restartSequenceNeeds();
+	
 }

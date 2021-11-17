@@ -7,15 +7,14 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper">
 
 	<select parameterType="map" id="searchNeeds" resultMap="NeedResult">
-	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
-	    n.state, n.modify_date from needs as n
-	    join categories as c on n.category = c.name 
-	    join users as u on n.name = u.name 
-	    order by n.state, n.modify_date desc
+	    select * from needs as n
+		join categories as c on n.category = c.name 
+		join users as u on n.name = u.name 
+		order by n.state, n.modify_date desc
   	</select>
   	
   	<select parameterType="map" id="searchNeedsByUser" resultMap="NeedResult">
-	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
+	    select n.id, c.name, u.name, n.description, n.urgency, n.creation_date,
 	    n.state, n.modify_date from needs as n
 	    join categories as c on n.category = c.name 
 	    join users as u on n.name = u.name 
@@ -24,8 +23,7 @@
   	</select>
   	
   	<select parameterType="map" id="searchActiveOrInProcessNeeds" resultMap="NeedResult">
-	    select n.id, n.category, n.name, n.description, n.urgency, n.creation_date,
-	    n.state, n.modify_date from needs as n
+	    select * from needs as n
 	    join categories as c on n.category = c.name 
 	    join users as u on n.name = u.name 
 	    where n.state = 'Activo' or n.state = 'En proceso' 

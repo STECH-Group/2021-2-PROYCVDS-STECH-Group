@@ -15,6 +15,7 @@ public class Main {
 		//ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().actualizarCategoria("Expresión Gráfica", "", "", "Inactivo");
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchCategories());
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchActiveCategoryNames());
+		System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().consultarNecesidades());
 		System.exit(0);
 	}
 }

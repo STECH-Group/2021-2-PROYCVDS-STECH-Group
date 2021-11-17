@@ -88,7 +88,6 @@ public class LoginBean implements Serializable{
     }
 	
 	public void redirect() {
-		System.out.println("Estoy en Redirect");
 		try {
 			Subject user = SecurityUtils.getSubject();
 			if (user.hasRole("Administrador")) {

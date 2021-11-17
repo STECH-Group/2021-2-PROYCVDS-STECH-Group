@@ -20,6 +20,7 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	private String name;
 	private String desc;
 	private String state;
+	private Category category;
 	
 	@Inject
 	private ServicioSolidaridadECI ssECI;
@@ -45,6 +46,10 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		ssECI.actualizarCategoria(oName, nName, desc, state);
 	}
 	
+	public void deleteCategory() {
+		ssECI.eliminarCategoria(getCategory());
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -67,5 +72,13 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }

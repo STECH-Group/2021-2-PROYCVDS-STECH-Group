@@ -48,14 +48,13 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	public void limpiarCategorias() {
 		categoryMapper.deleteAllCategories();
 		categoryMapper.restartSequence();
-		
 	}
 	
 	@Override
-	public void eliminarCategoria(String name, int id) throws PersistenceException{
+	public void eliminarCategoria(Category category) throws PersistenceException{
 		try{
-			if(name.length() != 0) categoryMapper.deleteCategoryByName(name);
-			if(id != 0) categoryMapper.deleteCategoryById(id);
+			if(category.getName().length() != 0) categoryMapper.deleteCategoryByName(category.getName());
+			//if(id != 0) categoryMapper.deleteCategoryById(id);
 		}
         catch(PersistenceException e){
             throw new PersistenceException("Error al eliminar la categoría",e);

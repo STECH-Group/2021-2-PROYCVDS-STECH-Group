@@ -22,7 +22,7 @@ public interface ServicioSolidaridadECI {
 	
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws ExceptionServicioSolidaridadECI;
 	
-	public void eliminarCategoria(String name, int id);
+	public void eliminarCategoria(Category category);
 
 	public List<Need> consultarNecesidades();
 	
