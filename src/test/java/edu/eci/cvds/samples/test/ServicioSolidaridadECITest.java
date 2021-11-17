@@ -98,7 +98,7 @@ public class ServicioSolidaridadECITest {
 		ssECI.actualizarCategoria("Electronica", "", "", "Inactivo");
 		Assert.assertEquals("Category [id=2, name=Electronica, description=Implmentos de electronica, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
 	}
-	
+	/**
 	@Test
 	public void deberiaEliminarCategoriasPorNombre() {
 		ssECI.eliminarCategoria("Laboratorios", 0);
@@ -110,7 +110,7 @@ public class ServicioSolidaridadECITest {
 		ssECI.eliminarCategoria("", 2);
 		Assert.assertEquals("[]", ssECI.searchCategoriesByName("Electronica").toString());
 	}
-	
+	*/
 	@Test
 	public void deberiaConsultarNecesidades() {
 		System.out.println();
