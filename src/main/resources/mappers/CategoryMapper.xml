@@ -7,19 +7,40 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.CategoryMapper">
 
 	<select parameterType="map" id="searchCategories" resultMap="CategoryResult">
-	    select * from categories
+	    select
+	    c.id as c_id,
+	    c.name as c_name,
+	    c.description as a_description,
+	    c.creation_date as c_creation_date,
+	    c.state as c_state,
+	    c.modify_date as c_modify_date
+	    from categories c
   	</select>
   	
   	<select parameterType="map" id="searchActiveCategories" resultMap="CategoryResult">
-	    select * from categories where state = 'Activo'
+	    select
+	    c.id as c_id,
+	    c.name as c_name,
+	    c.description as a_description,
+	    c.creation_date as c_creation_date,
+	    c.state as c_state,
+	    c.modify_date as c_modify_date
+	    from categories c where c.state = 'Activo'
   	</select>
   	
   	<select parameterType="map" id="searchActiveCategoryNames" resultMap="CategoryResult">
-	    select name from categories where state = 'Activo'
+	    select c.name as c_name from categories c where c.state = 'Activo'
   	</select>
 
 	<select parameterType="map" id="searchCategoriesByName" resultMap="CategoryResult">
-	    select * from categories where name = #{Name}
+	    select
+	    c.id as c_id,
+	    c.name as c_name,
+	    c.description as a_description,
+	    c.creation_date as c_creation_date,
+	    c.state as c_state,
+	    c.modify_date as c_modify_date
+	    from categories c where c.name = #{Name}
   	</select>
   	
   	<insert parameterType="map" id="newCategory">
@@ -55,12 +76,12 @@
 	 </update>
 
 	<resultMap type='Category' id='CategoryResult'>
-		 <id property='id' column='id'/>
-		 <result property='name' column='name'/>
-		 <result property='description' column='description'/>
-		 <result property='creationDate' column='creation_date'/>
-		 <result property='state' column='state'/>
-		 <result property='modifyDate' column='modify_date'/>
+		 <id property='id' column='c_id'/>
+		 <result property='name' column='c_name'/>
+		 <result property='description' column='c_description'/>
+		 <result property='creationDate' column='c_creation_date'/>
+		 <result property='state' column='c_state'/>
+		 <result property='modifyDate' column='c_modify_date'/>
 	</resultMap>
   
 </mapper>  

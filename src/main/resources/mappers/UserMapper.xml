@@ -7,15 +7,17 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.UserMapper">
 
 	<select parameterType="map" id="searchNameUserByMail" resultMap="UserResult">
-		select * from users where mail = #{Email};
+		select
+		u.name as u_name,
+		from users u where u.mail = #{Email};
   	</select>
 
 	<resultMap type='User' id='UserResult'>
-		 <id property='userName' column='user_name'/>
-		 <result property='name' column='name'/>
-		 <result property='mail' column='mail'/>
-		 <result property='passwd' column='passwd'/>
-		 <result property='rol' column='rol'/>
+		 <id property='userName' column='u_user_name'/>
+		 <result property='name' column='u_name'/>
+		 <result property='mail' column='u_mail'/>
+		 <result property='passwd' column='u_passwd'/>
+		 <result property='rol' column='u_rol'/>
 	</resultMap>
   
 </mapper>
