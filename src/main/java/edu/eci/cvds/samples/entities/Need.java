@@ -6,15 +6,15 @@ import java.sql.Date;
 public class Need implements Serializable{
 	
 	private int id;
-	private Category category;
-	private User name;
+	private String category;
+	private String name;
 	private String description;
 	private int urgency;
 	private Date creationDate;
 	private String state;
 	private Date modifyDate;
 	
-	public Need(int id, Category category, User name, String description, int urgency, Date creationDate,
+	public Need(int id, String category, String name, String description, int urgency, Date creationDate,
 			String state, Date modifyDate) {
 		this.id = id;
 		this.category = category;
@@ -34,19 +34,19 @@ public class Need implements Serializable{
 		this.id = id;
 	}
 
-	public Category getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
-	public User getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(User name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
