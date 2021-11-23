@@ -23,8 +23,16 @@
   	</select>
   	
   	<select parameterType="map" id="searchNeedsByUser" resultMap="NeedResult">
-	    select n_id, c_name, u_name, n_description, n_urgency, n_creation_date,
-	    n_state, n_modify_date from needs as n
+	    select 
+	    n.id as n_id, 
+	    c.name as c_name, 
+	    u.name as u_name, 
+	    n.description as n_description, 
+	    n.urgency as n_urgency, 
+	    n.creation_date as n_creation_date,
+	    n.state as n_state, 
+	    n.modify_date as n_modify_date 
+	    from needs as n
 	    join categories as c on n.category = c.name 
 	    join users as u on n.name = u.name 
 	    where u.name = #{Name} 

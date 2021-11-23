@@ -8,7 +8,7 @@
 
 	<select parameterType="map" id="searchNameUserByMail" resultMap="UserResult">
 		select
-		u.name as u_name,
+		u.name as u_name
 		from users u where u.mail = #{Email};
   	</select>
 
