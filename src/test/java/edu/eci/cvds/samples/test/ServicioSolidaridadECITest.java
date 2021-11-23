@@ -2,6 +2,7 @@ package edu.eci.cvds.samples.test;
 
 import java.time.LocalDate;
 
+import org.bouncycastle.operator.AADProcessor;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,6 +10,7 @@ import org.junit.Test;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.samples.entities.Category;
 import edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -62,7 +64,7 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaConsultarCategoriasPorNombre() {
-		Assert.assertEquals("Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategoriesByName("Textos").get(0).toString());
+		Assert.assertEquals("Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategoryByName("Textos").toString());
 	}
 	
 	@Test
@@ -98,19 +100,22 @@ public class ServicioSolidaridadECITest {
 		ssECI.actualizarCategoria("Electronica", "", "", "Inactivo");
 		Assert.assertEquals("Category [id=2, name=Electronica, description=Implmentos de electronica, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategories().get(1).toString());
 	}
-	/**
+	
 	@Test
 	public void deberiaEliminarCategoriasPorNombre() {
-		ssECI.eliminarCategoria("Laboratorios", 0);
-		Assert.assertEquals("[]", ssECI.searchCategoriesByName("Laboratorios").toString());
+		//ssECI.eliminarCategoria("Laboratorios", 0);
+		Category categoria = ssECI.searchCategoryByName("Laboratorios");
+		ssECI.eliminarCategoria(categoria);
+		Assert.assertEquals("[]", ssECI.searchCategoryByName("Laboratorios").toString());
 	}
 	
+	/*
 	@Test
 	public void deberiaEliminarCategoriasPorId() {
 		ssECI.eliminarCategoria("", 2);
 		Assert.assertEquals("[]", ssECI.searchCategoriesByName("Electronica").toString());
-	}
-	*/
+	}*/
+	
 	@Test
 	public void deberiaConsultarNecesidades() {
 		System.out.println();
