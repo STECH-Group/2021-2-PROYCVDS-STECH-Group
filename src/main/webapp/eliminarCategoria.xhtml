@@ -36,7 +36,7 @@
 				<h:outputText value="#{category1.name}" />
 			</p:column>
 
-			<p:column headerText="DESCRIPCION">
+			<p:column headerText="DESCRIPCIÓN">
 				<h:outputText value="#{category1.description}" />
 			</p:column>
 
@@ -53,10 +53,10 @@
 			</p:column>
 			
 			<f:facet name="footer">
-				<p:commandButton id = "boton_Continuar" actionListener ="#{administratorBean.deleteCategory}" action ="consultarCategoria?faces-redirect = true" value="ELIMINAR" styleClass="ui-button-secondary" />
+				<p:commandButton id = "boton_eliminar" actionListener ="#{administratorBean.deleteCategory}" update="eliminarCategoria"  value="ELIMINAR" styleClass="ui-button-secondary" />
 				<br></br>
 				<br></br>
-				<p:commandButton id = "boton_Regresar" value ="REGRESAR" actionListener ="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
+				<p:commandButton id = "boton_Regresar" value ="REGRESAR" actionListener ="#{loginBean.redirect()}" styleClass="ui-button-secondary" />	
 			</f:facet>
 		</p:dataTable>
 	</div>

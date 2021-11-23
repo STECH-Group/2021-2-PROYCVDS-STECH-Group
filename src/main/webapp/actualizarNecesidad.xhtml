@@ -26,7 +26,7 @@
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
 
                 <p:column headerText="CATEGORIA">
-                    <h:outputText value="#{need.getCategory().getName()}" />
+                    <h:outputText value="#{need.getCategory()}" />
                 </p:column>
 
                 <p:column headerText="NOMBRE">
@@ -38,8 +38,8 @@
                 </p:column>
 
                 <p:column headerText="URGENCIA">
-                    <!--h:outputText value="#{need.getUrgency()}" /-->
-                    <p:rating value="#{need.getUrgency()}" />
+                    
+                    <p:rating value="#{need.urgency}" />
                 </p:column>
 
                 <p:column headerText="FECHA CREACIÓN">
