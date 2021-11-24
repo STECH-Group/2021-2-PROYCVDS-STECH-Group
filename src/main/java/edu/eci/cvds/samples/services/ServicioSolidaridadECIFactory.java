@@ -2,16 +2,9 @@ package edu.eci.cvds.samples.services;
 
 import static com.google.inject.Guice.createInjector;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Optional;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.guice.XMLMyBatisModule;
-import org.mybatis.guice.datasource.helper.JdbcHelper;
-
 import com.google.inject.Injector;
 
 import edu.eci.cvds.samples.persistence.*;
@@ -34,6 +27,8 @@ public class ServicioSolidaridadECIFactory {
 	               bind(UserDAO.class).to(MyBatisUserDAO.class);
 	               bind(NeedDAO.class).to(MyBatisNeedDAO.class);
 	               bind(OfferDAO.class).to(MyBatisOfferDAO.class);
+	               bind(AnswerNeedDAO.class).to(MyBatisAnswerNeedDAO.class);
+		           bind(AnswerOfferDAO.class).to(MyBatisAnswerOfferDAO.class);
 	           }
 	       });
 	   }

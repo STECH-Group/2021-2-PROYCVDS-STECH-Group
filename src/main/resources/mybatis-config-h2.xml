@@ -9,6 +9,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
        <typeAlias type="edu.eci.cvds.samples.entities.Category" alias="Category"/>
        <typeAlias type="edu.eci.cvds.samples.entities.Need" alias="Need"/>
        <typeAlias type="edu.eci.cvds.samples.entities.Offer" alias="Offer"/>
+       <typeAlias type="edu.eci.cvds.samples.entities.AnswerNeed" alias="AnswerNeed"/>
+       <typeAlias type="edu.eci.cvds.samples.entities.AnswerOffer" alias="AnswerOffer"/>
    </typeAliases>
 
    <environments default="test">
@@ -28,6 +30,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
        <mapper resource="mappers/CategoryMapper.xml"></mapper>
        <mapper resource="mappers/NeedMapper.xml"></mapper> 
        <mapper resource="mappers/OfferMapper.xml"></mapper>
+       <mapper resource="mappers/AnswerNeedMapper.xml"></mapper>
+       <mapper resource="mappers/AnswerOfferMapper.xml"></mapper>
    </mappers> 
 
 </configuration>
