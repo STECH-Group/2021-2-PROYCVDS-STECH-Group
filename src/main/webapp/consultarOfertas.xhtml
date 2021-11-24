@@ -21,7 +21,7 @@
             <h2>OFERTAS EXISTENTES</h2>
         </div>
         <div class="panel consulta">
-            <p:dataTable var="ofert" rows="6" value="#{usuarioBean.searchOffersByUser()}" paginator="true" selectionMode="single" selection="{usuarioBean.offfer}" rowKey="#{ofert.id}" 
+            <p:dataTable var="ofert" rows="6" value="#{usuarioBean.searchActiveOrInProcessOffers()}" paginator="true" selectionMode="single" selection="{usuarioBean.offfer}" rowKey="#{ofert.id}" 
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 <p:column headerText="ID">
                     <h:outputText value="#{ofert.getId()}" />
