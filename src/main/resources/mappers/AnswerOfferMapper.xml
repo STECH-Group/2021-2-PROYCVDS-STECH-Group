@@ -7,7 +7,7 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.AnswerOfferMapper">
 
 	<insert parameterType="map" id="regiterAnswerOffer">
-	   	insert into needs(id, name, response, creation_date, offer) values (nextval('id_Answers_Offers'), #{name}, #{resp}, current_date, #{offer.id})
+	   	insert into answers_offers(id, name, response, creation_date, offer) values (nextval('id_Answers_Offers'), #{name}, #{resp}, current_date, #{offer.id})
 	</insert>
 	 
 	 <delete id="deleteAnswersOffers">
