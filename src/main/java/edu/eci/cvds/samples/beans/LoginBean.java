@@ -32,9 +32,8 @@ public class LoginBean implements Serializable{
 			redirect();
 			setLogeado(true);
 		} catch (UnknownAccountException ex) {
-			FacesMessage errorMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "El usuario no se encuentra registrado", null);
-			FacesContext.getCurrentInstance().addMessage("formulario_login:javaText", errorMessage);
-            error("Unknown account");
+			String errorMessage = "El usuario no se encuentra registrado";
+            error(errorMessage);
             log.error(ex.getMessage(), ex);
         } catch (IncorrectCredentialsException ex) {
             error("Wrong password");
@@ -73,7 +72,7 @@ public class LoginBean implements Serializable{
 	}
 	
 	private void error(String message) {
-        FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "error"));
+        FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intente de nuevo: ", message));
     }
 
 	public void logOut() {
