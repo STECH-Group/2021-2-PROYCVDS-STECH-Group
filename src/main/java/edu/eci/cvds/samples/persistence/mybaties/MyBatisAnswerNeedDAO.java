@@ -23,7 +23,7 @@ public class MyBatisAnswerNeedDAO implements AnswerNeedDAO{
 	public void registrarRespuestaNecesidad(String respuesta, Need necesidad) {
 		Subject user = SecurityUtils.getSubject();
 		User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
-		an.regiterAnswerNeed(user2.getName(), respuesta, necesidad);
+		an.regiterAnswerNeed(user2.getName(), respuesta, necesidad.getId());
 	}
 
 	@Override

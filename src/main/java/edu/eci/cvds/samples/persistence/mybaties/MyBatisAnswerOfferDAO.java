@@ -23,7 +23,7 @@ public class MyBatisAnswerOfferDAO implements AnswerOfferDAO{
 	public void registrarRespuestaOferta(String respuesta, Offer oferta) {
 		Subject user = SecurityUtils.getSubject();
 		User user2 = userMapper.searchNameUserByMail(user.getSession().getAttribute("mail").toString());
-		ao.regiterAnswerOffer(user2.getName(), respuesta, oferta);
+		ao.regiterAnswerOffer(user2.getName(), respuesta, oferta.getId());
 	}
 
 	@Override

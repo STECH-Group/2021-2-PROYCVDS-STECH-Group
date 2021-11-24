@@ -8,7 +8,7 @@ public interface AnswerOfferMapper {
 	
 	public void regiterAnswerOffer(@Param ("name") String name,
 																@Param ("resp") String response,
-																@Param ("offer") Offer offer);
+																@Param ("offer") int offer);
 	
 	public void deleteAnswersOffers();
 	

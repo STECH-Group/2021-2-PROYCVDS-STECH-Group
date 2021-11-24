@@ -8,7 +8,7 @@ public interface AnswerNeedMapper {
 	
 	public void regiterAnswerNeed(@Param ("name") String name,
 																@Param ("resp") String response,
-																@Param ("need") Need need);
+																@Param ("need") int need);
 	
 	public void deleteAnswersNeeds();
 	
