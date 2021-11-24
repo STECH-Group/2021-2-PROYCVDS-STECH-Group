@@ -37,12 +37,15 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		return ssECI.searchActiveCategoryNames();
 	}
 	
+	public List<String> searchCategoryNames(){
+		return ssECI.searchCategoryNames();
+	}
+	
 	public void newCategory(String name, String desc, String state) throws ExceptionServicioSolidaridadECI {
 		ssECI.crearNuevaCategoria(name, desc, state);
 	}
 	
 	public void updateCategory(String oName, String nName, String desc, String state) throws ExceptionServicioSolidaridadECI {
-		
 		ssECI.actualizarCategoria(oName, nName, desc, state);
 	}
 	

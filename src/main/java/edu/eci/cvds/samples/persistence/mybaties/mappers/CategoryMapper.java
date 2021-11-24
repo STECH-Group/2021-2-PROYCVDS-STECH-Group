@@ -15,6 +15,8 @@ public interface CategoryMapper {
 	public List<Category> searchActiveCategories();
 	
 	public List<Category> searchActiveCategoryNames();
+	
+	public List<Category> searchCategoryNames();
 
 	public List<Category> searchCategoriesByName(@Param ("Name") String name);
 	

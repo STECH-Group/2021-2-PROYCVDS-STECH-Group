@@ -3,6 +3,9 @@ package edu.eci.cvds.samples.persistence.mybaties;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 import org.apache.ibatis.exceptions.PersistenceException;
 
 import com.google.inject.Inject;
@@ -22,6 +25,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 		categoryMapper.newCategory(name, description, state);
 		}
 		catch(PersistenceException e) {
+			FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intente de nuevo: ", "Error al crear la categoria, el nombre ya se encuentra en uso"));
             throw new PersistenceException("Error al crear la categoria, el nombre ya esta en uso",e);
 		}
 	}
@@ -35,6 +39,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 			if(nName.length() != 0) categoryMapper.updateCategoryName(oName, nName);
 		}
         catch(PersistenceException e){
+        	FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intente de nuevo: ", "Error al crear la categoria, el nombre ya se encuentra en uso"));
             throw new PersistenceException("Error al actualizar la categoría",e);
         }
 	}
@@ -81,5 +86,14 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 		return categoryMapper.searchCategoriesByName(name);
 	}
 	
+	@Override
+	public List<String> consultarNombresDeCategorias(){
+		List<Category> listaCategorias = categoryMapper.searchCategoryNames();
+		List<String> lista = new ArrayList<String>() ; 
+		for (Category categoria : listaCategorias) {
+			 lista.add(categoria.getName());
+		}
+		return lista;
+	}
 	
 }

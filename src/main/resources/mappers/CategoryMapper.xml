@@ -31,6 +31,10 @@
   	<select parameterType="map" id="searchActiveCategoryNames" resultMap="CategoryResult">
 	    select c.name as c_name from categories c where c.state = 'Activo'
   	</select>
+  	
+  	<select parameterType="map" id="searchCategoryNames" resultMap="CategoryResult">
+	    select c.name as c_name from categories c
+  	</select>
 
 	<select parameterType="map" id="searchCategoriesByName" resultMap="CategoryResult">
 	    select

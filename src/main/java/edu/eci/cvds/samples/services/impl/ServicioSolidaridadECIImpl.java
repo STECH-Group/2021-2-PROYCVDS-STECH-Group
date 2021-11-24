@@ -72,6 +72,11 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	}
 	
 	@Override
+	public List<String> searchCategoryNames(){
+		return categoryDAO.consultarNombresDeCategorias();
+	}
+	
+	@Override
 	public List<Category> searchCategoriesByName(String name) {
 		return categoryDAO.consultarCategoriasPorNombre(name);
 	}

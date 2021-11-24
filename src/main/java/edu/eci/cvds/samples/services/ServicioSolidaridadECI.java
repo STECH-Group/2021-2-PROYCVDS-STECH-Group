@@ -16,6 +16,8 @@ public interface ServicioSolidaridadECI {
 	
 	public List<String> searchActiveCategoryNames();
 	
+	public List<String> searchCategoryNames();
+	
 	public List<Category> searchCategoriesByName(String name);
 	
 	public void crearNuevaCategoria(String name, String description, String state) throws ExceptionServicioSolidaridadECI;

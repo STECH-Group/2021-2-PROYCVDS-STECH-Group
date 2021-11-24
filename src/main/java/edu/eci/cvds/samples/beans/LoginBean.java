@@ -36,13 +36,16 @@ public class LoginBean implements Serializable{
             error(errorMessage);
             log.error(ex.getMessage(), ex);
         } catch (IncorrectCredentialsException ex) {
-            error("Wrong password");
+        	String errorMessage = "La contraseña que ingreso no es correcta";
+            error(errorMessage);
             log.error(ex.getMessage(), ex);
         } catch (LockedAccountException ex) {
-            error("Locked account");
+        	String errorMessage = "El usuario esta deshabilitado para el ingreso";
+            error(errorMessage);
             log.error(ex.getMessage(), ex);
         } catch (AuthenticationException ex) {
-            error("Unknown error: "+ex.getMessage());
+        	String errorMessage = "Error inesperado";
+            error(errorMessage);
             log.error(ex.getMessage(), ex);
         }
 	}
