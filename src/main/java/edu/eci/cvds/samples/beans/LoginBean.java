@@ -75,13 +75,10 @@ public class LoginBean implements Serializable{
     }
 
 	public void logOut() {
-		System.out.println("Estoy en LogOut");
 		setLogeado(false);
 		SecurityUtils.getSubject().logout();
-        System.out.println("Usuario deslogueado");
 		try {
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/login.xhtml");
-			System.out.println("Me estoy redirigiendo en LogOut");
 		} catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -47,7 +47,7 @@ public class ServicioSolidaridadECITest {
 
 	@Test
 	public void deberiaConsultarCategorias() {
-		//System.out.println();
+		System.out.println();
 		//System.out.println(ssECI.searchCategories().toString());
 		Assert.assertEquals(5, ssECI.searchCategories().size());
 	}
@@ -64,7 +64,7 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaConsultarCategoriasPorNombre() {
-		Assert.assertEquals("Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategoryByName("Textos").toString());
+		Assert.assertEquals("Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t", ssECI.searchCategoriesByName("Textos").get(0).toString());
 	}
 	
 	@Test
@@ -102,19 +102,11 @@ public class ServicioSolidaridadECITest {
 	}
 	
 	@Test
-	public void deberiaEliminarCategoriasPorNombre() {
-		//ssECI.eliminarCategoria("Laboratorios", 0);
-		Category categoria = ssECI.searchCategoryByName("Laboratorios");
+	public void deberiaEliminarCategorias() {
+		Category categoria = ssECI.searchCategoriesByName("Electronica").get(0);
 		ssECI.eliminarCategoria(categoria);
-		Assert.assertEquals("[]", ssECI.searchCategoryByName("Laboratorios").toString());
-	}
-	
-	/*
-	@Test
-	public void deberiaEliminarCategoriasPorId() {
-		ssECI.eliminarCategoria("", 2);
 		Assert.assertEquals("[]", ssECI.searchCategoriesByName("Electronica").toString());
-	}*/
+	}
 	
 	@Test
 	public void deberiaConsultarNecesidades() {

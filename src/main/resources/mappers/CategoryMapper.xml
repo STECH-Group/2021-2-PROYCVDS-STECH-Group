@@ -10,7 +10,7 @@
 	    select
 	    c.id as c_id,
 	    c.name as c_name,
-	    c.description as a_description,
+	    c.description as c_description,
 	    c.creation_date as c_creation_date,
 	    c.state as c_state,
 	    c.modify_date as c_modify_date
@@ -21,7 +21,7 @@
 	    select
 	    c.id as c_id,
 	    c.name as c_name,
-	    c.description as a_description,
+	    c.description as c_description,
 	    c.creation_date as c_creation_date,
 	    c.state as c_state,
 	    c.modify_date as c_modify_date
@@ -36,7 +36,7 @@
 	    select
 	    c.id as c_id,
 	    c.name as c_name,
-	    c.description as a_description,
+	    c.description as c_description,
 	    c.creation_date as c_creation_date,
 	    c.state as c_state,
 	    c.modify_date as c_modify_date
