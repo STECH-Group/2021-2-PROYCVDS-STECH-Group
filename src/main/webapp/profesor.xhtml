@@ -25,12 +25,13 @@
         <div class="container">
             <p:panelMenu style="width:500px">
                 <p:submenu label="Necesidad">
-                    <p:menuitem value="Registrar respuesta a necesidad" icon="pi pi-book" />
+                    <p:menuitem value="Registrar respuesta a necesidad" icon="pi pi-book" action="consultarNecesidades?faces-redirect = true" />
                 </p:submenu>
                 <p:submenu label="Oferta">
                     <p:menuitem value="Registrar oferta" icon="pi pi-book" action="registrarOferta?faces-redirect = true" />
-                    <p:menuitem value="Registrar respuesta a oferta" icon="pi pi-book" />
-                    <p:menuitem value="Actualizar estado oferta" action="actualizarOferta?faces-redirect = true" icon="pi pi-pencil" />
+                    <p:menuitem value="Registrar respuesta a oferta" icon="pi pi-book" action="consultarOfertas?faces-redirect = true"  />
+                    <p:menuitem value="Consultar respuestas a ofertas" icon="pi pi-book"  />
+                    <p:menuitem value="Actualizar estado oferta" icon="pi pi-pencil" action="actualizarOferta?faces-redirect = true" />
                 </p:submenu>
                 <p:submenu label="Reportes">
                     <p:menuitem value="Reporte necesidad" icon="pi pi-chart-bar" />

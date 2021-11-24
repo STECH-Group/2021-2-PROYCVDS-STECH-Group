@@ -21,35 +21,36 @@
         </div>
 		<!--ESTA ES PARA REGISTRAR RESPUESTA A NECESIDADES, SE MUESTRAN *TODAS* LAS ACTIVAS -->
         <div class="consultarnecesidad">
-            <p:dataTable var="need" rows="10" value="#{usuarioBean.searchActiveOrInProcessNeeds()}" paginator="true" selectionMode="single" selection="{usuarioBean.need}" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+            <p:dataTable var="need1" rows="10" value="#{usuarioBean.searchActiveOrInProcessNeeds()}" paginator="true" selectionMode="single" 
+                selection="#{usuarioBean.need}" rowKey="#{need1.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                 currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
                 <p:column headerText="CATEGORIA">
-                    <h:outputText value="#{need.getCategory()}" />
+                    <h:outputText value="#{need1.getCategory()}" />
                 </p:column>
 
                 <p:column headerText="NOMBRE">
-                    <h:outputText value="#{need.getName()}" />
+                    <h:outputText value="#{need1.getName()}" />
                 </p:column>
 
                 <p:column headerText="DESCRIPCION">
-                    <h:outputText value="#{need.getDescription()}" />
+                    <h:outputText value="#{need1.getDescription()}" />
                 </p:column>
 
                 <p:column headerText="URGENCIA">
                     <!--h:outputText value="#{need.getUrgency()}" /-->
-                    <p:rating value="#{need.getUrgency()}" />
+                    <p:rating value="#{need1.urgency}" />
                 </p:column>
 
                 <p:column headerText="FECHA CREACIÓN">
-                    <h:outputText value="#{need.getCreationDate()}" />
+                    <h:outputText value="#{need1.getCreationDate()}" />
                 </p:column>
 
                 <p:column headerText="ESTADO">
-                    <h:outputText value="#{need.getState()}" />
+                    <h:outputText value="#{need1.getState()}" />
                 </p:column>
 
                 <p:column headerText="FECHA MODIFICACIÓN">
-                    <h:outputText value="#{need.getModifyDate()}" />
+                    <h:outputText value="#{need1.getModifyDate()}" />
                 </p:column>
 				<f:facet name="footer">
                     <p:commandButton id="boton_Actualizar" value="RESPONDER" action="registrarRespuesta?faces-redirect = true" styleClass="ui-button-secondary" /><br></br>

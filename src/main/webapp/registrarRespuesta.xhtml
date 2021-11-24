@@ -32,8 +32,9 @@
 							<h:outputText for="comentarios" value="Comentarios: " />
 							<p:inputTextarea rows="6" cols="30" id="comentarios" type="String" binding="#{comentarios}" />
                         </h:panelGrid>
-						<p:commandButton id="boton_R" value = "REGISTRAR"  update="Formato" styleClass="ui-button-secondary"
-						style="float:center;" /> <!-- colocar accion y actionListener -> Solo se guardo comentario-->
+                        <br></br>
+						<p:commandButton id="boton_R" value = "REGISTRAR" actionListener="#{usuarioBean.registrarRespuesta(comentarios.value)}" action="#{loginBean.redirect()}" styleClass="ui-button-secondary"
+						style="float:center;" /><br></br>
 						<p:commandButton id="boton_Regresar" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />   	 
                      </p:panel>
 						
