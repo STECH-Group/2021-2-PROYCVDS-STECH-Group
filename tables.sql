@@ -41,3 +41,24 @@ create table if not exists NEEDS(
 	state varchar(10) not null,
 	modify_Date Date not null
  );
+ 
+ create sequence id_Answers_Needs;
+ 
+ create table if not exists answers_needs( 
+	id int primary key,
+	name varchar(80) references users(name),
+	response varchar(400) not null,
+	creation_Date Date not null,
+	need int references needs(id)
+ );
+ 
+ create sequence id_Answers_Offers;
+
+create table if not exists answers_offers( 
+	id int primary key,
+	name varchar(80) references users(name),
+	response varchar(400) not null,
+	creation_Date Date not null,
+	offer int references offers(id)
+ );
+ 

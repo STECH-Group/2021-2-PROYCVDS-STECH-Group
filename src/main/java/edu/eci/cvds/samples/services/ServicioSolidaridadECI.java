@@ -50,4 +50,8 @@ public interface ServicioSolidaridadECI {
 	
 	public void eliminarOfertas();
 	
+	public void registrarRespuestaNecesidad(String resp, Need nece);
+	
+	public void registrarRespuestaOferta(String resp, Offer ofer);
+	
 }

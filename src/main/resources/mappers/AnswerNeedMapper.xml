@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.AnswerNeedMapper">
+	
+	<insert parameterType="map" id="regiterAnswerNeed">
+	   	insert into needs(id, name, response, creation_date, need) values (nextval('id_Answers_Needs'), #{name}, #{resp}, current_date, #{need.id})
+	</insert>
+	 
+	 <delete id="deleteAnswersNeeds">
+	 	delete from answers_needs;
+	 </delete>
+	 
+	 <update id="restartSequenceAnswerNeeds">
+	 	alter sequence id_Answers_Needs restart with 1;
+	 </update>
+	
+	<resultMap type='AnswerNeed' id='AnswerNeedResult'>
+		 <id property='id' column='an_id'/>
+		 <result property='response' column='an_description'/>
+		 <result property='creationDate' column='an_creation_date'/>
+		 <association property='need' javaType='Need' resultMap='edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper.NeedResult' columnPrefix="c_"></association>
+		 <association property='name' javaType='User' resultMap='edu.eci.cvds.samples.persistence.mybaties.mappers.UserMapper.UserResult' columnPrefix="u_"></association>
+	</resultMap>
+  
+</mapper>

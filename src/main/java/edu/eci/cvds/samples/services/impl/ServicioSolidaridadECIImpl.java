@@ -24,11 +24,19 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Inject
 	private OfferDAO offerDAO;
 	
+	@Inject
+	private AnswerNeedDAO anDAO;
+	
+	@Inject
+	private AnswerOfferDAO aoDAO;
+	
 	@Override
 	public void limpiarTablas() {
 		categoryDAO.limpiarCategorias();
 		needDAO.eliminarNecesidades();
 		offerDAO.eliminarOfertas();
+		anDAO.eliminarRespuestasNecesidades();
+		aoDAO.eliminarRespuestasOfertas();
 	}
 	
 	@Override
@@ -137,6 +145,16 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public void eliminarOfertas() {
 		offerDAO.eliminarOfertas();
+	}
+
+	@Override
+	public void registrarRespuestaNecesidad(String resp, Need nece) {
+		anDAO.registrarRespuestaNecesidad(resp, nece);
+	}
+
+	@Override
+	public void registrarRespuestaOferta(String resp, Offer ofer) {
+		aoDAO.registrarRespuestaOferta(resp, ofer);
 	}
 
 }

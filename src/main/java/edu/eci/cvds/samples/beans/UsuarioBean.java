@@ -77,6 +77,14 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	public void updateStateNeed(String state) {
 		ssECI.actualizarEstadoNecesidad(getNeedUpdate(), state);
 	}
+	
+	public void registerAnswerNeed(String resp, Need need) {
+		ssECI.registrarRespuestaNecesidad(resp, need);
+	}
+	
+	public void registerAnswerOffer(String resp, Offer offer) {
+		ssECI.registrarRespuestaOferta(resp, offer);
+	}
 
 	public String getCat() {
 		return cat;
