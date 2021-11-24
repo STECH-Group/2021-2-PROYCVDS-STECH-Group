@@ -21,7 +21,7 @@
 	    order by o.modify_date desc
   	</select>
   	
-  	<select parameterType="map" id="searchInProcessOffers" resultMap="OfferResult">
+  	<select parameterType="map" id="searchActiveOrInProcessOffers" resultMap="OfferResult">
 	    select 
 	    o.id, 
 	    c.name as c_name, 
