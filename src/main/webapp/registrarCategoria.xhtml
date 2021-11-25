@@ -19,9 +19,13 @@
             </div>
         </header>
         <!-- / #main-header -->
+      
         <div class="titulo">
             <h2>REGISTRAR CATEGORIA</h2>
         </div>
+        <p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate/>
+        </p:messages>
         <div class="container">
             <p:tab id="personal_category" title="NUEVA CATEGORIA">
                 <p:panel header="Información categoria">
@@ -39,8 +43,9 @@
                             <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
                         </p:selectOneMenu>
                     </h:panelGrid>
-                    <p:commandButton id="boton_Registrar" value="REGISTRAR" styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />
+                    <p:commandButton id="boton_Registrar" value="REGISTRAR"  styleClass="ui-button-secondary" actionListener="#{administratorBean.newCategory(name.value,description.value,state.value)}" style="float:center;" />
                     <p:commandButton id="boton_regresar" value="  REGRESAR  " actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float:right;" />
+
                 </p:panel>
             </p:tab>
 			<br></br>

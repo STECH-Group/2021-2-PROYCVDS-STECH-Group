@@ -24,18 +24,16 @@
             <div class="titulo">
                 <h2>REGISTRAR RESPUESTA</h2>
             </div>        
-			<!-- Mostrar a que le va a dar respuesta? (Necesidad o Respuesta) -->
             <div class="container" >
                 <p:tab id="personal" title="REGISTRAR RESPUESTA">
                     <p:panel header="Ingrese sus comentarios :">
                         <h:panelGrid columns="2" columnClasses="label, value">
 							<h:outputText for="comentarios" value="Comentarios: " />
 							<p:inputTextarea rows="6" cols="30" id="comentarios" type="String" binding="#{comentarios}" />
+                            <p:commandButton id="boton_R" value = "REGISTRAR" actionListener="#{usuarioBean.registrarRespuesta(comentarios.value)}" action="#{loginBean.redirect()}" styleClass="ui-button-secondary"
+						 style="float: left;" />
+						    <p:commandButton id="boton_Regresar" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" style="float: right;" /> 
                         </h:panelGrid>
-                        <br></br>
-						<p:commandButton id="boton_R" value = "REGISTRAR" actionListener="#{usuarioBean.registrarRespuesta(comentarios.value)}" action="#{loginBean.redirect()}" styleClass="ui-button-secondary"
-						style="float:center;" /><br></br>
-						<p:commandButton id="boton_Regresar" value="REGRESAR" actionListener="#{loginBean.redirect()}" styleClass="ui-button-secondary" />   	 
                      </p:panel>
 						
                 </p:tab>  

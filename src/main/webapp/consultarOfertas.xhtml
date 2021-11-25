@@ -22,7 +22,7 @@
         </div>
         <div class="panel consulta">
             <p:dataTable var="ofert" rows="6" value="#{usuarioBean.searchActiveOrInProcessOffers()}" paginator="true" selectionMode="single" selection="#{usuarioBean.offer}" rowKey="#{ofert.id}" 
-                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" paginatorPosition="bottom"  >
                 <p:column headerText="ID">
                     <h:outputText value="#{ofert.getId()}" />
                 </p:column>

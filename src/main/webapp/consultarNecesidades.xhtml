@@ -22,8 +22,8 @@
 		<!--ESTA ES PARA REGISTRAR RESPUESTA A NECESIDADES, SE MUESTRAN *TODAS* LAS ACTIVAS -->
         <div class="consultarnecesidad">
             <p:dataTable var="need1" rows="10" value="#{usuarioBean.searchActiveOrInProcessNeeds()}" paginator="true" selectionMode="single" 
-                selection="#{usuarioBean.need}" rowKey="#{need1.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                selection="#{usuarioBean.need}" rowKey="#{need1.id}" paginatorPosition="bottom" 
+                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records">
                 <p:column headerText="CATEGORIA">
                     <h:outputText value="#{need1.getCategory()}" />
                 </p:column>

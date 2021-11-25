@@ -29,7 +29,7 @@
 						<h:outputText for="category_name" value="Anterior Nombre categoria: " />
                         <p:selectOneMenu id="categoria_name" binding="#{nameold}" required="true" >
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
-                            <f:selectItems value="#{administratorBean.searchActiveCategoryNames()}" />
+                            <f:selectItems value="#{administratorBean.searchCategoryNames()}" />
                         </p:selectOneMenu>
 
                         <h:outputText for="category_name" value="Nuevo Nombre categoria: " />
