@@ -21,13 +21,7 @@ public class MyBatisCategoryDAO implements CategoryDAO{
 	
 	@Override
 	public void crearCategoria(String name, String description, String state) throws PersistenceException {
-		try {
 		categoryMapper.newCategory(name, description, state);
-		}
-		catch(PersistenceException e) {
-			FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intente de nuevo: ", "Error al crear la categoria, el nombre ya se encuentra en uso"));
-            throw new PersistenceException("Error al crear la categoria, el nombre ya esta en uso",e);
-		}
 	}
 
 	@Override

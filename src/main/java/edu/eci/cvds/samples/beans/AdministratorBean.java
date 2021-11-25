@@ -3,9 +3,12 @@ package edu.eci.cvds.samples.beans;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.*;
+import javax.faces.context.FacesContext;
 
 import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.exceptions.PersistenceException;
 
 import com.google.inject.Inject;
 
@@ -41,8 +44,12 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		return ssECI.searchCategoryNames();
 	}
 	
-	public void newCategory(String name, String desc, String state) throws ExceptionServicioSolidaridadECI {
-		ssECI.crearNuevaCategoria(name, desc, state);
+	public void newCategory(String name, String desc, String state) throws ExceptionServicioSolidaridadECI, PersistenceException{
+		try {
+			ssECI.crearNuevaCategoria(name, desc, state);
+		}catch (PersistenceException ex){
+			FacesContext.getCurrentInstance().addMessage("Shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Intente de nuevo: ", "Error al crear la categoria, el nombre ya se encuentra en uso"));
+		}
 	}
 	
 	public void updateCategory(String oName, String nName, String desc, String state) throws ExceptionServicioSolidaridadECI {

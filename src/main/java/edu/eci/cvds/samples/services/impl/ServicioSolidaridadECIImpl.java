@@ -45,7 +45,7 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	
 	@Override
 	public void crearNuevaCategoria(String name, String description, String state)
-			throws ExceptionServicioSolidaridadECI {
+			throws ExceptionServicioSolidaridadECI, PersistenceException {
 		categoryDAO.crearCategoria(name, description, state);
 	}
 

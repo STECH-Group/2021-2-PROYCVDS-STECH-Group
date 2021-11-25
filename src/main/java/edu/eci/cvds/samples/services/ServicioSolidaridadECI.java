@@ -20,7 +20,7 @@ public interface ServicioSolidaridadECI {
 	
 	public List<Category> searchCategoriesByName(String name);
 	
-	public void crearNuevaCategoria(String name, String description, String state) throws ExceptionServicioSolidaridadECI;
+	public void crearNuevaCategoria(String name, String description, String state) throws ExceptionServicioSolidaridadECI, PersistenceException;
 	
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws ExceptionServicioSolidaridadECI;
 	
