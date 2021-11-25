@@ -13,6 +13,7 @@
         <typeAlias type="edu.eci.cvds.samples.entities.Offer" alias="Offer"/>
         <typeAlias type="edu.eci.cvds.samples.entities.AnswerNeed" alias="AnswerNeed"/>
         <typeAlias type="edu.eci.cvds.samples.entities.AnswerOffer" alias="AnswerOffer"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Reporte" alias="Reporte"/>
     </typeAliases>	
 
     <environments default="development">
@@ -34,6 +35,7 @@
         <mapper resource="mappers/OfferMapper.xml"></mapper>
         <mapper resource="mappers/AnswerNeedMapper.xml"></mapper>
        	<mapper resource="mappers/AnswerOfferMapper.xml"></mapper>
+       	<mapper resource="mappers/ReporteMapper.xml"></mapper>
     </mappers> 
         
 </configuration>

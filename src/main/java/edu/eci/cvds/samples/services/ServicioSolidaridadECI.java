@@ -30,6 +30,10 @@ public interface ServicioSolidaridadECI {
 	
 	public List<Need> consultarNecesidadesPorUsuario();
 	
+	public List<Need> reporteDeNecesidades();
+	
+	public List<Reporte> reporteNecesidadesGrafico();
+	
 	public void registrarNecesidad(String category,  String description, int urgency, String state) throws PersistenceException;
 	
 	public void actualizarEstadoNecesidad(Need need, String state) throws PersistenceException;
@@ -43,6 +47,10 @@ public interface ServicioSolidaridadECI {
 	public List<Offer> consultaOfertasActivasOEnProceso();
 	
 	public List<Offer> consultaOfertasPorUsuario();
+	
+	public List<Offer> reporteDeOfertas();
+	
+	public List<Reporte> reporteOfertasGrafico();
 	
 	public void nuevaOferta(String category, String description, String state) throws PersistenceException;
 	

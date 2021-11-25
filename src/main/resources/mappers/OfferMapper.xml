@@ -52,6 +52,20 @@
 	    where u.name = #{Name} 
 	    order by modify_date desc
   	</select>
+  	
+  	<select parameterType="map" id="offersReport" resultMap="OfferResult">
+	    select 
+		o.id, 
+		c.name as c_name, 
+		u.name as u_name, 
+		o.description, 
+		o.creation_date, 
+		o.state, 
+		o.modify_date
+		from offers o join users u on u.name = o.name
+		join categories c on c.name = o.category
+		order by o.state
+  	</select>
   
   	<insert parameterType="map" id="newOffer">
 	   	insert into offers(id, category, name, description, creation_date, state, modify_date) values (nextval('id_Offers'), #{Cat}, #{Name}, #{Desc}, current_date, #{State}, current_date)

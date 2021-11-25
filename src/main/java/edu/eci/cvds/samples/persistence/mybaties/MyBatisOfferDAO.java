@@ -81,4 +81,9 @@ public class MyBatisOfferDAO implements OfferDAO{
 		}
 	}
 
+	@Override
+	public List<Offer> reporteOfertas() {
+		return offerMapper.offersReport();
+	}
+
 }

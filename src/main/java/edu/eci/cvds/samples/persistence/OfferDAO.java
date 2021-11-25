@@ -14,6 +14,8 @@ public interface OfferDAO {
 	
 	public List<Offer> consultarOfertasPorUsuario() throws PersistenceException;
 	
+	public List<Offer> reporteOfertas();
+	
 	public void nuevaOferta(String category, String description, String state) throws PersistenceException;
 	
 	public void actualizarEstadoOferta(Offer offer, String state) throws PersistenceException;

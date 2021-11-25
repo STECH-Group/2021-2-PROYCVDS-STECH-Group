@@ -2,7 +2,6 @@ package edu.eci.cvds.samples.services.client;
 
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECIFactory;
-import edu.eci.cvds.samples.services.impl.ServicioSolidaridadECIImpl;
 
 public class Main {
 	
@@ -15,7 +14,8 @@ public class Main {
 		//ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().actualizarCategoria("Expresión Gráfica", "", "", "Activo");
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchCategories());
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchActiveCategoryNames());
-		System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().consultarNecesidades());
+		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().reporteDeNecesidades());
+		System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().reporteDeOfertas());
 		System.exit(0);
 	}
 }

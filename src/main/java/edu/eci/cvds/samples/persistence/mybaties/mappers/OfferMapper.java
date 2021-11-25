@@ -16,6 +16,8 @@ public interface OfferMapper {
 	
 	public List<Offer> searchOffersByUser(@Param ("Name") String name);
 	
+	public List<Offer> offersReport();
+	
 	public void newOffer(@Param ("Cat") String category,
 			@Param ("Name") String name, 
 			@Param ("Desc") String description,

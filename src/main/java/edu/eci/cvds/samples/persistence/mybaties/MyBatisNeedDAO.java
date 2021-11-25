@@ -80,4 +80,9 @@ public class MyBatisNeedDAO implements NeedDAO{
 	public List<Need> consultarNecesidadesActivasOEnProceso() throws PersistenceException {
 		return needMapper.searchActiveOrInProcessNeeds();
 	}
+
+	@Override
+	public List<Need> reporteNecesidades() {
+		return needMapper.needsReport();
+	}
 }

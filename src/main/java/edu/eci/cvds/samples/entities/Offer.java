@@ -82,6 +82,6 @@ public class Offer implements Serializable{
 	@Override
 	public String toString() {
 		return "Offer [id=" + id + ", category=" + category + ", name=" + name + ", description=" + description
-				+ ", creationDate=" + creationDate + ", state=" + state + ", modifyDate=" + modifyDate + "]";
+				+ ", creationDate=" + creationDate + ", state=" + state + ", modifyDate=" + modifyDate + "]\n\t";
 	}
 }

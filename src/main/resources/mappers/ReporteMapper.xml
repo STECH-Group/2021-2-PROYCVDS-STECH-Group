@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.ReporteMapper">
+
+  	<select parameterType="map" id="needsReportValuesForGraffic" resultMap="ReporteNeedResult">
+	    select n.state as n_state, count(*) as cantidad from needs n group by state;
+  	</select>
+  	
+  	<select parameterType="map" id="offersReportValuesForGraffic" resultMap="ReporteOfferResult">
+	    select o.state as o_state, count(*) as cantidad from offers o group by state;
+  	</select>
+  	
+  	<resultMap type='Reporte' id='ReporteNeedResult'>
+  		<result property='estado' column='n_state'/>
+  		<result property='cantidad' column='cantidad'/>
+	</resultMap>
+	
+	<resultMap type='Reporte' id='ReporteOfferResult'>
+  		<result property='estado' column='o_state'/>
+  		<result property='cantidad' column='cantidad'/>
+	</resultMap>
+  
+</mapper>  

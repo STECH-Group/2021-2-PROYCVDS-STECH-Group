@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Category;
 import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.entities.Offer;
+import edu.eci.cvds.samples.entities.Reporte;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -29,6 +30,9 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	
 	@Inject
 	private AnswerOfferDAO aoDAO;
+	
+	@Inject
+	private ReporteDAO reporteDAO;
 	
 	@Override
 	public void limpiarTablas() {
@@ -160,6 +164,26 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	@Override
 	public void registrarRespuestaOferta(String resp, Offer ofer) {
 		aoDAO.registrarRespuestaOferta(resp, ofer);
+	}
+
+	@Override
+	public List<Need> reporteDeNecesidades() {
+		return needDAO.reporteNecesidades();
+	}
+
+	@Override
+	public List<Reporte> reporteNecesidadesGrafico() {
+		return reporteDAO.valoresReporteNecesidades();
+	}
+	
+	@Override
+	public List<Offer> reporteDeOfertas() {
+		return offerDAO.reporteOfertas();
+	}
+
+	@Override
+	public List<Reporte> reporteOfertasGrafico() {
+		return reporteDAO.valoresReporteOfertas();
 	}
 
 }
