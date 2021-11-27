@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -9,6 +10,9 @@ import javax.faces.context.FacesContext;
 
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.exceptions.PersistenceException;
+import org.primefaces.model.chart.PieChartModel;
+import org.primefaces.model.charts.ChartData;
+import org.primefaces.model.charts.pie.PieChartDataSet;
 
 import com.google.inject.Inject;
 
@@ -24,9 +28,11 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 	private String desc;
 	private String state;
 	private Category category;
+	private PieChartModel pieChart;
 	
 	@Inject
 	private ServicioSolidaridadECI ssECI;
+	
 	
 	public List<Category> searchCategories(){
 		return ssECI.searchCategories();
@@ -61,6 +67,29 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		ssECI.eliminarCategoria(getCategory());
 	}
 	
+	public List<Need> searchNeeds(){
+		return ssECI.reporteDeNecesidades();
+	}
+	
+	public void createPieChartNeeds() {
+		pieChart = new PieChartModel();
+        ChartData data = new ChartData();
+        PieChartDataSet dataSet = new PieChartDataSet();
+        List<Number> values = new ArrayList<>();
+        List<Reporte> reportStates = ssECI.reporteNecesidadesGrafico();
+        for(Reporte i : reportStates) {
+        	values.add(i.getCatidad());
+        }
+        dataSet.setData(values);
+        data.addChartDataSet(dataSet);
+        List<String> labels = new ArrayList<>();
+        for(Reporte i : reportStates) {
+        	labels.add(i.getEstado());
+        }
+        data.setLabels(labels);
+        pieChart.setData(data);
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -91,5 +120,13 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+	
+	public PieChartModel getPieChart() {
+		return pieChart;
+	}
+	
+	public void setPieChart(PieChartModel pieChart) {
+		this.pieChart = pieChart;
 	}
 }
