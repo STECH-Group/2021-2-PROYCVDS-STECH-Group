@@ -49,7 +49,7 @@
             </p:dataTable>
 			
         </div>
-		<p:chart type="pie" model="#{administratorBean.getPieChart()}" style="width:400px;height:300px"/>
+		<p:pieChart model="#{administratorBean.getPieChart()}" style="width:400px;height:300px"/>
 		
 		<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2 ui-button-outlined">
 			<p:dataExporter type="xlsxstream" target="reporteNecesidad" fileName="ReporteNecesidad"/>
