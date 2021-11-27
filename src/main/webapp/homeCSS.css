@@ -5,12 +5,13 @@ body {
 .banner {
     position: relative;
     width: 100%;
-    height: 30vh;
+    height: 25vh;
     background-color: #F5F5F5;
     background-size: cover;
     background-position: center;
     transition: all .1s ease-in-out;
     background-image: url("home.jpg");
+    
 }
 
 .banner-content {
@@ -32,26 +33,26 @@ body {
 }
 
 .info .parrafo {
-    border: 1px solid #6e111c;
+    border: 1.5px solid #6e111c;
     background-color: #fff;
     color: #727070;
-    width: 600px;
-    height: 350px;
-    border-radius: 15px;
+    width: auto;
+    /*height: 350px;*/
+    border-radius: 7px;
     position: center;
 }
 
 .info .parrafo label {
     color: #6e111c;
     position: absolute;
-    top: calc(30vh + 45px);
-    left: 100px;
+    top: calc(50vh+100px);
+    left: 90px;
     font-family: Helvetica, Georgia, 'Times New Roman', Times, sans-serif;
-    font-size: 120%;
+    font-size: 140%;
 }
 
-.info p {
-    font-size: 105%;
+.info p  {
+    font-size: 115%;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 50px;
@@ -60,22 +61,29 @@ body {
 
 .botones {
     background-color: #fff;
-    width: 10%;
-    height: 20vh;
-    padding-left: 50px;
-    padding-top: 20px;
+    width: 2%;
+    padding-left: 30px;
+    padding-top: 3px;
     position: center;
 }
 
 .manual {
     font-size: 105%;
-    color: #727070;
+    background-color: #fff;
     font-family: Helvetica, Georgia, 'Times New Roman', Times, sans-serif;
     background-color: #fff;
-    width: 30%;
-    height: 50vh;
-    padding-left: 50px;
+    width:auto;
+    padding-left: 70px;
     padding-top: 20px;
-    position: static;
-    float: left;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+} 
+
+
+
+.container {
+    display: inline;
+    counter-reset: heading;
+    position: absolute;
+    resize:both;
 }

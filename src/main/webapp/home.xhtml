@@ -4,35 +4,39 @@
 
 <h:head>
     <title>Solidaridad ECI</title>
+    <link rel="icon" href="icono.jpg"></link>
 </h:head>
 
 <body>
-    <link href="homeCSS.css" rel="stylesheet" type="text/css" />
-    <div class="banner">
-        <div class="banner-content">
+    <div class="container">
+        <link href="homeCSS.css" rel="stylesheet" type="text/css" />
+        <div class="banner">
+            <div class="banner-content">
+            </div>
         </div>
-    </div>
-
-    <div class="info">
-        <div class="parrafo">
-            <label>SOLIDARIDAD ECI</label>
-            <p ALIGN="justify">La Plataforma Solidaridad Escuela, es una herramienta para generar un entorno de comunicación y ayuda dentro de la comunidad de la Escuela Colombiana de Ingeniería Julio Garavito. El sistema permite que los estudiantes puedan expresar las
-                necesidades que puedan tener de algún elemento para poder desarrollar sus actividades de forma correcta, y que los demás miembros de la comunidad puedan facilitar estos elementos a quienes lo necesitan. De igual manera los miembros de
-                la comunidad pueden ofrecer diferentes elementos que sean de interés para los estudiantes sin que exista alguna solicitud específica. Adicionalmente el sistema cuenta con diferentes funcionalidades de reportería y administración que permite
-                llevar un control del funcionamiento de la plataforma y del alcance que se está logrando.</p>
+        <div class="info">
+            <div class="parrafo">
+                <label>SOLIDARIDAD ECI</label>
+                <p ALIGN="justify">La Plataforma Solidaridad Escuela, es una herramienta para generar un entorno de comunicación y ayuda dentro de la comunidad de la Escuela Colombiana de Ingeniería Julio Garavito. El sistema permite que los estudiantes puedan expresar las
+                    necesidades que puedan tener de algún elemento para poder desarrollar sus actividades de forma correcta, y que los demás miembros de la comunidad puedan facilitar estos elementos a quienes lo necesitan. De igual manera los miembros de
+                    la comunidad pueden ofrecer diferentes elementos que sean de interés para los estudiantes sin que exista alguna solicitud específica. Adicionalmente el sistema cuenta con diferentes funcionalidades de reportería y administración que permite
+                    llevar un control del funcionamiento de la plataforma y del alcance que se está logrando.</p>
+                    <div class="botones">
+                        <h:form>
+                            <p:commandButton id="boton_Regresar" value="INGRESAR" action="login.xhtml?faces-redirect=true" styleClass=" ui-button-secondary" />
+                        </h:form>
+                    </div>    
+                </div>
         </div>
-
-        <div class="botones">
-            <h:form>
-                <p:commandButton id="boton_Regresar" value="INGRESAR" action="login.xhtml?faces-redirect=true" styleClass=" ui-button-secondary" />
-            </h:form>
+        <div class="manual" style="float: right;">
+            <a href="https://github.com/STECH-Group/2021-2-PROYCVDS-STECH-Group"><img src="manual.png" width="558" height="171" ></img>
+            </a>
+            
+            <a href="https://campusvirtual.escuelaing.edu.co/moodle/?redirect=0"><img src="moodle.png" width="571" height="156" line-height="0;" ></img>
+            </a>
+            
         </div>
-    </div>
-    <div class="manual" style="float: right;">
-        <p> No olvides leer el manual de Usuario </p>
-        <a href="https://github.com/STECH-Group/2021-2-PROYCVDS-STECH-Group"><img src="manual.png" width="200" height="200"></img>
-        </a>
-    </div>
-</body>
+    </div>    
+    </body>
 
 </html>

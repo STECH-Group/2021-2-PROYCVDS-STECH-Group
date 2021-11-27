@@ -10,6 +10,11 @@
         font-weight: bolder;
     }
     
+    p {
+        font-family: Arial ,'Verdana', 'Times New Roman';
+        color: #0e0d0d;
+    }
+
     h1 {
         font-family: 'Verdana', 'Times New Roman', Times, serif;
         -webkit-text-stroke: 0.6px black;
