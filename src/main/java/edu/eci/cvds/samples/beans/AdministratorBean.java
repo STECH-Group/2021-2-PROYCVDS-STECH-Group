@@ -81,6 +81,13 @@ public class AdministratorBean extends BasePageBean implements Serializable{
         	values.add(i.getCatidad());
         }
         dataSet.setData(values);
+        
+        List<String> colores = new ArrayList<>();
+        colores.add("rgb(255, 233, 0)");
+        colores.add("rgb(85, 100, 235)");
+        colores.add("rgb(248, 0, 0)");
+        dataSet.setBackgroundColor(colores);
+        
         data.addChartDataSet(dataSet);
         List<String> labels = new ArrayList<>();
         for(Reporte i : reportStates) {

@@ -1,0 +1,39 @@
+h2 {
+	    font-family: "Helvetica Rounded", Helvetica, Georgia, 'Times New Roman', Times, serif;
+	    -webkit-text-stroke: 0.5px black;
+	    color: #720c14;
+	    font-size: 250%;
+	    counter-reset: heading;
+	}
+	
+#barra-administrador {
+	    background: #720c14;
+	    color: #720c14;
+	    height: 80px;
+	    width: 100%;
+	    left: 0;
+	    right: 20px;
+	    top: 0;
+	    position: fixed;
+	}
+	
+#cerrar_sesion {
+	    margin: 0;
+	    padding: 10px 50px 20px;
+	    color: white;
+	}
+#admin-header {
+	    display: block;
+	    font-weight: 900;
+	    font-size: 1.5em;
+	    color: white;
+	    display: block;
+	    padding: 8px 14px;
+	    font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
+	}
+	
+.logo-nav-container {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	}
