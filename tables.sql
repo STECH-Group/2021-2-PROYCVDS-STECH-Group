@@ -62,3 +62,16 @@ create table if not exists answers_offers(
 	offer int references offers(id)
  );
  
+insert into users(user_name, name, mail, passwd, rol) values ('jose', 'José Gamboa', 'administrador@hotmail.com', 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6', 'Administrador');
+insert into users(user_name, name, mail, passwd, rol) values ('zuly', 'Zuly Vargas', 'profesor@hotmail.com', '48a8d9ca65d4ffed5d24d09cde13ef76320e7d4ebf468bcfcb5c4a17f87785a9', 'Profesor');
+insert into users(user_name, name, mail, passwd, rol) values ('camilo', 'Camilo Pichimata', 'estudiante@hotmail.com', 'b45513fe304c65eb8a8fede7855c766223895d895457f1d5c3080f1cfea517b2', 'Estudiante');
+insert into users(user_name, name, mail, passwd, rol) values ('cristian', 'Cristian Forero', 'egresado@hotmail.com', '021ba6da08ba4219338399dc758cdbb4d871cadb91bf46dc78dfbece449e90f8', 'Egresado');
+insert into users(user_name, name, mail, passwd, rol) values ('oscar', 'Oscar Ospina', 'administrativo@hotmail.com', '5be08197828915431445b8dbab6181b751dc3aab4b9f50fea0bd604187665bef', 'Administrativo');
+
+insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Laboratorios', 'Implementos de seguridad para practicas de laboratorio', current_date, 'Activo', current_date);
+insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Electronica', 'Implmentos de electronica', current_date, 'Activo', current_date);
+insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Textos', 'Libros, guias, manuales, etc. para clases teoricas', current_date, 'Inactivo', current_date);
+insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Deportes', 'Equipo de practica para los integrantes de los equipos de la Escuela', current_date, 'Activo', current_date);
+insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Expresión Gráfica', 'Instrumentos de dibujo para EGR', current_date, 'Inactivo', current_date);
+
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Textos', 'Camilo Pichimata', 'Necesito implemento para la clase', 3, current_date, 'Activo', current_date);
