@@ -25,6 +25,8 @@ public interface ServicioSolidaridadECI {
 	public void actualizarCategoria(String oName, String nName, String description, String state) throws ExceptionServicioSolidaridadECI;
 	
 	public void eliminarCategoria(Category category);
+	
+	public List<Reporte> reporteCategorias();
 
 	public List<Need> consultarNecesidades();
 	

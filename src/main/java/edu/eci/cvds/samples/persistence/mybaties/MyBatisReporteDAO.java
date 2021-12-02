@@ -23,4 +23,9 @@ public class MyBatisReporteDAO implements ReporteDAO{
 		return reporteMapper.offersReportValuesForGraffic();
 	}
 
+	@Override
+	public List<Reporte> reporteCategorias() {
+		return reporteMapper.categoriesReport();
+	}
+
 }

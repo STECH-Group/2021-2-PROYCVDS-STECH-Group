@@ -9,5 +9,7 @@ public interface ReporteDAO {
 	public List<Reporte> valoresReporteNecesidades();
 	
 	public List<Reporte> valoresReporteOfertas();
+	
+	public List<Reporte> reporteCategorias();
 
 }

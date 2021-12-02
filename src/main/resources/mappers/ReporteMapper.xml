@@ -7,21 +7,36 @@
 <mapper namespace="edu.eci.cvds.samples.persistence.mybaties.mappers.ReporteMapper">
 
   	<select parameterType="map" id="needsReportValuesForGraffic" resultMap="ReporteNeedResult">
-	    select n.state as n_state, count(*) as cantidad from needs n group by state;
+	    select n.state as n_state, count(*) as cantidad, 0 as not_use from needs n group by state;
   	</select>
   	
   	<select parameterType="map" id="offersReportValuesForGraffic" resultMap="ReporteOfferResult">
-	    select o.state as o_state, count(*) as cantidad from offers o group by state;
+	    select o.state as o_state, count(*) as cantidad, 0 as not_use from offers o group by state;
+  	</select>
+  	
+  	<select parameterType="map" id="categoriesReport" resultMap="ReporteCategoriesResult">
+	    select name as categorias, sum(nOfrecidas) as n_ofrecidas,sum(nNecesidades) as n_necesidades from (
+		select c.name, count(*) as nOfrecidas, 0 as nNecesidades from categories c join offers o on c.name = o.category group by c.name 
+		union 
+		select c.name, 0 as nOfrecidas, count(*) as nNecesidades from categories c join needs n on c.name = n.category group by c.name) as x group by name;
   	</select>
   	
   	<resultMap type='Reporte' id='ReporteNeedResult'>
   		<result property='estado' column='n_state'/>
   		<result property='cantidad' column='cantidad'/>
+  		<result property='cantidad2' column='not_use'/>
 	</resultMap>
 	
 	<resultMap type='Reporte' id='ReporteOfferResult'>
   		<result property='estado' column='o_state'/>
   		<result property='cantidad' column='cantidad'/>
+  		<result property='cantidad2' column='not_use'/>
+	</resultMap>
+	
+	<resultMap type='Reporte' id='ReporteCategoriesResult'>
+  		<result property='estado' column='categorias'/>
+  		<result property='cantidad' column='n_ofrecidas'/>
+  		<result property='cantidad2' column='n_necesidades'/>
 	</resultMap>
   
 </mapper>  

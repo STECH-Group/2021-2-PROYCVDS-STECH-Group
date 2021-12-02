@@ -15,7 +15,7 @@ public class Main {
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchCategories());
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().searchActiveCategoryNames());
 		//System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().reporteDeNecesidades());
-		System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().reporteDeOfertas());
+		System.out.println(ServicioSolidaridadECIFactory.getInstance().getServicioSolidaridadECI().reporteCategorias());
 		System.exit(0);
 	}
 }

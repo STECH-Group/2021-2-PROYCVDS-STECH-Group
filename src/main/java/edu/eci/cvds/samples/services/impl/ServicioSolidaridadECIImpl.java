@@ -89,6 +89,11 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	public void eliminarCategoria(Category category) {
 		categoryDAO.eliminarCategoria(category);
 	}
+	
+	@Override
+	public List<Reporte> reporteCategorias() {
+		return reporteDAO.reporteCategorias();
+	}
 
 	@Override
 	public void registrarNecesidad(String category, String description, int urgency, String state)

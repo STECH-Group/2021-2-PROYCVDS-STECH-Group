@@ -9,5 +9,7 @@ public interface ReporteMapper {
 	public List<Reporte> needsReportValuesForGraffic();
 	
 	public List<Reporte> offersReportValuesForGraffic();
+	
+	public List<Reporte> categoriesReport();
 
 }
