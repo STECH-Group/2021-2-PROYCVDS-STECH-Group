@@ -45,7 +45,7 @@ body {
 .info .parrafo label {
     color: #6e111c;
     position: absolute;
-    top: calc(50vh+100px);
+    top: calc(60vh+250px);
     left: 90px;
     font-family: Helvetica, Georgia, 'Times New Roman', Times, sans-serif;
     font-size: 140%;
