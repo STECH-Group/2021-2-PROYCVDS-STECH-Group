@@ -11,5 +11,7 @@ public interface ReporteDAO {
 	public List<Reporte> valoresReporteOfertas();
 	
 	public List<Reporte> reporteCategorias();
+	
+	public List<Reporte> reporteRespuestas();
 
 }

@@ -191,4 +191,9 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 		return reporteDAO.valoresReporteOfertas();
 	}
 
+	@Override
+	public List<Reporte> reporteRespuestas() {
+		return reporteDAO.reporteRespuestas();
+	}
+
 }

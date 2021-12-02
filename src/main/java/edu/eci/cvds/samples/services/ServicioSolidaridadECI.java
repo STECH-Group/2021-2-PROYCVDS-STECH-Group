@@ -66,4 +66,6 @@ public interface ServicioSolidaridadECI {
 	
 	public void registrarRespuestaOferta(String resp, Offer ofer);
 	
+	public List<Reporte> reporteRespuestas();
+	
 }

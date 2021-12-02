@@ -11,5 +11,7 @@ public interface ReporteMapper {
 	public List<Reporte> offersReportValuesForGraffic();
 	
 	public List<Reporte> categoriesReport();
+	
+	public List<Reporte> answersReport();
 
 }
