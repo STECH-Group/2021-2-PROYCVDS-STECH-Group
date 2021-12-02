@@ -28,7 +28,7 @@
                     <h:panelGrid columns="2" columnClasses="label, value">
 
 						<h:outputText for="category_name" value="Anterior Nombre categoria: " />
-                        <p:selectOneMenu id="categoria_name" binding="#{nameold}" required="true" >
+                        <p:selectOneMenu id="categoria_name" binding="#{nameold}" >
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
                             <f:selectItems value="#{administratorBean.searchCategoryNames()}" />
                         </p:selectOneMenu>
