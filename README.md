@@ -26,11 +26,11 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 Al ingresar al enlace de la aplicación se muestra la pantalla de inicio. Al lado derecho de esta se encuentra la descripción del proyecto junto al botón que redirecciona al usuario para que pueda 
 iniciar sesión. Al lado izquierdo se encuentran los enlaces directos al manual de usuario y a el campus virtual de la universidad. 
 
-<img src="imagenes/home_exp.jpg" width="1240" height="400" >
+<img src="imagenes/home_exp.jpg" width="1240" height="420" >
 
 Al dar en ingresar se muestra la pantalla de inicio de sesión, en esta se deben ingresar los datos correspondientes. Luego de ingresar los datos se da en ingresar para continuar al menu de usuario con las diferentes opciones. 
 
-<img src="imagenes/login_exp.jpg">
+<img src="imagenes/login_exp.jpg"  width="1240" height="420" >
 
 Los perfiles de usuario que maneja la plataforma de SOLIDARIDAD ECI son los siguientes:
 
@@ -48,7 +48,7 @@ Según el rol del usuario, se muestran los principales servicios del sistema a l
 
 En el registro de necesidad los usuarios expresan las necesidades que presentan. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Necesidad" y en la opción de "Registrar necesidad".
 
-<img src="imagenes/necesidad1_exp.jpg">
+<img src="imagenes/necesidad1_exp.jpg"  width="1240" height="430" >
 
 En la pantalla de Registro Necesidades se debe incluir la siguiente información necesaria. 
 En primer lugar se debe agregar una **descripción** de la necesidad en el cuadro de texto extendible. 
