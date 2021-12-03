@@ -57,23 +57,23 @@ En primer lugar se debe agregar una **descripción** de la necesidad en el cuadr
 
 Seguido a esto se debe agregar el **nivel de urgencia** de la necesidad, donde 1 es el nivel más bajo y 5 el más alto.
 
-<img src="imagenes/necesidad_urg_exp.jpg">
+[![necesidad-urg-exp.jpg](https://i.postimg.cc/vZRJcS0R/necesidad-urg-exp.jpg)](https://postimg.cc/Tp97sQ8Q)
 
 En **Estado** se debe indicar el estado de la necesidad donde se encuentran las opciones de: Activo, En Proceso, Resuelto y Cerrado. 
 
-<img src="imagenes/necesidad_estado_exp.jpg">
+[![necesidad-estado-exp.jpg](https://i.postimg.cc/6QKTLc5g/necesidad-estado-exp.jpg)](https://postimg.cc/JsT1RbX5)
 
 Por último se debe indicar la categoría a la cual pertenece la necesidad.
 
-<img src="imagenes/necesidad_categ_exp.jpg">
+[![necesidad-categ-exp.jpg](https://i.postimg.cc/RV8gF6VN/necesidad-categ-exp.jpg)](https://postimg.cc/GHFFgpDC)
 
 Luego de ingresar la información necesaria se debe dar en el botón **Registrar** para ser redirigido a la consulta de necesidades para verificar que esta haya sido registrada. 
 
-<img src="imagenes/necesidad_reg_exp.jpg">
+[![necesidad-reg-exp.jpg](https://i.postimg.cc/KY57nRF7/necesidad-reg-exp.jpg)](https://postimg.cc/94rq2XDz)
 
 Luego de registrar, podemos observar como ha sido guardada la petición recien realizada.
 
-<img src="imagenes/necesidad_consulta_exp.jpg">
+[![necesidad-consulta-exp.jpg](https://i.postimg.cc/zBcgjhQh/necesidad-consulta-exp.jpg)](https://postimg.cc/ftYyWVDW)
 
 ## Actualización Estado de necesidad
 
@@ -81,15 +81,15 @@ Luego de registrar, podemos observar como ha sido guardada la petición recien r
 
 En la actualización del estado de una necesidad se cambia el estado actual de la necesidad deseada. Los estudiantes solo pueden cambiar el estado de las necesidades que registraron mientras que el administrador puede cambiar el estado de las necesidades registradas por los estudiantes. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Necesidad" y en la opción de "Actualizar estado necesidad".
 
-<img src="imagenes/necesidad_act1_exp.jpg">
+[![necesidad-act1-exp.jpg](https://i.postimg.cc/JnDbSKZx/necesidad-act1-exp.jpg)](https://postimg.cc/xJQJzvsN)
 
 Al dar click en la opción, será redirigido a la ventana de actualización. En esta se debe seleccionar la necesidad que se desea actualizar y seleccionar el nuevo estado de esta.
 
-<img src="imagenes/necesidad_act2_exp.jpg">
+[![necesidad-act2-exp.jpg](https://i.postimg.cc/R0360hhV/necesidad-act2-exp.jpg)](https://postimg.cc/SXhNTycw)
 
 Para actualizar la necesidad seleccionada se da click en el botón de "Actualizar". Seguido a esto se mostrará actualizada la necesidad con su última fecha de modificación correspondiente.
 
-<img src="imagenes/necesidad_act3_estado_exp.jpg">
+[![necesidad-act3-estado-exp.jpg](https://i.postimg.cc/prkXCMr6/necesidad-act3-estado-exp.jpg)](https://postimg.cc/jnwbq9zH)
 
 
 ## Arquitectura y Diseño detallado
