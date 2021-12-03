@@ -23,8 +23,15 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 
 ### Manual de Usuario
 
-### Principales funcionalidades 
+Al ingresar al enlace de la aplicación se muestra la pantalla de inicio. Al lado derecho de esta se encuentra la descripción del proyecto junto al botón que redirecciona al usuario para que pueda 
+iniciar sesión. AL lado izquierdo se encuentran los enlaces directos al manual de usuario y a el campus virtual de la universidad. 
 
+
+
+
+La aplicación SOLIDADIDAD ECI maneja 
+### Principales funcionalidades 
+Al ingresar 
 ## Arquitectura y Diseño detallado
 
 ### Modelo E-R
