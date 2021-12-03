@@ -70,12 +70,15 @@
 			    </div>
 			</div>
 			
-			<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2">
-				<p:dataExporter type="xlsxstream" target="reporteOferta" fileName="Reporteoferta"/>
-			</p:commandButton>
-			<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
-	            <p:dataExporter type="pdf" target="reporteOferta" fileName="ReporteOferta"/>
-	        </p:commandButton>
+			<div>
+				<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2">
+					<p:dataExporter type="xlsxstream" target="reporteOferta" fileName="Reporteoferta"/>
+				</p:commandButton>
+				<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
+		            <p:dataExporter type="pdf" target="reporteOferta" fileName="ReporteOferta"/>
+		        </p:commandButton>
+		        <p:commandButton id = "boton_Regresar" value ="REGRESAR" actionListener ="#{loginBean.redirect()}" styleClass="ui-button-secondary" />
+	        </div>
 	    </h:form>
 	</body>
 </html>

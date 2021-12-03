@@ -37,3 +37,11 @@ h2 {
 	    justify-content: space-between;
 	    align-items: center;
 	}
+	
+.boton_Regresar {
+		float: right;
+	}
+	
+.exporter {
+		float: left;
+	}
