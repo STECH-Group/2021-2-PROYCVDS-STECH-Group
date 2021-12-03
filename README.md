@@ -53,7 +53,7 @@ En el registro de necesidad los usuarios expresan las necesidades que presentan.
 En la pantalla de Registro Necesidades se debe incluir la siguiente información necesaria. 
 En primer lugar se debe agregar una **descripción** de la necesidad en el cuadro de texto extendible. 
 
-<img src="imagenes/necesidad_desc_exp.jpg">
+[![necesidad-desc-exp.jpg](https://i.postimg.cc/WzCwhgnS/necesidad-desc-exp.jpg)](https://postimg.cc/rRGrHd7t)
 
 Seguido a esto se debe agregar el **nivel de urgencia** de la necesidad, donde 1 es el nivel más bajo y 5 el más alto.
 
