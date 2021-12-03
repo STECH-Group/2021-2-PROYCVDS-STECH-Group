@@ -21,8 +21,8 @@ create sequence id_Needs;
 
 create table if not exists NEEDS( 
 	id int primary key,
-	category varchar(50) references categories(name) on delete set null on update cascade,
-	name varchar(80) references users(name) on delete set null on update cascade,
+	category varchar(50) references categories(name),
+	name varchar(80) references users(name),
 	description varchar(400) not null,
 	urgency int not null,
 	creation_Date Date not null,
@@ -32,10 +32,10 @@ create table if not exists NEEDS(
  
  create sequence id_Offers;
  
-create table if not exists OFFERS( 
+ create table if not exists OFFERS( 
 	id int primary key,
-	category varchar(50) references categories(name) on delete set null on update cascade,
-	name varchar(80) references users(name) on delete set null on update cascade,
+	category varchar(50) references categories(name),
+	name varchar(80) references users(name),
 	description varchar(400) not null,
 	creation_Date Date not null,
 	state varchar(10) not null,
@@ -44,22 +44,22 @@ create table if not exists OFFERS(
  
  create sequence id_Answers_Needs;
  
-create table if not exists answers_needs( 
+ create table if not exists answers_needs( 
 	id int primary key,
-	name varchar(80) references users(name) on delete set null on update cascade,
+	name varchar(80) references users(name),
 	response varchar(400) not null,
 	creation_Date Date not null,
-	need int references needs(id) on delete set null on update cascade
+	need int references needs(id)
  );
  
  create sequence id_Answers_Offers;
 
 create table if not exists answers_offers( 
 	id int primary key,
-	name varchar(80) references users(name) on delete set null on update cascade,
+	name varchar(80) references users(name),
 	response varchar(400) not null,
 	creation_Date Date not null,
-	offer int references offers(id) on delete set null on update cascade
+	offer int references offers(id)
  );
  
 insert into users(user_name, name, mail, passwd, rol) values ('jose', 'José Gamboa', 'administrador@hotmail.com', 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6', 'Administrador');
@@ -74,4 +74,8 @@ insert into categories(id, name, description, creation_date, state, modify_date)
 insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Deportes', 'Equipo de practica para los integrantes de los equipos de la Escuela', current_date, 'Activo', current_date);
 insert into categories(id, name, description, creation_date, state, modify_date) values (nextval('id_Categories'), 'Expresión Gráfica', 'Instrumentos de dibujo para EGR', current_date, 'Inactivo', current_date);
 
-insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Textos', 'Camilo Pichimata', 'Necesito implemento para la clase', 3, current_date, 'Activo', current_date);
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Textos', 'Camilo Pichimata', 'Necesito texto para la clase de precalculo', 4, current_date, 'Activo', current_date);
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Deportes', 'Zuly Vargas', 'Necesito raqueta de segunda en buen estado', 2, current_date, 'Activo', current_date);
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Expresión Gráfica', 'José Gamboa', 'Necesito tabla de dibujo para la clase', 5, current_date, 'Activo', current_date);
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Expresión Gráfica', 'Cristian Forero', 'Necesito escuadra de 45 grados', 1, current_date, 'Inactivo', current_date);
+insert into needs(id, category, name, description, urgency, creation_date, state, modify_date) values (nextval('id_Needs'), 'Textos', 'Zuly Vargas', 'Necesito libro de física mecánica', 4, current_date, 'Inactivo', current_date);
