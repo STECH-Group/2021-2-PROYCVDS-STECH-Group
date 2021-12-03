@@ -67,8 +67,12 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		ssECI.eliminarCategoria(getCategory());
 	}
 	
-	public List<Need> searchNeeds(){
+	public List<Need> reportNeeds(){
 		return ssECI.reporteDeNecesidades();
+	}
+	
+	public List<Offer> reportOffer(){
+		return ssECI.reporteDeOfertas();
 	}
 	
 	public void createPieChartNeeds() {
@@ -77,6 +81,32 @@ public class AdministratorBean extends BasePageBean implements Serializable{
         PieChartDataSet dataSet = new PieChartDataSet();
         List<Number> values = new ArrayList<>();
         List<Reporte> reportStates = ssECI.reporteNecesidadesGrafico();
+        for(Reporte i : reportStates) {
+        	values.add(i.getCatidad());
+        }
+        dataSet.setData(values);
+        
+        List<String> colores = new ArrayList<>();
+        colores.add("rgb(255, 233, 0)");
+        colores.add("rgb(85, 100, 235)");
+        colores.add("rgb(248, 0, 0)");
+        dataSet.setBackgroundColor(colores);
+        
+        data.addChartDataSet(dataSet);
+        List<String> labels = new ArrayList<>();
+        for(Reporte i : reportStates) {
+        	labels.add(i.getEstado());
+        }
+        data.setLabels(labels);
+        pieChart.setData(data);
+	}
+	
+	public void createPieChartOffer() {
+		pieChart = new PieChartModel();
+        ChartData data = new ChartData();
+        PieChartDataSet dataSet = new PieChartDataSet();
+        List<Number> values = new ArrayList<>();
+        List<Reporte> reportStates = ssECI.reporteOfertasGrafico();
         for(Reporte i : reportStates) {
         	values.add(i.getCatidad());
         }

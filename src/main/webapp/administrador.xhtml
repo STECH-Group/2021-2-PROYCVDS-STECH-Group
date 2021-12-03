@@ -34,7 +34,7 @@
                 </p:submenu>
                 <p:submenu label="Reportes">
                     <p:menuitem value="Reporte necesidad" icon="pi pi-chart-bar" actionListener="#{administratorBean.createPieChartNeeds()}" action = "reporteNecesidades?faces-redirect = true"/>
-                    <p:menuitem value="Reporte ofertas" icon="pi pi-chart-bar" />
+                    <p:menuitem value="Reporte ofertas" icon="pi pi-chart-bar" actionListener="#{administratorBean.createPieChartOffer()}" action = "reporteOfertas?faces-redirect = true"/>
                     <p:menuitem value="Reporte respuestas" icon="pi pi-chart-bar" />
                     <p:menuitem value="Reporte categorias" icon="pi pi-chart-bar" />
                 </p:submenu>
