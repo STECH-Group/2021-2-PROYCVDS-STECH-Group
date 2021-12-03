@@ -117,6 +117,11 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	}
 
 	@Override
+	public Need consultarNecesidadesPorId(int id) {
+		return needDAO.consultarNecesidadesPorId(id);
+	}
+	
+	@Override
 	public List<Need> consultarNecesidadesPorUsuario() {
 		return needDAO.consultarNecesidadesPorUsuario();
 	}

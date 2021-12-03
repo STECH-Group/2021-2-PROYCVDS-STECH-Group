@@ -4,11 +4,15 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.sun.mail.imap.protocol.ID;
+
 import edu.eci.cvds.samples.entities.Need;
 
 public interface NeedMapper {
 	
 	public List<Need> searchNeeds();
+	
+	public Need searchNeedsById(@Param ("Id") int id);
 	
 	public List<Need> searchNeedsByUser(@Param ("Name") String name);
 	

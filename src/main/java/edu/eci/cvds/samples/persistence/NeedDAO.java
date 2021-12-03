@@ -10,6 +10,8 @@ public interface NeedDAO {
 	
 	public List<Need> consultarNecesidades();
 	
+	public Need consultarNecesidadesPorId(int id);
+	
 	public List<Need> consultarNecesidadesPorUsuario() throws PersistenceException;
 	
 	public List<Need> consultarNecesidadesActivasOEnProceso() throws PersistenceException;
@@ -23,5 +25,5 @@ public interface NeedDAO {
 	public void eliminarNecesidadPorId(int id) throws PersistenceException;
 	
 	public void eliminarNecesidades();
-
+	
 }

@@ -30,6 +30,8 @@ public interface ServicioSolidaridadECI {
 
 	public List<Need> consultarNecesidades();
 	
+	public Need consultarNecesidadesPorId(int id);
+	
 	public List<Need> consultarNecesidadesPorUsuario();
 	
 	public List<Need> reporteDeNecesidades();

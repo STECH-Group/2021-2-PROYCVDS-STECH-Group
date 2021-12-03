@@ -64,6 +64,11 @@ public class MyBatisNeedDAO implements NeedDAO{
 	public List<Need> consultarNecesidades() {
 		return needMapper.searchNeeds();
 	}
+	
+	@Override
+	public Need consultarNecesidadesPorId(int id) {
+		return needMapper.searchNeedsById(id);
+	}
 
 	@Override
 	public List<Need> consultarNecesidadesPorUsuario() throws PersistenceException{
