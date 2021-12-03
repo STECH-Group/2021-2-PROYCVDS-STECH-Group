@@ -11,7 +11,6 @@ body {
     background-position: center;
     transition: all .1s ease-in-out;
     background-image: url("home.jpg");
-    
 }
 
 .banner-content {
@@ -45,7 +44,7 @@ body {
 .info .parrafo label {
     color: #6e111c;
     position: absolute;
-    top: calc(60vh+250px);
+    top: calc(40vh+230px);
     left: 90px;
     font-family: Helvetica, Georgia, 'Times New Roman', Times, sans-serif;
     font-size: 140%;
@@ -62,9 +61,7 @@ body {
 .botones {
     background-color: #fff;
     width: 2%;
-    padding-left: 30px;
-    padding-top: 3px;
-    position: center;
+    height: 5%;
 }
 
 .manual {
@@ -79,11 +76,8 @@ body {
     grid-template-columns: repeat(1, 1fr);
 } 
 
-
-
 .container {
-    display: inline;
     counter-reset: heading;
-    position: absolute;
+    position: relative;
     resize:both;
 }

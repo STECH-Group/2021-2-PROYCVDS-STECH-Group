@@ -31,7 +31,7 @@
                 <p:panel header="Ingrese los datos a registrar">
                     <h:panelGrid columns="2" columnClasses="label, value">
 
-                        <h:outputLabel for="descripcion" value="Descripcion:       " />
+                        <h:outputLabel for="descripcion" value="Descripción:       " />
                         <p:inputTextarea rows="6" cols="30" id="descripcion" type="String" binding="#{descripcion}" />
 
                         <h:outputText for="urgencia" value="Urgencia: " />
@@ -48,7 +48,7 @@
                             <f:selectItem itemLabel="Cerrado" itemValue="Cerrado" />
                         </p:selectOneMenu>
 
-                        <h:outputText for="category_name" value="Nombre categoria: " />
+                        <h:outputText for="category_name" value="Nombre categoría: " />
                         <p:selectOneMenu id="categoria_lista" binding="#{category}" >
                             <f:selectItem itemLabel="Seleccione" itemValue="" />
                             <f:selectItems value="#{administratorBean.searchActiveCategoryNames()}" />

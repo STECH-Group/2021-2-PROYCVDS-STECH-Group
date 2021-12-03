@@ -23,8 +23,9 @@
             <h2>NECESIDADES EXISTENTES</h2>
         </div>
         <div class="panel consulta">
-            <p:dataTable var="need" rows="10" value="#{usuarioBean.searchNeedsByUser()}" selection="#{usuarioBean.needUpdate}" paginator="true" selectionMode="single" rowKey="#{need.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+            <p:dataTable var="need" rows="10" value="#{usuarioBean.searchNeedsByUser()}" selection="#{usuarioBean.needUpdate}" paginator="true" selectionMode="single" rowKey="#{need.id}" 
+            paginatorPosition="bottom" 
+            currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" >
 
                 <p:column headerText="CATEGORIA">
                     <h:outputText value="#{need.getCategory()}" />
