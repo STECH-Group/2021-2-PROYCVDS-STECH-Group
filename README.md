@@ -26,23 +26,23 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 Al ingresar al enlace de la aplicación se muestra la pantalla de inicio. Al lado derecho de esta se encuentra la descripción del proyecto junto al botón que redirecciona al usuario para que pueda 
 iniciar sesión. Al lado izquierdo se encuentran los enlaces directos al manual de usuario y a el campus virtual de la universidad. 
 
-<img src="imagenes/home_exp.jpg">
+<img src="imagenes/home_exp.jpg" width="1240" height="400" >
 
 Al dar en ingresar se muestra la pantalla de inicio de sesión, en esta se deben ingresar los datos correspondientes. Luego de ingresar los datos se da en ingresar para continuar al menu de usuario con las diferentes opciones. 
 
 <img src="imagenes/login_exp.jpg">
 
 Los perfiles de usuario que maneja la plataforma de SOLIDARIDAD ECI son los siguientes:
-    
-- Administrador
-- Administrativo
-- Estudiante
-- Egresado 
-- Profesor 
+
++   Administrador
++   Administrativo
++   Estudiante
++   Egresado 
++   Profesor 
 
 Según el rol del usuario, se muestran los principales servicios del sistema a las cuales puede acceder. Las principales funcionalidades de la plataforma y los usuarios autorizados para cada una son :
 
-## Registro de Necesidad:
+## Registro de Necesidad
 
 **Roles autorizados:** Estudiante.
 
@@ -75,7 +75,7 @@ Luego de registrar, podemos observar como ha sido guardada la petición recien r
 
 <img src="imagenes/necesidad_consulta_exp.jpg">
 
-## Actualización Estado de necesidad:
+## Actualización Estado de necesidad
 
 **Roles autorizados:** Administrador, Estudiante.
 
