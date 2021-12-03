@@ -1,10 +1,16 @@
 package edu.eci.cvds.samples.test;
 
+import static org.junit.Assert.assertArrayEquals;
+
 import java.time.LocalDate;
+import java.sql.Date;
+import java.util.List;
 
 import javax.validation.constraints.Size;
 
 import org.apache.pdfbox.contentstream.operator.state.SetLineDashPattern;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+import org.bouncycastle.asn1.cmc.CMCObjectIdentifiers;
 import org.bouncycastle.operator.AADProcessor;
 import org.junit.After;
 import org.junit.Assert;
@@ -15,6 +21,7 @@ import com.google.inject.Inject;
 
 import edu.eci.cvds.samples.beans.LoginBean;
 import edu.eci.cvds.samples.entities.Category;
+import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -58,6 +65,17 @@ public class ServicioSolidaridadECITest {
 	public void deberiaConsultarCategoriasPorNombre() {
 		String salidaEsperada = "Category [id=3, name=Textos, description=Libros, guias, manuales, etc. para clases teoricas, creationDate=" + LocalDate.now() + ", state=Inactivo, modifyDate=" + LocalDate.now() + "]\n\t"; 
 		Assert.assertEquals(salidaEsperada, ssECI.searchCategoriesByName("Textos").get(0).toString());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoCategoria() {
+		Category categoria = new Category(8, "Otros", "Productos de otras categorías", Date.valueOf(LocalDate.now()), "Activo", Date.valueOf(LocalDate.now()));
+		Assert.assertEquals(8, categoria.getId());
+		Assert.assertEquals("Otros", categoria.getName());
+		Assert.assertEquals("Productos de otras categorías", categoria.getDescription());
+		Assert.assertEquals(java.sql.Date.valueOf(LocalDate.now()), categoria.getCreationDate());
+		Assert.assertEquals("Activo", categoria.getState());
+		Assert.assertEquals(java.sql.Date.valueOf(LocalDate.now()), categoria.getModifyDate());
 	}
 	
 	@Test
@@ -130,10 +148,44 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaConsultarNecesidades() {
-		//System.out.println("---Necesidades---");
+		//System.out.println("---Consultar Necesidades---");
 		//System.out.println(ssECI.consultarNecesidades().toString());
-		int numeroNecesidades = 1;
+		int numeroNecesidades = 5;
 		Assert.assertEquals(numeroNecesidades, ssECI.consultarNecesidades().size());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoNecesidad() {
+		Need necesidad = new Need(6, "Textos", "José Gamboa", "Ncesito texto de física mecánica", 4, Date.valueOf(LocalDate.now()), "Activo", Date.valueOf(LocalDate.now()));
+		Assert.assertEquals(6, necesidad.getId());
+		Assert.assertEquals("Textos", necesidad.getCategory());
+		Assert.assertEquals("José Gamboa", necesidad.getName());
+		Assert.assertEquals("Ncesito texto de física mecánica", necesidad.getDescription());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), necesidad.getCreationDate());
+		Assert.assertEquals("Activo", necesidad.getState());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), necesidad.getModifyDate());
+	}
+	
+	@Test
+	public void deberiaGenerarReporteDeNecesidades() {
+		//System.out.println("---Reporte de Necesidades---");
+		//System.out.println(ssECI.reporteDeNecesidades().toString());
+		List<Need> reporte = ssECI.reporteDeNecesidades();
+		Assert.assertEquals("Activo", reporte.get(0).getState());
+		Assert.assertEquals("Inactivo", reporte.get(reporte.size()-1).getState());
+	}
+	
+	/*@Test
+	public void deberiaActualizarEstadoNecesidad() {
+		Need necesidad; //= consultarNecesidadPorId("___")
+		ssECI.actualizarEstadoNecesidad(necesidad, ______);
+		
+	}*/
+	
+	@Test
+	public void deberiaConsultarNecesidadesActivasOEnProceso() {
+		int numeroNecesidades = 3;
+		Assert.assertEquals(numeroNecesidades, ssECI.consultaNecesidadesActivasOEnProceso().size());
 	}
 	
 	/*@Test
