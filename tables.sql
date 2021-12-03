@@ -21,8 +21,8 @@ create sequence id_Needs;
 
 create table if not exists NEEDS( 
 	id int primary key,
-	category varchar(50) references categories(name),
-	name varchar(80) references users(name),
+	category varchar(50) references categories(name) on delete set null on update cascade,
+	name varchar(80) references users(name) on delete set null on update cascade,
 	description varchar(400) not null,
 	urgency int not null,
 	creation_Date Date not null,
@@ -32,10 +32,10 @@ create table if not exists NEEDS(
  
  create sequence id_Offers;
  
- create table if not exists OFFERS( 
+create table if not exists OFFERS( 
 	id int primary key,
-	category varchar(50) references categories(name),
-	name varchar(80) references users(name),
+	category varchar(50) references categories(name) on delete set null on update cascade,
+	name varchar(80) references users(name) on delete set null on update cascade,
 	description varchar(400) not null,
 	creation_Date Date not null,
 	state varchar(10) not null,
@@ -44,22 +44,22 @@ create table if not exists NEEDS(
  
  create sequence id_Answers_Needs;
  
- create table if not exists answers_needs( 
+create table if not exists answers_needs( 
 	id int primary key,
-	name varchar(80) references users(name),
+	name varchar(80) references users(name) on delete set null on update cascade,
 	response varchar(400) not null,
 	creation_Date Date not null,
-	need int references needs(id)
+	need int references needs(id) on delete set null on update cascade
  );
  
  create sequence id_Answers_Offers;
 
 create table if not exists answers_offers( 
 	id int primary key,
-	name varchar(80) references users(name),
+	name varchar(80) references users(name) on delete set null on update cascade,
 	response varchar(400) not null,
 	creation_Date Date not null,
-	offer int references offers(id)
+	offer int references offers(id) on delete set null on update cascade
  );
  
 insert into users(user_name, name, mail, passwd, rol) values ('jose', 'José Gamboa', 'administrador@hotmail.com', 'b20b0f63ce2ed361e8845d6bf2e59811aaa06ec96bcdb92f9bc0c5a25e83c9a6', 'Administrador');
