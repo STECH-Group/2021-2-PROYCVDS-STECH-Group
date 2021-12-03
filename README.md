@@ -48,7 +48,7 @@ Según el rol del usuario, se muestran los principales servicios del sistema a l
 
 En el registro de necesidad los usuarios expresan las necesidades que presentan. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Necesidad" y en la opción de "Registrar necesidad".
 
-<img src="imagenes/necesidad1_exp.jpg">
+[![necesidad1-exp.jpg](https://i.postimg.cc/N0k9Wm2S/necesidad1-exp.jpg)](https://postimg.cc/PLN5DL4Q)
 
 En la pantalla de Registro Necesidades se debe incluir la siguiente información necesaria. 
 En primer lugar se debe agregar una **descripción** de la necesidad en el cuadro de texto extendible. 
