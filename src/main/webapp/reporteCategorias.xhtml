@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
 
 	<h:head>
-	    <title>Reporte Ofertas</title>
+	    <title>Reporte Categorias</title>
 	</h:head>
 	<body>
 		<h:form>
@@ -25,35 +25,23 @@
 	        
 	        
 	        <div class="panel consulta">
-	            <p:dataTable id="reporteOferta" var="offer" value="#{administratorBean.reportOffer()}" paginator="true" selectionMode="single" selection="" rowKey="#{offer.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+	            <p:dataTable id="reporteCategoria" var="category" value="#{administratorBean.reportCategory()}" paginator="true" selectionMode="single" selection="" rowKey="#{category.estado}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
 	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
 	                
-					<p:column headerText="ID">
-	                    <h:outputText value="#{offer.getId()}" />
-	                </p:column>
-					
 					<p:column headerText="CATEGORIA">
-	                    <h:outputText value="#{offer.getCategory()}" />
+	                    <h:outputText value="#{category.getEstado()}" />
 	                </p:column>
 	
-	                <p:column headerText="NOMBRE">
-	                    <h:outputText value="#{offer.getName()}" />
+	                <p:column headerText="NUMERO DE SOLICITUDES">
+	                    <h:outputText value="#{category.getCantidad()}" />
 	                </p:column>
 	
-	                <p:column headerText="DESCRIPCION">
-	                    <h:outputText value="#{offer.getDescription()}" />
+	                <p:column headerText="NUMERO DE OFERTAS">
+	                    <h:outputText value="#{category.getCantidad2()}" />
 	                </p:column>
 	
-	                <p:column headerText="FECHA CREACIÓN">
-	                    <h:outputText value="#{offer.getCreationDate()}" />
-	                </p:column>
-	
-	                <p:column headerText="ESTADO">
-	                    <h:outputText value="#{offer.getState()}" />
-	                </p:column>
-	
-	                <p:column headerText="FECHA MODIFICACIÓN">
-	                    <h:outputText value="#{offer.getModifyDate()}" />
+	                <p:column headerText="TOTAL">
+	                    <h:outputText value="#{category.getTotal()}" />
 	                </p:column>
 					
 					<f:facet name="footer">
@@ -71,10 +59,10 @@
 			</div>
 			
 			<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2">
-				<p:dataExporter type="xlsxstream" target="reporteOferta" fileName="Reporteoferta"/>
+				<p:dataExporter type="xlsxstream" target="reporteCategoria" fileName="ReporteCategoria"/>
 			</p:commandButton>
 			<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
-	            <p:dataExporter type="pdf" target="reporteOferta" fileName="ReporteOferta"/>
+	            <p:dataExporter type="pdf" target="reporteCategoria" fileName="ReporteCategoria"/>
 	        </p:commandButton>
 	    </h:form>
 	</body>

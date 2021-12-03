@@ -75,6 +75,14 @@ public class AdministratorBean extends BasePageBean implements Serializable{
 		return ssECI.reporteDeOfertas();
 	}
 	
+	public List<Reporte> reportAnswers(){
+		return ssECI.reporteRespuestas();
+	}
+	
+	public List<Reporte> reportCategory(){
+		return ssECI.reporteCategorias();
+	}
+	
 	public void createPieChartNeeds() {
 		pieChart = new PieChartModel();
         ChartData data = new ChartData();
@@ -82,7 +90,7 @@ public class AdministratorBean extends BasePageBean implements Serializable{
         List<Number> values = new ArrayList<>();
         List<Reporte> reportStates = ssECI.reporteNecesidadesGrafico();
         for(Reporte i : reportStates) {
-        	values.add(i.getCatidad());
+        	values.add(i.getCantidad());
         }
         dataSet.setData(values);
         
@@ -108,7 +116,33 @@ public class AdministratorBean extends BasePageBean implements Serializable{
         List<Number> values = new ArrayList<>();
         List<Reporte> reportStates = ssECI.reporteOfertasGrafico();
         for(Reporte i : reportStates) {
-        	values.add(i.getCatidad());
+        	values.add(i.getCantidad());
+        }
+        dataSet.setData(values);
+        
+        List<String> colores = new ArrayList<>();
+        colores.add("rgb(255, 233, 0)");
+        colores.add("rgb(85, 100, 235)");
+        colores.add("rgb(248, 0, 0)");
+        dataSet.setBackgroundColor(colores);
+        
+        data.addChartDataSet(dataSet);
+        List<String> labels = new ArrayList<>();
+        for(Reporte i : reportStates) {
+        	labels.add(i.getEstado());
+        }
+        data.setLabels(labels);
+        pieChart.setData(data);
+	}
+	
+	public void createPieChartCategory() {
+		pieChart = new PieChartModel();
+        ChartData data = new ChartData();
+        PieChartDataSet dataSet = new PieChartDataSet();
+        List<Number> values = new ArrayList<>();
+        List<Reporte> reportStates = ssECI.reporteCategorias();
+        for(Reporte i : reportStates) {
+        	values.add(i.getTotal());
         }
         dataSet.setData(values);
         

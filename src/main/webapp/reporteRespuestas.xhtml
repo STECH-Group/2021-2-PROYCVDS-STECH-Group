@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	    <title>Reporte Respuestas</title>
+	</h:head>
+	<body>
+		<h:form>
+			<link href="reporteCSS.css" rel="stylesheet" type="text/css" />
+			<header id="barra-administrador">
+	
+	            <div class=" logo-nav-container">
+	                <p id="admin-header" href="#">
+	                    ADMINISTRADOR
+	                </p>
+	                <p:commandButton id="cerrar_sesion" styleClass="ui-button-raised ui-button-flat ui-button-plain" actionListener="#{loginBean.logOut()}" style="float:center;" value="Cerrar Sesión" />
+	            </div>
+	
+	        </header>
+			<!-- / #main-header -->
+	        <div class="titulo">
+	            <h2>CATEGORIAS</h2>
+	        </div>
+	        
+	        
+	        <div class="panel consulta">
+	            <p:dataTable id="reporteRespuesta" var="answer" value="#{administratorBean.reportAnswers()}" paginator="true" selectionMode="single" selection="" rowKey="#{answer.id}" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+	                
+					<p:column headerText="RESPUESTA">
+	                    <h:outputText value="#{answer.getEstado()}" />
+	                </p:column>
+					
+					<p:column headerText="RESPUESTA NECESIDAD U OFERTA">
+	                    <h:outputText value="#{answer.getResponseNO()}" />
+	                </p:column>
+					
+					<f:facet name="footer">
+	                    
+	            	</f:facet>
+	            </p:dataTable>
+				
+	        </div>       
+			
+			<p:commandButton value="XLSX" styleClass="p-mr-2 p-mb-2">
+				<p:dataExporter type="xlsxstream" target="reporteRespuesta" fileName="ReporteRespuestas"/>
+			</p:commandButton>
+			<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
+	            <p:dataExporter type="pdf" target="reporteRespuesta" fileName="ReporteRespuestas"/>
+	        </p:commandButton>
+	    </h:form>
+	</body>
+</html>

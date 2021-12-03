@@ -22,11 +22,11 @@ public class Reporte implements Serializable{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public int getCatidad() {
+	public int getCantidad() {
 		return cantidad;
 	}
 	
-	public void setCatidad(int cantidad) {
+	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
 	
@@ -44,6 +44,10 @@ public class Reporte implements Serializable{
 	
 	public void setResponseNO(String responseNO) {
 		this.responseNO = responseNO;
+	}
+	
+	public int getTotal() {
+		return getCantidad2() + getCantidad();
 	}
 	
 	@Override
