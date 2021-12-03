@@ -24,14 +24,74 @@ La **Plataforma Solidaridad Escuela**, es una herramienta para generar un entorn
 ### Manual de Usuario
 
 Al ingresar al enlace de la aplicación se muestra la pantalla de inicio. Al lado derecho de esta se encuentra la descripción del proyecto junto al botón que redirecciona al usuario para que pueda 
-iniciar sesión. AL lado izquierdo se encuentran los enlaces directos al manual de usuario y a el campus virtual de la universidad. 
+iniciar sesión. Al lado izquierdo se encuentran los enlaces directos al manual de usuario y a el campus virtual de la universidad. 
+
+<img src="imagenes/home_exp.jpg">
+
+Al dar en ingresar se muestra la pantalla de inicio de sesión, en esta se deben ingresar los datos correspondientes. Luego de ingresar los datos se da en ingresar para continuar al menu de usuario con las diferentes opciones. 
+
+<img src="imagenes/login_exp.jpg">
+
+Los perfiles de usuario que maneja la plataforma de SOLIDARIDAD ECI son los siguientes:
+    
+- Administrador
+- Administrativo
+- Estudiante
+- Egresado 
+- Profesor 
+
+Según el rol del usuario, se muestran los principales servicios del sistema a las cuales puede acceder. Las principales funcionalidades de la plataforma y los usuarios autorizados para cada una son :
+
+## Registro de Necesidad:
+
+**Roles autorizados:** Estudiante.
+
+En el registro de necesidad los usuarios expresan las necesidades que presentan. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Necesidad" y en la opción de "Registrar necesidad".
+
+<img src="imagenes/necesidad1_exp.jpg">
+
+En la pantalla de Registro Necesidades se debe incluir la siguiente información necesaria. 
+En primer lugar se debe agregar una **descripción** de la necesidad en el cuadro de texto extendible. 
+
+<img src="imagenes/necesidad_desc_exp.jpg">
+
+Seguido a esto se debe agregar el **nivel de urgencia** de la necesidad, donde 1 es el nivel más bajo y 5 el más alto.
+
+<img src="imagenes/necesidad_urg_exp.jpg">
+
+En **Estado** se debe indicar el estado de la necesidad donde se encuentran las opciones de: Activo, En Proceso, Resuelto y Cerrado. 
+
+<img src="imagenes/necesidad_estado_exp.jpg">
+
+Por último se debe indicar la categoría a la cual pertenece la necesidad.
+
+<img src="imagenes/necesidad_categ_exp.jpg">
+
+Luego de ingresar la información necesaria se debe dar en el botón **Registrar** para ser redirigido a la consulta de necesidades para verificar que esta haya sido registrada. 
+
+<img src="imagenes/necesidad_reg_exp.jpg">
+
+Luego de registrar, podemos observar como ha sido guardada la petición recien realizada.
+
+<img src="imagenes/necesidad_consulta_exp.jpg">
+
+## Actualización Estado de necesidad:
+
+**Roles autorizados:** Administrador, Estudiante.
+
+En la actualización del estado de una necesidad se cambia el estado actual de la necesidad deseada. Los estudiantes solo pueden cambiar el estado de las necesidades que registraron mientras que el administrador puede cambiar el estado de las necesidades registradas por los estudiantes. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Necesidad" y en la opción de "Actualizar estado necesidad".
+
+<img src="imagenes/necesidad_act1_exp.jpg">
+
+Al dar click en la opción, será redirigido a la ventana de actualización. En esta se debe seleccionar la necesidad que se desea actualizar y seleccionar el nuevo estado de esta.
+
+<img src="imagenes/necesidad_act2_exp.jpg">
+
+Para actualizar la necesidad seleccionada se da click en el botón de "Actualizar". Seguido a esto se mostrará actualizada la necesidad con su última fecha de modificación correspondiente.
+
+<img src="imagenes/necesidad_act3_estado_exp.jpg">
 
 
-
-
-La aplicación SOLIDADIDAD ECI maneja 
-### Principales funcionalidades 
-Al ingresar 
 ## Arquitectura y Diseño detallado
 
 ### Modelo E-R
