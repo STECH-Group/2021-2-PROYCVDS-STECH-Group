@@ -107,5 +107,4 @@ public class LoginBean implements Serializable{
             log.error(ex.getMessage(), ex);
 		}
 	}
-	
 }
