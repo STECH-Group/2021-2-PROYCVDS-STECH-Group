@@ -8,7 +8,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 
-import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.primefaces.model.charts.ChartData;
 import org.primefaces.model.charts.pie.PieChartDataSet;
