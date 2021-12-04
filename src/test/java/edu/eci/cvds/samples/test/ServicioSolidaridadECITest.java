@@ -9,9 +9,14 @@ import org.junit.Test;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.samples.beans.UsuarioBean;
+import edu.eci.cvds.samples.entities.AnswerNeed;
+import edu.eci.cvds.samples.entities.AnswerOffer;
 import edu.eci.cvds.samples.entities.Category;
 import edu.eci.cvds.samples.entities.Need;
 import edu.eci.cvds.samples.entities.Offer;
+import edu.eci.cvds.samples.entities.Reporte;
+import edu.eci.cvds.samples.entities.User;
 import edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -241,5 +246,102 @@ public class ServicioSolidaridadECITest {
 		List<Offer> reporte = ssECI.reporteDeOfertas();
 		Assert.assertEquals("Activo", reporte.get(0).getState());
 		Assert.assertEquals("Inactivo", reporte.get(reporte.size()-1).getState());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoAnswerOffer() {
+		AnswerOffer respuestaOferta = new AnswerOffer(6, "Camilo Pichimata", "Deseo ver Balón de futbol", Date.valueOf(LocalDate.now()), 2);
+		Assert.assertEquals(6, respuestaOferta.getId());
+		Assert.assertEquals("Camilo Pichimata", respuestaOferta.getName());
+		Assert.assertEquals("Deseo ver Balón de futbol", respuestaOferta.getResponse());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), respuestaOferta.getCreationDate());
+		Assert.assertEquals(2, respuestaOferta.getOffer());
+	}
+	
+	@Test
+	public void deberiaActualizarDatosObjetoAnswerOffer() {
+		AnswerOffer respuestaOferta = new AnswerOffer(6, "Andrés Pichimata", "Deseo ver Balón de futbol", Date.valueOf(LocalDate.now()), 2);
+		respuestaOferta.setId(6);
+		respuestaOferta.setName("Camilo Pichimata");
+		respuestaOferta.setResponse("Deseo obtener Balón de futbol");
+		respuestaOferta.setCreationDate(Date.valueOf(LocalDate.now()));
+		respuestaOferta.setOffer(2);
+		Assert.assertEquals(6, respuestaOferta.getId());
+		Assert.assertEquals("Camilo Pichimata", respuestaOferta.getName());
+		Assert.assertEquals("Deseo obtener Balón de futbol", respuestaOferta.getResponse());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), respuestaOferta.getCreationDate());
+		Assert.assertEquals(2, respuestaOferta.getOffer());
+	}
+	
+	@Test
+	public void deberiaPasarAnswerOfferAString() {
+		AnswerOffer respuestaOferta = new AnswerOffer(6, "Andrés Pichimata", "Deseo ver Balón de futbol", Date.valueOf(LocalDate.now()), 2);
+		String salidaEsperada = "AnswerOffer [id=6, name=Andrés Pichimata, response=Deseo ver Balón de futbol, creationDate=" + Date.valueOf(LocalDate.now()) + ", offer=2]";
+		Assert.assertEquals(salidaEsperada, respuestaOferta.toString());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoAnswerNeed() {
+		AnswerNeed respuestaNecesidad = new AnswerNeed(6, "Cristian Forero", "Tengo tabla de dibujo", Date.valueOf(LocalDate.now()), 3);
+		Assert.assertEquals(6, respuestaNecesidad.getId());
+		Assert.assertEquals("Cristian Forero", respuestaNecesidad.getName());
+		Assert.assertEquals("Tengo tabla de dibujo", respuestaNecesidad.getResponse());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), respuestaNecesidad.getCreationDate());
+		Assert.assertEquals(3, respuestaNecesidad.getNeed());
+	}
+	
+	@Test
+	public void deberiaActualizarDatosObjetoAnswerNeed() {
+		AnswerNeed respuestaNecesidad = new AnswerNeed(6, "Manuel Gamboa", "Tengo tabla de dibujo", Date.valueOf(LocalDate.now()), 3);
+		respuestaNecesidad.setId(6);
+		respuestaNecesidad.setName("Manuel Gamboa");
+		respuestaNecesidad.setResponse("Tengo tabla para clase de expresión");
+		respuestaNecesidad.setCreationDate(Date.valueOf(LocalDate.now()));
+		respuestaNecesidad.setNeed(3);
+		Assert.assertEquals(6, respuestaNecesidad.getId());
+		Assert.assertEquals("Manuel Gamboa", respuestaNecesidad.getName());
+		Assert.assertEquals("Tengo tabla para clase de expresión", respuestaNecesidad.getResponse());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), respuestaNecesidad.getCreationDate());
+		Assert.assertEquals(3, respuestaNecesidad.getNeed());
+	}
+	
+	@Test
+	public void deberiaPasarAnswerNeedAString() {
+		AnswerNeed respuestaNecesidad = new AnswerNeed(6, "Manuel Gamboa", "Deseo ver Balón de futbol", Date.valueOf(LocalDate.now()), 2);
+		String salidaEsperada = "AnswerNeed [id=6, name=Manuel Gamboa, response=Deseo ver Balón de futbol, creationDate=" + Date.valueOf(LocalDate.now()) + ", need=2]";
+		Assert.assertEquals(salidaEsperada, respuestaNecesidad.toString());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoUser() {
+		User usuario = new User("andres", "Andrés Cárdenas", "andrescardenas@hotmail.com", "asdfghjklñ", "Estudiante");
+		Assert.assertEquals("andres", usuario.getUserName());
+		Assert.assertEquals("Andrés Cárdenas", usuario.getName());
+		Assert.assertEquals("andrescardenas@hotmail.com", usuario.getMail());
+		Assert.assertEquals("asdfghjklñ", usuario.getPasswd());
+		Assert.assertEquals("Estudiante", usuario.getRol());
+	}
+	
+	@Test
+	public void deberiaActualizarDatosObjetoUser() {
+		User usuario = new User("andres", "Andrés Cárdenas", "andrescardenas@hotmail.com", "asdfghjklñ", "Estudiante");
+		usuario.setUserName("Andrés");
+		usuario.setName("Camilo Cárdenas");
+		usuario.setMail("andrescardenas@gmail.com");
+		usuario.setPasswd("ñlkjhgfdsa");
+		usuario.setRol("Graduado");
+		Assert.assertEquals("Andrés", usuario.getUserName());
+		Assert.assertEquals("Camilo Cárdenas", usuario.getName());
+		Assert.assertEquals("andrescardenas@gmail.com", usuario.getMail());
+		Assert.assertEquals("ñlkjhgfdsa", usuario.getPasswd());
+		Assert.assertEquals("Graduado", usuario.getRol());
+	}
+	
+	@Test
+	public void deberiaPasarUserAString() {
+		User usuario = new User("andres", "Andrés Cárdenas", "andrescardenas@hotmail.com", "asdfghjklñ", "Estudiante");
+		
+		String salidaEsperada = "User [userName=andres, name=Andrés Cárdenas, mail=andrescardenas@hotmail.com, passwd=asdfghjklñ, rol=Estudiante]\n\t";
+		Assert.assertEquals(salidaEsperada, usuario.toString());
 	}
 }
