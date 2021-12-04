@@ -205,13 +205,35 @@ Para ver los resportes el Administrador debe desplegar la opción de reportes en
 
 ## Reporte de necesidades
 
+En este apartado el Administrador puede ver el reporte de necesidades agrupadas por estado, de igual manera se muestra el pie chart con cada uno de los estados. En la parte inferior el 
+administrador puede descargar el reporte dado como archivo .pdf o .xlsx.
+
+[![reporte-necesidades1.jpg](https://i.postimg.cc/wjQQL2Db/reporte-necesidades1.jpg)](https://postimg.cc/v4DndWqW)
+
+<img src="imagenes/pie_necesidades.jpg">
+
 ## Reporte de ofertas
 
+En este apartado el Administrador puede ver el reporte de ofertas agrupadas por estado, de igual manera se muestra el pie chart con cada uno de los estados. En la parte inferior el 
+administrador puede descargar el reporte dado como archivo .pdf o .xlsx.
+
+[![reporte-ofertas1.jpg](https://i.postimg.cc/s2B1sDf9/reporte-ofertas1.jpg)](https://postimg.cc/bGhqRPts)
+
+<img src="imagenes/pie_ofertas.jpg">
+
 ## Reporte de respuestas
+
+El servicio de reporte de respuestas muestra las respuestas e  incluye la funcionalidad de descarga en .pdf y .xsml. Para esto el administrador debe oprimir el botón correspondiente al formato que prefiere y ya tendrá el reporte correspondiente descargado.
+
+[![reporte-respuesta.jpg](https://i.postimg.cc/7ZHmBjPy/reporte-respuesta.jpg)](https://postimg.cc/vcKrTq6P)
 
 ## Reporte de categorias
 
 El servicio de reportes incluye la funcionalidad de descarga en .pdf y .xsml. Para esto el administrador debe oprimir el botón correspondiente al formato que prefiere y ya tendrá el reporte correspondiente descargado.
+
+[![reporte-categoria.jpg](https://i.postimg.cc/13bVgNjY/reporte-categoria.jpg)](https://postimg.cc/jDQSmCKz)
+
+<img src="imagenes/pie_categorias.jpg">
 
 ## Arquitectura y Diseño detallado
 
@@ -293,3 +315,5 @@ Historias de usuario:
 <img src="imagenes/sprint3_hu.png">
 
 ### Reporte de pruebas y de cubrimiento de las mismas 
+
+<img src="imagenes/test_jacoco.jpg">
