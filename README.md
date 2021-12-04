@@ -227,35 +227,35 @@ El servicio de reportes incluye la funcionalidad de descarga en .pdf y .xsml. Pa
 
 ## Capas
 
-+ Aplicación
-+ Presentación
-+ Persistencia
++  Aplicación
++  Presentación
++  Persistencia
 
 **Capa de aplicación:** En la capa de aplicación se utilizarón las siguientes tecnologías:
 
-+ Java : Java es una tecnología empleada para el desarrollo de aplicaciones que convierten a la Web en un elemento más interesante y útil. Empleamos este lenguaje de programación para el desarrollo de la plataforma SOLIDARIDAD ECI.
++  Java : Java es una tecnología empleada para el desarrollo de aplicaciones que convierten a la Web en un elemento más interesante y útil. Empleamos este lenguaje de programación para el desarrollo de la plataforma SOLIDARIDAD ECI.
 
-+ Google Guice : Google Guice es un framework que permite la inyección de dependencias.
++  Google Guice : Google Guice es un framework que permite la inyección de dependencias.
 
-+ Maven : Maven es una herramienta de software para la gestión y construcción de proyectos. Este fue empleado para la construcción y administración de nuestro proyecto de inicio a fin.
++  Maven : Maven es una herramienta de software para la gestión y construcción de proyectos. Este fue empleado para la construcción y administración de nuestro proyecto de inicio a fin.
 
-+ Apashe Shiro: Apashe Shiro permite el control de autenticación en aplicaciones. Este fue implementado para el control de autorizaciones y accesos. 
++  Apashe Shiro: Apashe Shiro permite el control de autenticación en aplicaciones. Este fue implementado para el control de autorizaciones y accesos. 
 
-+ JaCoCo: JaCoCo es una herramienta para Java que evalua la cobertura de pruebas. Esta herramienta fue usada para el analisis del cubriento de las pruebas realizadas y la generación del reporte de estas.
++  JaCoCo: JaCoCo es una herramienta para Java que evalua la cobertura de pruebas. Esta herramienta fue usada para el analisis del cubriento de las pruebas realizadas y la generación del reporte de estas.
 
 **Capa de presentación:**
 
-+ JFS: Java Server Faces es un framework de interfaz de usuario para aplicaciones web en Java. Este fue empleado para la construcción de las interfaces de usuario y su en lace con los beans en la capa de aplicación.
++  JFS: Java Server Faces es un framework de interfaz de usuario para aplicaciones web en Java. Este fue empleado para la construcción de las interfaces de usuario y su en lace con los beans en la capa de aplicación.
 
-+ Primefaces: Primefaces es una biblioteca de componentes de JSF que brinda diferentes elementos visuales. Fue empleada para el desarrollo de las diferentes pantallas de usuario.
++  Primefaces: Primefaces es una biblioteca de componentes de JSF que brinda diferentes elementos visuales. Fue empleada para el desarrollo de las diferentes pantallas de usuario.
 
-+ CSS: CSS es un lenguaje que permite dar estilo a los archivos html. CSS fue empleado para dar estilo y posicionar visualmente las diferentes interfaces. 
++  CSS: CSS es un lenguaje que permite dar estilo a los archivos html. CSS fue empleado para dar estilo y posicionar visualmente las diferentes interfaces. 
 
 **Capa de persistencia:** 
 
-+ PostgreSQL: Postgrest es un sistema gestor de bases de datos relacionales. Fue usado para la persistencia de la información correspondiente al proyecto.
++  PostgreSQL: Postgrest es un sistema gestor de bases de datos relacionales. Fue usado para la persistencia de la información correspondiente al proyecto.
 
-+ MyBatis: MyBatis es una herramienta de persistencia Java. Este fue empleado para el mapeo de las sentencias SQL.
++  MyBatis: MyBatis es una herramienta de persistencia Java. Este fue empleado para el mapeo de las sentencias SQL.
 
 ## Descripción del proceso
 
@@ -265,9 +265,9 @@ Para el desarrollo de este proyecto empleamos la metodología SCRUM. Mediante **
 
 ### Release-burndown chart
 
-<img src="imagenes/scrum_total.png">
+<img src="imagenes/scrum_total.PNG">
 
-# Sprints
+## Sprints
 
 ## Sprint 1
 
