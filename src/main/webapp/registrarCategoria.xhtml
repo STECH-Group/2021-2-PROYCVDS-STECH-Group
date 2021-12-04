@@ -32,9 +32,9 @@
                         <h:outputText for="category_name" value="Nombre categoria: *" />
                         <p:inputText id="nombre" type="String" binding="#{name}"  />
 
-                        <h:outputLabel for="description" value="Descripcion: *" />
-                        <p:inputText id="description" type="String" binding="#{description}"  />
-
+                        <h:outputLabel for="descripcion" value="Descripcion: *" />
+                        <p:inputTextarea rows="6" cols="30" id="descripcion" type="String" binding="#{descripcion}" />
+                        
                         <p:outputLabel value="Estado: *" />
                         <p:selectOneMenu id="option" binding="#{state}">
                             <f:selectItem itemLabel="Seleccione " itemValue="" />
