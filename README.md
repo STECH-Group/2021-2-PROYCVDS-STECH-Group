@@ -107,6 +107,44 @@ En la pantalla de registro se debe agregar un comentario de respuesta y dar clic
 
 [![respuesta-comentario.jpg](https://i.postimg.cc/5yKzHHhP/respuesta-comentario.jpg)](https://postimg.cc/BPDbkvQD)
 
+## Registro de Oferta
+
+**Roles autorizados:** Administrador, Estudiante, Administrativo, Profesor y Egresado.
+
+En el registro de oferta los usuarios expresan los diferentes elementos que pueden brindar a la comunidad. Para acceder a este servicio debe dirigirse al menú principal, dar click en "Oferta" y en la opción de "Registrar oferta".
+
+[![registro-oferta.jpg](https://i.postimg.cc/C18YndRF/registro-oferta.jpg)](https://postimg.cc/r0q7vVGb)
+
+
+En la pantalla de Registro de Oferta se debe incluir la siguiente información necesaria. 
+En primer lugar se debe agregar una **descripción** de la oferta en el cuadro de texto extendible. Al igual que en la necesidad agregamos el **estado** de la OFerta y el **nombre de la categoría** a la cual pertenece. 
+
+[![registro-oferta-datos.jpg](https://i.postimg.cc/pVBH3mnF/registro-oferta-datos.jpg)](https://postimg.cc/hhh6dPsD)
+
+Luego de registrar será redireccionado a la consulta de ofertas para verificar que haya sido registrada.
+
+[![consulta-ofertas-usuario.jpg](https://i.postimg.cc/dt1GyT2R/consulta-ofertas-usuario.jpg)](https://postimg.cc/vDJ1RTSD)
+
+Para actualizar la necesidad seleccionada se despliega el menu en Ofertas y se da click en el botón "Actualizar estado oferta". Seguido a esto se mostrará la lista de ofertas. El Administrador puede cambiar el estado de cualquier oferta, mientras que lo sdemás usuarios solo pueden editar el estado de sus ofertas registradas.
+
+[![actualizar-oferta1.jpg](https://i.postimg.cc/htbXfDJW/actualizar-oferta1.jpg)](https://postimg.cc/CR5h2VHm)
+
+Luego de dar en "Actualizar" se mostrará la respuesta con la actualización del estado.
+
+[![actualizar-oferta2.jpg](https://i.postimg.cc/dQkjHxNk/actualizar-oferta2.jpg)](https://postimg.cc/G9RD9qCd)
+
+## Dar respuesta a una Oferta
+
+**Roles autorizados:** Administrador, Estudiante, Administrativo, Profesor y Egresado.
+
+En el registro de respuesta a oferta los usuarios pueden responder a las ofertas activas actualmente. Para esto se debe desplegar el menu en Ofertas y dar en la opción "Registrar respuesta a oferta".
+Se mostrarán las ofertas activas existentes, en esta pantalla se debe seleccionar la oferta que se quiere dar respuesta y dar en "Responder".
+
+[![resp-oferta1.jpg](https://i.postimg.cc/DZBsmqzX/resp-oferta1.jpg)](https://postimg.cc/WFqtHqgN)
+
+Al dar click será direccionado al registro de la respuesta, en este debe agregar un comentario y dar uevamente en "Registrar" para guardar la respuesta.
+
+[![resp-oferta2.jpg](https://i.postimg.cc/pThCNGCd/resp-oferta2.jpg)](https://postimg.cc/62KnnhDs)
 
 
 ## Arquitectura y Diseño detallado
