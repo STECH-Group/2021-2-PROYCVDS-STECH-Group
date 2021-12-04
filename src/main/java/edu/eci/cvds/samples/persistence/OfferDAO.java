@@ -10,6 +10,8 @@ public interface OfferDAO {
 	
 	public List<Offer> consultarOfertas();
 	
+	public Offer consultarOfertasPorId(int id);
+	
 	public List<Offer> consultarOfertasActivasOEnProceso();
 	
 	public List<Offer> consultarOfertasPorUsuario() throws PersistenceException;

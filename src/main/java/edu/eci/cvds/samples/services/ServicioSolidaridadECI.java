@@ -48,6 +48,8 @@ public interface ServicioSolidaridadECI {
 	
 	public List<Offer> consultaOfertas();
 	
+	public Offer consultarOfertaPorId(int id);
+	
 	public List<Offer> consultaOfertasActivasOEnProceso();
 	
 	public List<Offer> consultaOfertasPorUsuario();

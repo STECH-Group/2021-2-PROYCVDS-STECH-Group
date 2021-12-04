@@ -25,6 +25,12 @@ public class MyBatisOfferDAO implements OfferDAO{
 	public List<Offer> consultarOfertas() {
 		return offerMapper.searchOffers();
 	}
+	
+	@Override
+	public Offer consultarOfertasPorId(int id) {
+		return offerMapper.searchOfferById(id);
+	}
+
 
 	@Override
 	public List<Offer> consultarOfertasActivasOEnProceso() {

@@ -1,27 +1,17 @@
 package edu.eci.cvds.samples.test;
 
-import static org.junit.Assert.assertArrayEquals;
-
 import java.time.LocalDate;
 import java.sql.Date;
 import java.util.List;
 
-import javax.validation.constraints.Size;
-
-import org.apache.pdfbox.contentstream.operator.state.SetLineDashPattern;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
-import org.bouncycastle.asn1.cmc.CMCObjectIdentifiers;
-import org.bouncycastle.operator.AADProcessor;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import com.google.inject.Inject;
 
-import edu.eci.cvds.samples.beans.LoginBean;
 import edu.eci.cvds.samples.entities.Category;
 import edu.eci.cvds.samples.entities.Need;
+import edu.eci.cvds.samples.entities.Offer;
 import edu.eci.cvds.samples.persistence.mybaties.mappers.NeedMapper;
 import edu.eci.cvds.samples.services.ExceptionServicioSolidaridadECI;
 import edu.eci.cvds.samples.services.ServicioSolidaridadECI;
@@ -40,17 +30,12 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaConsultarCategorias() {
-		//System.out.println("---Consultar Categorías---");
-		//System.out.println(ssECI.searchCategories().toString());
-		
 		int numeroCategorias = 5;
 		Assert.assertEquals(numeroCategorias, ssECI.searchCategories().size());
 	}
 	
 	@Test
 	public void deberiaConsultarNombresDeCategoriasActivas() {
-		//System.out.println("---Consultar Nombre Categorías Activas---");
-		
 		String salidaEsperada = "[Laboratorios, Electronica, Deportes]"; 
 		Assert.assertEquals(salidaEsperada, ssECI.searchActiveCategoryNames().toString());
 	}
@@ -148,19 +133,24 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaConsultarNecesidades() {
-		//System.out.println("---Consultar Necesidades---");
-		//System.out.println(ssECI.consultarNecesidades().toString());
 		int numeroNecesidades = 5;
 		Assert.assertEquals(numeroNecesidades, ssECI.consultarNecesidades().size());
 	}
 	
 	@Test
+	public void deberiaConsultarNecesidadesPorId() {
+		String salidaEsperada = "Need [id=3, category=Expresión Gráfica, name=José Gamboa, description=Necesito tabla de dibujo para la clase, urgency=5, creationDate=" + LocalDate.now() + ", state=Activo, modifyDate=" + LocalDate.now() + "]\n\t";
+		Assert.assertEquals(salidaEsperada, ssECI.consultarNecesidadesPorId(3).toString());
+	}
+	
+	@Test
 	public void deberiaCrearObjetoNecesidad() {
-		Need necesidad = new Need(6, "Textos", "José Gamboa", "Ncesito texto de física mecánica", 4, Date.valueOf(LocalDate.now()), "Activo", Date.valueOf(LocalDate.now()));
+		Need necesidad = new Need(6, "Textos", "José Gamboa", "Necesito texto de física mecánica", 4, Date.valueOf(LocalDate.now()), "Activo", Date.valueOf(LocalDate.now()));
 		Assert.assertEquals(6, necesidad.getId());
 		Assert.assertEquals("Textos", necesidad.getCategory());
 		Assert.assertEquals("José Gamboa", necesidad.getName());
-		Assert.assertEquals("Ncesito texto de física mecánica", necesidad.getDescription());
+		Assert.assertEquals("Necesito texto de física mecánica", necesidad.getDescription());
+		Assert.assertEquals(4, necesidad.getUrgency());
 		Assert.assertEquals(Date.valueOf(LocalDate.now()), necesidad.getCreationDate());
 		Assert.assertEquals("Activo", necesidad.getState());
 		Assert.assertEquals(Date.valueOf(LocalDate.now()), necesidad.getModifyDate());
@@ -168,33 +158,88 @@ public class ServicioSolidaridadECITest {
 	
 	@Test
 	public void deberiaGenerarReporteDeNecesidades() {
-		//System.out.println("---Reporte de Necesidades---");
-		//System.out.println(ssECI.reporteDeNecesidades().toString());
 		List<Need> reporte = ssECI.reporteDeNecesidades();
 		Assert.assertEquals("Activo", reporte.get(0).getState());
 		Assert.assertEquals("Inactivo", reporte.get(reporte.size()-1).getState());
 	}
 	
-	/*@Test
+	@Test
 	public void deberiaActualizarEstadoNecesidad() {
-		Need necesidad; //= consultarNecesidadPorId("___")
-		ssECI.actualizarEstadoNecesidad(necesidad, ______);
+		Need necesidad = ssECI.consultarNecesidadesPorId(2);
+		ssECI.actualizarEstadoNecesidad(necesidad, "Est Prueba");
 		
-	}*/
+		String salidaEsperada = "Need [id=2, category=Deportes, name=Zuly Vargas, description=Necesito raqueta de segunda en buen estado, urgency=2, creationDate=" + LocalDate.now() + ", state=Est Prueba, modifyDate=" + LocalDate.now() + "]\n\t";
+		Assert.assertEquals(salidaEsperada, ssECI.consultarNecesidadesPorId(2).toString());
+		
+		ssECI.actualizarEstadoNecesidad(necesidad, "Activo");
+	}
 	
 	@Test
 	public void deberiaConsultarNecesidadesActivasOEnProceso() {
-		int numeroNecesidades = 3;
+		int numeroNecesidades = 4;
 		Assert.assertEquals(numeroNecesidades, ssECI.consultaNecesidadesActivasOEnProceso().size());
 	}
 	
-	/*@Test
-	public void deberiaEliminarLosRegistrosDeLasTablas() {
-		ssECI.limpiarTablas();
-		Assert.assertEquals("[]", ssECI.consultarNecesidades().toString());
-		Assert.assertEquals("[]", ssECI.searchCategories().toString());
+	@Test
+	public void deberiaEliminarNecesidadesPorId() {
+		ssECI.eliminarNecesidadPorId(6);
+		int numeroNecesidades = 5;
+		Assert.assertEquals(numeroNecesidades, ssECI.consultarNecesidades().size());
+	}
+	
+	@Test
+	public void deberiaConsultarOfertas() {
+		int numeroOfertas = 6;
+		Assert.assertEquals(numeroOfertas, ssECI.consultaOfertas().size());
+	}
+	
+	@Test
+	public void deberiaConsultarOfertasActivasOEnProceso() {
+		int numeroOfertas = 3;
+		Assert.assertEquals(numeroOfertas, ssECI.consultaOfertasActivasOEnProceso().size());
+	}
+	
+	@Test
+	public void deberiaGenerarReporteDeOfertas() {
+		List<Offer> reporte = ssECI.reporteDeOfertas();
+		Assert.assertEquals("Activo", reporte.get(0).getState());
+		Assert.assertEquals("Inactivo", reporte.get(reporte.size()-1).getState());
+	}
 
-		//Assert.assertEquals("[]", ssECI.searchCategories().toString());
-	}*/
-
+	@Test
+	public void deberiaActualizarEstadoOferta() {
+		Offer oferta = ssECI.consultarOfertaPorId(4);
+		ssECI.actualizarEstadoOferta(oferta, "Est Prueba");
+		
+		String salidaEsperada = "Offer [id=4, category=Deportes, name=Zuly Vargas, description=Facilito la adquisición de Brownies Veganos, creationDate=" + LocalDate.now() + ", state=Est Prueba, modifyDate=" + LocalDate.now() + "]\n\t";
+		Assert.assertEquals(salidaEsperada, ssECI.consultarOfertaPorId(4).toString());
+		
+		ssECI.actualizarEstadoOferta(oferta, "Inactivo");
+	}
+	
+	@Test
+	public void deberiaEliminarOfertasPorId() {
+		ssECI.eliminarOfertaPorId(6);
+		int numeroOfertas = 5;
+		Assert.assertEquals(numeroOfertas, ssECI.consultaOfertas().size());
+	}
+	
+	@Test
+	public void deberiaCrearObjetoOferta() {
+		Offer oferta = new Offer(6, "Expresión Gráfica", "Zuly Vargas", "Regalo compás de precisión", Date.valueOf(LocalDate.now()), "Activo", Date.valueOf(LocalDate.now()));
+		Assert.assertEquals(6, oferta.getId());
+		Assert.assertEquals("Expresión Gráfica", oferta.getCategory());
+		Assert.assertEquals("Zuly Vargas", oferta.getName());
+		Assert.assertEquals("Regalo compás de precisión", oferta.getDescription());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), oferta.getCreationDate());
+		Assert.assertEquals("Activo", oferta.getState());
+		Assert.assertEquals(Date.valueOf(LocalDate.now()), oferta.getModifyDate());
+	}
+	
+	@Test
+	public void deberiaGenerarReporteDeOferta() {
+		List<Offer> reporte = ssECI.reporteDeOfertas();
+		Assert.assertEquals("Activo", reporte.get(0).getState());
+		Assert.assertEquals("Inactivo", reporte.get(reporte.size()-1).getState());
+	}
 }

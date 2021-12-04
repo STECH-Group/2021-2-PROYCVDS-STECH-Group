@@ -37,6 +37,21 @@
 	    order by o.modify_date desc
   	</select>
   	
+  	<select parameterType="map" id="searchOfferById" resultMap="OfferResult">
+	    select
+	    o.id, 
+	    c.name as c_name, 
+	    u.name as u_name, 
+	    o.description, 
+	    o.creation_date,
+	    o.state, 
+	    o.modify_date
+	    from offers as o
+	    join categories as c on o.category = c.name 
+	    join users as u on o.name = u.name 
+	    where o.id = #{Id}
+  	</select>
+  	
   	<select parameterType="map" id="searchOffersByUser" resultMap="OfferResult">
 	    select
 	    o.id, 
@@ -80,7 +95,7 @@
 	 </delete>
 	 
 	 <delete id="deleteOfferById">
-	 	delete from offers where id = #{Id};
+	 	delete from offers where id = #{idCat};
 	 </delete>
 	 
 	 <update id="restartSequenceOffers">

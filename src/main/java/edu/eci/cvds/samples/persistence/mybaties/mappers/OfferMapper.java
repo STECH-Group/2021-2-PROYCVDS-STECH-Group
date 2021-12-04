@@ -12,6 +12,8 @@ public interface OfferMapper {
 
 	public List<Offer> searchOffers();
 	
+	public Offer searchOfferById(@Param ("Id") int id);
+	
 	public List<Offer> searchActiveOrInProcessOffers();
 	
 	public List<Offer> searchOffersByUser(@Param ("Name") String name);

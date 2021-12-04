@@ -135,6 +135,10 @@ public class ServicioSolidaridadECIImpl implements ServicioSolidaridadECI{
 	public List<Offer> consultaOfertas() {
 		return offerDAO.consultarOfertas();
 	}
+	
+	public Offer consultarOfertaPorId(int id) {
+		return offerDAO.consultarOfertasPorId(id);
+	};
 
 	@Override
 	public List<Offer> consultaOfertasActivasOEnProceso() {
