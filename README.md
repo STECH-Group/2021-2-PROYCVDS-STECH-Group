@@ -15,6 +15,10 @@
 +   Cristian Camilo Forero Monroy - UX
 +   Camilo Andrés Pichimata Cárdenas - Back
 
+### Enlace Taiga
+
+https://tree.taiga.io/project/jose-gamboa-solidaridad-escuela/timeline
+
 ### Reporte de análisis estético de código
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2bb6066ee2249488b34a41489893cf5)](https://www.codacy.com/gh/STECH-Group/2021-2-PROYCVDS-STECH-Group/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=STECH-Group/2021-2-PROYCVDS-STECH-Group&amp;utm_campaign=Badge_Grade)
