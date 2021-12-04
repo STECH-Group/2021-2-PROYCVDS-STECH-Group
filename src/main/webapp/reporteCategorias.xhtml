@@ -25,8 +25,8 @@
 	        
 	        
 	        <div class="panel consulta">
-	            <p:dataTable id="reporteCategoria" var="category" value="#{administratorBean.reportCategory()}" paginator="true" selectionMode="single" selection="" rowKey="#{category.estado}" paginatorPosition="bottom" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+	            <p:dataTable id="reporteCategoria" var="category" value="#{administratorBean.reportCategory()}" paginator="true" selectionMode="single" selection="" rowKey="#{category.estado}" paginatorPosition="bottom"
+	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" >
 	                
 					<p:column headerText="CATEGORIA">
 	                    <h:outputText value="#{category.getEstado()}" />

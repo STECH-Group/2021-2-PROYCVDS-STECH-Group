@@ -20,13 +20,13 @@
 	        </header>
 			<!-- / #main-header -->
 	        <div class="titulo">
-	            <h2>CATEGORIAS</h2>
+	            <h2>RESPUESTAS</h2>
 	        </div>
 	        
 	        
 	        <div class="panel consulta">
-	            <p:dataTable id="reporteRespuesta" var="answer" value="#{administratorBean.reportAnswers()}" paginator="true" selectionMode="single" selection="" rowKey="#{answer.id}" paginatorPosition="bottom" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+	            <p:dataTable id="reporteRespuesta" var="answer" value="#{administratorBean.reportAnswers()}" paginator="true" paginatorPosition="bottom"
+	                currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records" >
 	                
 					<p:column headerText="RESPUESTA">
 	                    <h:outputText value="#{answer.getEstado()}" />
