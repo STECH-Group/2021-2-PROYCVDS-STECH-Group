@@ -39,11 +39,17 @@ public class UsuarioBean extends BasePageBean implements Serializable {
 	}
 	
 	public List<Offer> searchOffersByUser() {
-		return ssECI.consultaOfertasPorUsuario();
+		List<Offer> categories = new ArrayList<Offer>();
+		Subject user = SecurityUtils.getSubject();
+		if (user.hasRole("Administrador")) {
+            categories = searchOffers();
+		} else {
+			categories = ssECI.consultaOfertasPorUsuario();
+		}
+		return categories;
 	}
 	
 	public List<Need> searchNeedsByUser() {
-		
 		List<Need> categories = new ArrayList<Need>();
 		Subject user = SecurityUtils.getSubject();
 		if (user.hasRole("Administrador")) {
