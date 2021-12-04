@@ -265,7 +265,7 @@ Para el desarrollo de este proyecto empleamos la metodología SCRUM. Mediante **
 
 ### Release-burndown chart
 
-<img src="imagenes/scrum_total.png">
+<img src="imagenes/scrum_total.PNG">
 
 # Sprints
 
